@@ -3,239 +3,223 @@ package main
 import (
 	"fmt"
 	"strings"
+	"time"
 
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
 	"github.com/idelchi/godyl/internal/tools"
+	"github.com/idelchi/godyl/pkg/pretty"
 )
 
 var (
-	// Styles
-	headerStyle = lipgloss.NewStyle().
+	titleStyle = lipgloss.NewStyle().
 			Bold(true).
-			Foreground(lipgloss.Color("#7D56F4"))
+			Foreground(lipgloss.Color("170"))
 
-	itemStyle = lipgloss.NewStyle().
-			PaddingLeft(2)
+	selectedStyle = lipgloss.NewStyle().
+			Foreground(lipgloss.Color("170")).
+			Bold(true)
 
-	selectedItemStyle = lipgloss.NewStyle().
-				PaddingLeft(2).
-				Foreground(lipgloss.Color("#FFFFFF")).
-				Background(lipgloss.Color("#7D56F4"))
-
-	statusStyle = lipgloss.NewStyle().
-			PaddingLeft(1).
-			PaddingRight(1)
-
-	existsStyle = statusStyle.Copy().
-			Background(lipgloss.Color("#28A745")).
-			Foreground(lipgloss.Color("#FFFFFF"))
-
-	skipStyle = statusStyle.Copy().
-			Background(lipgloss.Color("#FFC107")).
-			Foreground(lipgloss.Color("#000000"))
-
-	downloadStyle = statusStyle.Copy().
-			Background(lipgloss.Color("#17A2B8")).
-			Foreground(lipgloss.Color("#FFFFFF"))
-
-	errorStyle = statusStyle.Copy().
-			Background(lipgloss.Color("#DC3545")).
-			Foreground(lipgloss.Color("#FFFFFF"))
+	normalStyle = lipgloss.NewStyle().
+			Foreground(lipgloss.Color("252"))
 )
 
-// ToolStatus represents the status of a tool after dry run
-type ToolStatus struct {
-	Tool    *tools.Tool
-	Status  string
-	Message string
-	Error   error
+type model struct {
+	items       []tools.Tool
+	cursor      int
+	selected    bool
+	isLoading   bool
+	loadingDots int
+	scrollPos   int    // Track scroll position for detail view
+	listScroll  int    // Track scroll position for list view
+	content     string // Store the formatted content
+	height      int    // Store terminal height
 }
 
-// Model represents the TUI state
-type Model struct {
-	tools      []ToolStatus
-	cursor     int
-	width      int
-	height     int
-	ready      bool
-	quitting   bool
-	processing bool
-	app        *App // Reference to main app
-}
+type tickMsg time.Time
 
-// Init implements tea.Model
-func (m Model) Init() tea.Cmd {
-	// Run the dry run analysis
-	return func() tea.Msg {
-		// Set dry run flag
-		m.app.cfg.Dry = true
-
-		// Run the standard processing
-		tags, withoutTags := splitTags(m.app.cfg.Tags)
-		processor := NewToolProcessor(m.app)
-
-		var toolStatuses []ToolStatus
-
-		// Create a channel to collect results
-		resultCh := make(chan result)
-
-		// Start processing in a goroutine
-		go func() {
-			for _, tool := range m.app.toolsList {
-				tool := tool // capture loop variable
-				res := result{}
-
-				tool.ApplyDefaults(m.app.defaults.Defaults)
-
-				if err := tool.Resolve(tags, withoutTags); err != nil {
-					res = result{tool: &tool, err: err}
-				} else {
-					_, found, err := tool.Download()
-					res = result{tool: &tool, found: found, err: err}
-				}
-
-				resultCh <- res
-			}
-			close(resultCh)
-		}()
-
-		// Collect results
-		for res := range resultCh {
-			status := ToolStatus{Tool: res.tool}
-
-			switch {
-			case res.err == nil:
-				status.Status = "download"
-				status.Message = "Will be downloaded"
-			case tools.IsErrAlreadyExists(res.err):
-				status.Status = "exists"
-				status.Message = "Already installed"
-			case tools.IsErrSkipped(res.err):
-				status.Status = "skip"
-				status.Message = "Skipped"
-			default:
-				status.Status = "error"
-				status.Message = res.err.Error()
-				status.Error = res.err
-			}
-
-			toolStatuses = append(toolStatuses, status)
-		}
-
-		return toolStatuses
+func initialModel() model {
+	return model{
+		items:       make([]tools.Tool, 0),
+		selected:    false,
+		isLoading:   true,
+		loadingDots: 0,
+		scrollPos:   0,
+		listScroll:  0,
+		height:      getTerminalHeight(),
 	}
 }
 
-// Update implements tea.Model
-func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
+func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	switch msg := msg.(type) {
 	case tea.WindowSizeMsg:
-		m.width = msg.Width
 		m.height = msg.Height
-		m.ready = true
-
-	case []ToolStatus:
-		m.tools = msg
-		m.processing = false
-
+		return m, nil
+	case tickMsg:
+		if m.isLoading {
+			m.loadingDots = (m.loadingDots + 1) % 4
+			return m, tick()
+		}
+		return m, nil
+	case []tools.Tool:
+		m.items = msg
+		m.isLoading = false
+		return m, nil
 	case tea.KeyMsg:
 		switch msg.String() {
-		case "q", "ctrl+c":
-			m.quitting = true
+		case "ctrl+c", "q":
 			return m, tea.Quit
-
 		case "up", "k":
-			if m.cursor > 0 {
-				m.cursor--
+			if m.selected {
+				if m.scrollPos > 0 {
+					m.scrollPos--
+				}
+			} else {
+				if m.cursor > 0 {
+					m.cursor--
+					// Scroll up if cursor moves above visible area
+					if m.cursor < m.listScroll {
+						m.listScroll = m.cursor
+					}
+				}
 			}
-
 		case "down", "j":
-			if m.cursor < len(m.tools)-1 {
-				m.cursor++
+			if m.selected {
+				lines := strings.Count(m.content, "\n")
+				height := m.height - 5
+				if m.scrollPos < lines-height {
+					m.scrollPos++
+				}
+			} else {
+				if m.cursor < len(m.items)-1 {
+					m.cursor++
+					// Scroll down if cursor moves below visible area
+					visibleHeight := m.height - 5 // Account for UI chrome
+					if m.cursor >= m.listScroll+visibleHeight {
+						m.listScroll = m.cursor - visibleHeight + 1
+					}
+				}
 			}
-
 		case "enter":
-			if m.cursor < len(m.tools) {
-				// TODO: Implement action on selected tool
+			if !m.selected {
+				m.selected = true
+				m.scrollPos = 0
+				m.content = pretty.YAMLMasked(m.items[m.cursor])
+			} else {
+				m.selected = false
 			}
+		case "esc":
+			m.selected = false
+			m.scrollPos = 0
 		}
 	}
-
 	return m, nil
 }
 
-// View implements tea.Model
-func (m Model) View() string {
-	if !m.ready {
-		return "Initializing..."
+func (m model) listView() string {
+	var s strings.Builder
+	s.WriteString(titleStyle.Render("Tools\n\n"))
+
+	visibleHeight := m.height - 5 // Account for UI chrome
+	end := m.listScroll + visibleHeight
+	if end > len(m.items) {
+		end = len(m.items)
 	}
 
-	if m.processing {
-		return "Processing tools..."
-	}
-
-	var b strings.Builder
-
-	// Header
-	b.WriteString(headerStyle.Render("godyl Tool Status\n\n"))
-
-	// Tool list
-	maxNameWidth := 0
-	for _, t := range m.tools {
-		if len(t.Tool.Name) > maxNameWidth {
-			maxNameWidth = len(t.Tool.Name)
-		}
-	}
-
-	for i, t := range m.tools {
-		// Prepare the status badge
-		var status string
-		switch t.Status {
-		case "exists":
-			status = existsStyle.Render("EXISTS")
-		case "skip":
-			status = skipStyle.Render("SKIP")
-		case "download":
-			status = downloadStyle.Render("DOWNLOAD")
-		case "error":
-			status = errorStyle.Render("ERROR")
-		}
-
-		// Create the line
-		line := fmt.Sprintf(
-			"%-*s %s %s",
-			maxNameWidth,
-			t.Tool.Name,
-			status,
-			t.Message,
-		)
-
-		// Apply selection styling
+	// Only render visible items
+	for i := m.listScroll; i < end; i++ {
+		cursor := " "
 		if i == m.cursor {
-			b.WriteString(selectedItemStyle.Render(line))
-		} else {
-			b.WriteString(itemStyle.Render(line))
+			cursor = ">"
 		}
-		b.WriteString("\n")
+
+		name := m.items[i].Name
+		if i == m.cursor {
+			s.WriteString(selectedStyle.Render(fmt.Sprintf("%s %s\n", cursor, name)))
+		} else {
+			s.WriteString(normalStyle.Render(fmt.Sprintf("%s %s\n", cursor, name)))
+		}
 	}
 
-	// Footer
-	b.WriteString("\n")
-	b.WriteString(itemStyle.Render("↑/↓: Navigate • Enter: Select • q: Quit"))
+	// Add scroll indicators if needed
+	if m.listScroll > 0 {
+		s.WriteString("\n↑ More items above")
+	}
+	if end < len(m.items) {
+		s.WriteString("\n↓ More items below")
+	}
 
-	return b.String()
+	s.WriteString("\nPress q to quit, enter to view details\n")
+	return s.String()
 }
 
-// StartTUI initializes and runs the TUI
-func StartTUI(app *App) error {
-	model := Model{
-		app:        app,
-		processing: true,
+func tick() tea.Cmd {
+	return tea.Tick(time.Millisecond*500, func(t time.Time) tea.Msg {
+		return tickMsg(t)
+	})
+}
+
+func (m model) Init() tea.Cmd {
+	return tick()
+}
+
+func (m model) View() string {
+	if m.isLoading {
+		return m.loadingView()
+	}
+	if m.selected {
+		return m.detailView()
+	}
+	return m.listView()
+}
+
+func (m model) loadingView() string {
+	var s strings.Builder
+	s.WriteString(titleStyle.Render("Collecting Tools\n\n"))
+	dots := strings.Repeat(".", m.loadingDots)
+	padding := strings.Repeat(" ", 3-m.loadingDots)
+	s.WriteString(fmt.Sprintf("Loading%s%s\n", dots, padding))
+	return s.String()
+}
+
+func (m model) detailView() string {
+	var s strings.Builder
+	s.WriteString(titleStyle.Render("Details\n\n"))
+
+	// Split content into lines and apply scrolling
+	lines := strings.Split(m.content, "\n")
+	height := getTerminalHeight() - 5 // Account for UI chrome
+	start := m.scrollPos
+	end := start + height
+	if end > len(lines) {
+		end = len(lines)
 	}
 
-	p := tea.NewProgram(model)
-	_, err := p.Run()
+	visibleLines := lines[start:end]
+	s.WriteString(strings.Join(visibleLines, "\n"))
+	s.WriteString("\n\nPress ESC to go back, up/down to scroll\n")
+	return s.String()
+}
 
-	return err
+// getTerminalHeight returns the terminal height or a default value
+func getTerminalHeight() int {
+	// You might want to use termenv or similar to get actual terminal size
+	return 20 // Default height, adjust as needed
+}
+
+func launchTUI(toolChan chan tools.Tool) error {
+	p := tea.NewProgram(initialModel())
+
+	go func() {
+		var tools []tools.Tool
+		for tool := range toolChan {
+			tools = append(tools, tool)
+		}
+		p.Send(tools)
+	}()
+
+	if _, err := p.Run(); err != nil {
+		return fmt.Errorf("error running TUI: %v", err)
+	}
+	return nil
 }

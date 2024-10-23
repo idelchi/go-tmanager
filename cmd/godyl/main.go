@@ -28,6 +28,8 @@ type App struct {
 	log             *logger.Logger
 	toolsList       tools.Tools
 	hasInstallError bool // Indicates if any tool failed to install
+
+	collectedTools []tools.Tool
 }
 
 // result struct to hold the tool and any associated error.
@@ -62,6 +64,7 @@ func (app *App) Run() error {
 	}
 
 	app.log = logger.New(app.cfg.Log)
+
 	app.logStartupInfo()
 
 	if err := app.loadToolsList(); err != nil {
@@ -168,6 +171,7 @@ type ToolProcessor struct {
 	resultCh  chan result
 	errGroup  *errgroup.Group
 	waitGroup *sync.WaitGroup
+	toolChan  chan tools.Tool
 }
 
 // NewToolProcessor creates a new ToolProcessor.
@@ -176,6 +180,7 @@ func NewToolProcessor(app *App) *ToolProcessor {
 		app:      app,
 		resultCh: make(chan result),
 		errGroup: &errgroup.Group{},
+		toolChan: make(chan tools.Tool),
 	}
 }
 
@@ -185,10 +190,25 @@ func (tp *ToolProcessor) Process(tags, withoutTags []string) error {
 
 	tp.waitGroup = &sync.WaitGroup{}
 	tp.waitGroup.Add(1)
+
+	var tuiErr error
+	var tuiDone sync.WaitGroup
+
+	if tp.app.cfg.Interactive {
+		tp.app.cfg.Dry = true
+		tuiDone.Add(1)
+		go func() {
+			defer tuiDone.Done()
+			if err := launchTUI(tp.toolChan); err != nil {
+				tuiErr = err
+				tp.app.log.Error("TUI error: %v", err)
+			}
+		}()
+	}
+
 	go tp.collectResults()
 
 	for _, tool := range tp.app.toolsList {
-		tool := tool // capture loop variable
 		tp.errGroup.Go(func() error {
 			return tp.processTool(&tool, tags, withoutTags)
 		})
@@ -200,6 +220,13 @@ func (tp *ToolProcessor) Process(tags, withoutTags []string) error {
 
 	close(tp.resultCh)
 	tp.waitGroup.Wait()
+
+	if tp.app.cfg.Interactive {
+		tuiDone.Wait()
+		if tuiErr != nil {
+			return fmt.Errorf("TUI error: %v", tuiErr)
+		}
+	}
 
 	if tp.app.hasInstallError {
 		return errors.New("one or more tools failed to install")
@@ -219,8 +246,13 @@ func (tp *ToolProcessor) setupConcurrencyLimit() {
 // collectResults reads results from the result channel and processes them.
 func (tp *ToolProcessor) collectResults() {
 	defer tp.waitGroup.Done()
+	defer close(tp.toolChan)
+
 	for res := range tp.resultCh {
 		tp.app.processResult(res)
+		if tp.app.cfg.Interactive {
+			tp.toolChan <- *res.tool
+		}
 	}
 }
 

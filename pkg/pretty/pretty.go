@@ -28,7 +28,7 @@ func YAML(obj any) string {
 // YAMLMasked returns a prettified YAML representation of the provided object
 // with masked sensitive fields. It uses JSONMasked internally to mask the fields.
 func YAMLMasked(obj any) string {
-	return YAML(JSONMasked(obj))
+	return YAML(MaskJSON(obj))
 }
 
 // JSON returns a prettified JSON representation of the provided object.
