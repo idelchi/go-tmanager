@@ -1,0 +1,6 @@
+dictionaries:
+  - go-match-words
+
+dictionaryDefinitions:
+  - name: go-match-words
+    path: project-words

@@ -1,4 +1,5 @@
-output: ~/.local/bin
+# output: ~/.local/bin
+output: .bin-{{ .OS }}-{{ .DISTRIBUTION }}-{{ .ARCH }}-{{ .ARCH_VERSION }}
 exe:
   patterns:
     - "^{{ .Exe }}{{ .EXTENSION }}$"
@@ -8,6 +9,21 @@ hints:
     weight: 1
   - pattern: zip
     weight: '{{ if eq .OS "windows" }}1{{ else }}0{{ end }}'
+  - pattern: "armv{{.ARCH_VERSION}}"
+    weight: 4
+  - pattern: "armv{{sub .ARCH_VERSION 1}}"
+    weight: 3
+  - pattern: "armv{{sub .ARCH_VERSION 2}}"
+    weight: 2
+  - pattern: "arm[^v].*"
+    weight: 1
+  - pattern: "musleabihf"
+    weight: |-
+      {{- if and (eq .DISTRIBUTION "alpine") (eq .ARCH "arm") -}}
+      1
+      {{- else -}}
+      0
+      {{- end -}}
 extensions:
   - '{{ if eq .OS "windows" }}.exe{{ else }}{{ end }}'
   - '{{ if eq .OS "windows" }}.zip{{ else }}{{ end }}'

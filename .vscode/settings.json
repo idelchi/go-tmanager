@@ -1,0 +1,123 @@
+{
+    /* ****** GENERAL ****** */
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "editor.formatOnSave": true,
+    /* ****** ****** ****** */
+    /* ****** JSON ****** */
+    "[json][jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    /* ****** ****** ****** */
+    /* ****** YAML ****** */
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced"
+    },
+    "yaml.format.bracketSpacing": false,
+    "yaml.format.singleQuote": true,
+    /* ****** ****** ****** */
+    /* ****** DOCKER ****** */
+    "[dockercompose]": {
+        "editor.insertSpaces": true
+    },
+    /* ****** ****** ****** */
+    /* ****** SHELL ****** */
+    "shellcheck.enable": true,
+    "shellcheck.run": "onSave",
+    "shellcheck.useWorkspaceRootAsCwd": true,
+    "shellcheck.customArgs": [
+        "-x",
+        "--shell=bash",
+        "--enable=all",
+        "--severity=style"
+    ],
+    "[shellscript]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced"
+    },
+    /* ****** ****** ****** */
+    /* ****** OTHER ****** */
+    "prettier.devenvPath": ".devenv/settings/.prettierrc.yml",
+    /* ****** ****** ****** */
+    /* ****** PYTHON ****** */
+    "python.defaultInterpreterPath": "python3",
+    "python.languageServer": "Pylance",
+    "python.analysis.autoImportCompletions": true,
+    "autoDocstring.docstringFormat": "google",
+    "black-formatter.args": ["--config", ".devenv/settings/pyproject.toml"],
+    "isort.args": ["--settings-file", ".devenv/settings/pyproject.toml"],
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
+    },
+    "pylint.args": ["--rcfile=.devenv/settings/pyproject.toml"],
+    "mypy-type-checker.args": ["--config=.devenv/settings/pyproject.toml"],
+    "ruff.lint.args": ["--config=.devenv/settings/pyproject.toml"],
+    "ruff.lint.run": "onSave",
+    /* ****** ****** ****** */
+    /* ****** GO ****** */
+    "go.lintOnSave": "workspace",
+    "go.lintTool": "golangci-lint",
+    "go.lintFlags": ["--config=.devenv/settings/.golangci.yml"],
+    "go.useLanguageServer": true,
+    "gopls": {
+        "formatting.gofumpt": true,
+        "ui.semanticTokens": true
+    },
+    /* ****** ****** ****** */
+    /* ****** GROOVY ****** */
+    "files.associations": {
+        "Jenkinsfile": "groovy"
+    },
+    "[groovy]": {
+        "editor.insertSpaces": true
+    },
+    /* ****** ****** ****** */
+    /* ****** TODOs ****** */
+    "todo-tree.filtering.includeHiddenFiles": true,
+    "todo-tree.highlights.defaultHighlight": {
+        "type": "text"
+    },
+    /* ****** ****** ****** */
+    /* ****** CONSOLE ****** */
+    "terminal.integrated.env.windows": {
+        "PWD": "${workspaceFolder}",
+        "DEVENV": ".devenv"
+    },
+    "terminal.integrated.env.linux": {
+        "PWD": "${workspaceFolder}",
+        "DEVENV": ".devenv"
+    },
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    /* ****** ****** ****** */
+    /* ****** SYSTEM ****** */
+    "files.eol": "\n",
+    /* ****** ****** ****** */
+    /* ****** COPILOT ****** */
+    "editor.inlineSuggest.enabled": true,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": true,
+        "markdown": true,
+        "yaml": true,
+        "python": true,
+        "go": true,
+        "rust": true,
+        "groovy": true,
+        "dockerfile": true,
+        "dockercompose": true,
+        "json": true,
+        "jsonc": true,
+        "csharp": true
+    }
+}
+// Note that environment variables might not work in config path
+// TODO: https://code.visualstudio.com/docs/editor/intellisense
+// Export a list of extensions:
+// code --list-extensions | xargs -L 1 echo code --install-extension

@@ -1,0 +1,82 @@
+#[=======================================================================[
+# Description : Docker image containing the godyl binary (Alpine version)
+#]=======================================================================]
+
+ARG GO_VERSION=1.23.1
+ARG DISTRO=alpine
+#### ---- Build ---- ####
+FROM golang:${GO_VERSION}-${DISTRO} AS build
+
+LABEL maintainer=arash.idelchi
+
+USER root
+
+# Install necessary packages for Alpine
+RUN apk add --no-cache \
+    python3 \
+    py3-pip \
+    tzdata \
+    bash
+
+WORKDIR /work
+
+# Create User (Alpine)
+ARG USER=user
+RUN addgroup -g 1001 ${USER} && \
+    adduser -D -u 1001 -G ${USER} -h /home/${USER} -s /bin/bash ${USER}
+
+USER ${USER}
+WORKDIR /tmp/go
+
+ENV GOMODCACHE=/home/${USER}/.cache/.go-mod
+ENV GOCACHE=/home/${USER}/.cache/.go
+
+COPY go.mod go.sum ./
+RUN --mount=type=cache,target=${GOMODCACHE},uid=1001,gid=1001 \
+    --mount=type=cache,target=${GOCACHE},uid=1001,gid=1001 \
+    go mod download
+
+COPY . .
+ARG GODYL_VERSION="unofficial & built by unknown"
+RUN --mount=type=cache,target=${GOMODCACHE},uid=1001,gid=1001 \
+    --mount=type=cache,target=${GOCACHE},uid=1001,gid=1001 \
+    CGO_ENABLED=0 go install -ldflags="-s -w -X 'main.version=${GODYL_VERSION}'" ./cmd/...
+
+COPY .bashrc /home/${USER}/.bashrc
+
+ENV PATH=$PATH:/home/${USER}/.local/bin
+ENV PATH=$PATH:/root/.local/bin
+
+USER ${USER}
+WORKDIR /home/${USER}
+
+# Timezone
+ENV TZ=Europe/Zurich
+
+
+
+FROM alpine:3.20 AS final
+
+RUN apk add --no-cache \
+    curl \
+    ca-certificates \
+    git
+
+ARG USER=user
+RUN addgroup -g 1001 ${USER} && \
+    adduser -D -u 1001 -G ${USER} -h /home/${USER} -s /bin/bash ${USER}
+
+
+USER ${USER}
+WORKDIR /home/${USER}
+
+COPY --from=build --chown=1001:1001 /go/bin/godyl /home/${USER}/.local/bin/godyl
+
+COPY --chown=1001:1001 .bashrc /home/${USER}/.bashrc
+
+ENV PATH=$PATH:/home/${USER}/.local/bin
+ENV PATH=$PATH:/root/.local/bin
+ENV ENV=/home/${USER}/.bashrc
+
+USER ${USER}
+WORKDIR /home/${USER}

@@ -22,19 +22,19 @@ func (LibraryInfo) Supported() []LibraryInfo {
 	return []LibraryInfo{
 		{
 			Type:    "gnu",
-			Aliases: []string{"gnu", "glibc"},
+			Aliases: []string{"glibc"},
 		},
 		{
-			Type:    "musl",
-			Aliases: []string{"musl"},
+			Type: "musl",
+			// Aliases: []string{"musl"},
 		},
 		{
 			Type:    "msvc",
-			Aliases: []string{"msvc", "visualcpp"},
+			Aliases: []string{"visualcpp"},
 		},
 		{
-			Type:    "android",
-			Aliases: []string{"android"},
+			Type: "android",
+			// Aliases: []string{"android"},
 		},
 	}
 }
@@ -46,7 +46,8 @@ func (l *Library) Parse(name string) error {
 	info := LibraryInfo{}
 
 	for _, info := range info.Supported() {
-		for _, alias := range info.Aliases {
+		// for _, alias := range info.Aliases {
+		for _, alias := range append([]string{info.Type}, info.Aliases...) {
 			if strings.Contains(name, alias) {
 				l.Type = info.Type
 				l.Raw = alias
@@ -69,29 +70,39 @@ func (l Library) Is(other Library) bool {
 	return other.Raw == l.Raw && !l.IsUnset() && !other.IsUnset()
 }
 
+var compatibilityMatrix = map[string]map[string]bool{
+	"gnu": {
+		"gnu":  true,
+		"musl": true,
+	},
+	"musl": {
+		"gnu":  true,
+		"musl": true,
+	},
+	"msvc": {
+		"msvc": true,
+		"gnu":  true,
+	},
+	"android": {
+		"android": true,
+	},
+}
+
 // IsCompatibleWith checks if this library is compatible with another.
 func (l Library) IsCompatibleWith(other Library) bool {
+	// Early return if either library is unset
 	if l.IsUnset() || other.IsUnset() {
 		return false
 	}
 
+	// Check if they're exactly the same library
 	if l.Is(other) {
 		return true
 	}
 
-	if l.Type == other.Type {
-		return true
-	}
-
-	// Specific compatibility rules
-	if l.Type == "gnu" && other.Type == "musl" {
-		return true
-	}
-	if l.Type == "musl" && other.Type == "gnu" {
-		return true
-	}
-	if l.Type == "msvc" && other.Type == "gnu" {
-		return true
+	// Look up compatibility in the matrix
+	if compatible, exists := compatibilityMatrix[l.Type]; exists {
+		return compatible[other.Type]
 	}
 
 	return false

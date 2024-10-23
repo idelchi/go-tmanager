@@ -66,6 +66,7 @@ func (d Downloader) Download(url, output string) (file.File, error) {
 		Src:     url,
 		Dst:     output,
 		GetMode: getter.ModeAny,
+		// ProgressListener: NewProgressTracker(),
 	}
 	client := &getter.Client{
 		Getters: []getter.Getter{

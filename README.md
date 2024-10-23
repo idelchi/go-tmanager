@@ -78,7 +78,7 @@ go install github.com/idelchi/godyl/cmd/godyl@latest
 ## From installation script
 
 ```sh
-curl -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/main/scripts/install.sh | sh -s -- -v v0.1 -o ~/.local/bin
+curl -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/scripts/install.sh | sh -s -- -v v0.1-beta -o ~/.local/bin
 ```
 
 ## Update
@@ -247,14 +247,8 @@ extensions:
 skip:
   - condition: string
     reason: string
-checker:
-  test: []
-  checksum:
-    enabled: boolean
-    path: string
 post: []
 mode: string
-settings: {}
 env:
   key: string
 ```
@@ -264,7 +258,7 @@ Any field that accepts a list, can also be provided as a string.
 For example:
 
 ```yaml
-aliases: z
+aliases: gd
 fallbacks: go
 exe:
   patterns: "{{ .Exe }}{{ .EXTENSION }}$"
@@ -274,7 +268,7 @@ is equivalent to:
 
 ```yaml
 aliases:
-  - z
+  - gd
 fallbacks:
   - go
 exe:
@@ -351,10 +345,6 @@ skip:
 #### Usage
 
 - Will be inferred and populated by the `source` method if not given
-
-### Checker
-
-![Not Implemented](https://img.shields.io/badge/Not%20Implemented-gray)
 
 ### Output
 
@@ -585,7 +575,7 @@ Accepted values are:
 | -------- | --------- | ----------- |
 | ![na]    | ![yes]    | ![no]       |
 
-`extensions` is a list of extensions to add to the tool name when matching the tools (used only for `github` source type).
+`extensions` is a list of extensions to consider when matching the most suitable tool to download (used only for `github` source type).
 
 #### Usage
 
@@ -682,6 +672,16 @@ The example above defines:
     ```yaml
     pattern: zip
     weight: '{{ if eq .OS "windows" }}1{{ else }}0{{ end }}'
+    ```
+
+  - prefer the three last versions of the arm architecture, in descending order
+    ```
+    - pattern: "armv{{.ARCH_VERSION}}"
+      weight: 3
+    - pattern: "armv{{sub .ARCH_VERSION 1}}"
+      weight: 2
+    - pattern: "armv{{sub .ARCH_VERSION 2}}"
+      weight: 1
     ```
 
 - Extensions to use when filtering assets
@@ -847,30 +847,18 @@ Only certain fields are templated. Below is a list of fields where templating is
 | Linux   | linux                   |
 | Darwin  | darwin, macos, mac, osx |
 | Windows | windows, win            |
-| FreeBSD | freebsd                 |
-| Android | android                 |
-| NetBSD  | netbsd                  |
-| OpenBSD | openbsd                 |
 
 ### Architectures
 
-| Architecture  | Inferred from                                   |
-| ------------- | ----------------------------------------------- |
-| AMD64         | amd64, x86_64, x64, win64                       |
-| ARM64         | arm64, aarch64                                  |
-| AMD32         | amd32, x86, i386, i686, win32, 386, 686         |
-| ARM32 (v7)    | arm32, armv7, armv7l, armhf, armv6, armv6l, arm |
-| ARM32 (v6) \* | arm32, armv6, armv6l, armhf, arm                |
-| ARM32 (v5)    | arm32, armv5, armv5l, armel, arm                |
-| MIPS          | mips, mipsel, mips64, mips64le                  |
-| PPC64         | powerpc64, ppc64, ppc64le                       |
-| RISCV         | riscv64                                         |
-
-\*Note: For ARM32 (v6), compatibility varies:
-
-- On Rasbian: arm32, armv6, armv6l, armhf, arm
-- On Debian: arm32, armv6, armv6l, arm
-- On other distributions: arm32, armhf, armv6, armv6l, arm
+| Architecture       | Inferred from                           |
+| ------------------ | --------------------------------------- |
+| AMD64              | amd64, x86_64, x64, win64               |
+| ARM64              | arm64, aarch64                          |
+| AMD32              | amd32, x86, i386, i686, win32, 386, 686 |
+| ARM32 (v7)         | armv7, armv7l, armhf                    |
+| ARM32 (v6) \*      | armv6, armv6l                           |
+| ARM32 (v5)         | armv5, armel                            |
+| ARM32 (v<unknown>) | arm                                     |
 
 ### Libraries
 
@@ -884,6 +872,9 @@ Only certain fields are templated. Below is a list of fields where templating is
 ## Notes
 
 All `regex` expressions are evaluated using `search`, meaning that `^` and `$` are necessary to match the start and end of the string.
+When running `32-bit` userland on a `64-bit` Kernel, there's some attempts to infer the matching `32-bit` architecture.
+
+However, to be certain that the right binary is downloaded, it's recommended to pass the `--arch` flag to the tool.
 
 <!-- Badges -->
 

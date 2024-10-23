@@ -37,6 +37,9 @@ type Show struct {
 	Defaults bool `mapstructure:"show-defaults"`
 	// Detect the platform and exit
 	Platform bool `mapstructure:"show-platform"`
+
+	// Detect and exist
+	Detect bool `mapstructure:"detect"`
 }
 
 // Config holds all the configuration options for godyl.
@@ -62,6 +65,9 @@ type Config struct {
 	Log logger.Level
 	// Number of parallel downloads (>= 0)
 	Parallel int `validate:"gte=0"`
+
+	// Run in interactive mode
+	Interactive bool
 
 	// Path to tools configuration file
 	Tools string

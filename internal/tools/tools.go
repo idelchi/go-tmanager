@@ -1,10 +1,12 @@
 package tools
 
 import (
+	"errors"
 	"os"
 	"path/filepath"
 	"strings"
 
+	"github.com/idelchi/go-next-tag/pkg/stdin"
 	"github.com/idelchi/godyl/internal/tools/sources"
 	"github.com/idelchi/godyl/pkg/utils"
 	"gopkg.in/yaml.v3"
@@ -17,7 +19,7 @@ type Tools []Tool
 // If the configuration is not a YAML file, it assumes a tool is being referenced by name or URL and creates a simple tool entry.
 func (t *Tools) Load(cfg string) (err error) {
 	// Check if the configuration is not a YAML file.
-	if !strings.HasSuffix(cfg, ".yml") && !strings.HasSuffix(cfg, ".yaml") {
+	if !strings.HasSuffix(cfg, ".yml") && !strings.HasSuffix(cfg, ".yaml") && cfg != "-" {
 		// If the configuration starts with "http", assume it's a URL.
 		if utils.IsURL(cfg) {
 
@@ -45,14 +47,30 @@ func (t *Tools) Load(cfg string) (err error) {
 		return nil
 	}
 
-	// Read the YAML configuration file from disk.
-	file, err := os.ReadFile(cfg)
-	if err != nil {
-		return err
+	var data []byte
+
+	if cfg == "-" {
+		if !stdin.IsPiped() {
+			return errors.New("no data piped to stdin")
+		}
+		input, err := stdin.Read()
+		if err != nil {
+			return err
+		}
+
+		data = []byte(input)
+	} else {
+		// Read the YAML configuration file from disk.
+		input, err := os.ReadFile(cfg)
+		if err != nil {
+			return err
+		}
+
+		data = input
 	}
 
 	// Unmarshal the YAML content into the Tools collection.
-	err = yaml.Unmarshal(file, t)
+	err = yaml.Unmarshal(data, t)
 	if err != nil {
 		return err
 	}

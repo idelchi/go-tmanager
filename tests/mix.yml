@@ -1,208 +1,96 @@
-- name: moncho/dry
-  description: A Docker manager for the terminal
-  exe:
-    name: dry
-    patterns: ^dry
-  extensions: ""
-  tags:
-    - docker
-
-- name: jesseduffield/lazydocker
-  description: The lazier way to manage everything docker
-  aliases: lazy
-  tags:
-    - docker
-
-- name: bcicen/ctop
-  description: Top-like interface for container metrics
-  skip:
-    - reason: "ctop is not available for darwin arm64"
-      condition: '{{ and (eq .OS "darwin") (eq .ARCH "arm64") }}'
-  extensions: []
-  tags:
-    - docker
-
-- name: kdash-rs/kdash
-  description: A simple and fast dashboard for Kubernetes
-  hints:
-    - pattern: "{{ .OS }}"
-      weight: -1
-  tags:
-    - kubernetes
-
-- name: kubernetes/minikube
-  description: Run Kubernetes locally
-  extensions: "{{ .EXTENSION }}"
-  tags:
-    - kubernetes
-
-- name: ahmetb/kubectx
-  description: Faster way to switch between clusters and namespaces in kubectl
-  aliases: kbx
-  tags:
-    - kubernetes
-
-- name: ahmetb/kubectx
-  description: Faster way to switch between clusters and namespaces in kubectl
-  exe: kubens
-  aliases: kbn
-  tags:
-    - kubernetes
-
-- name: derailed/k9s
-  description: Kubernetes CLI To Manage Your Clusters In Style!
-  skip:
-    - reason: "k9s is not available for armv6"
-      condition: '{{ and (eq .ARCH "arm") (eq .ARCH_VERSION 6) }}'
-  tags:
-    - kubernetes
-
-- name: helm/helm
-  description: The package manager for Kubernetes
-  path: https://get.helm.sh/helm-{{ .Version }}-{{ .OS }}-{{ .ARCH }}.tar.gz
-  tags:
-    - kubernetes
-
-- name: kubernetes/kubernetes
-  description: Command-line tool for controlling Kubernetes clusters
-  exe: kubectl
-  path: https://dl.k8s.io/{{ .Version }}/bin/{{ .OS }}/{{ .ARCH }}/kubectl{{ .EXTENSION }}
-  aliases: kc
-  tags:
-    - kubernetes
-
-- name: idelchi/gocry
-  description: Encrypt files or lines
-  tags:
-    - security
-
 - name: syncthing/syncthing
   description: Open Source Continuous File Synchronization
-  tags:
-    - sync
 
 - name: ajeetdsouza/zoxide
   description: A smarter cd command for your terminal
-  tags:
-    - terminal
 
 - name: junegunn/fzf
   description: A command-line fuzzy finder
-  tags:
-    - terminal
 
 - name: starship/starship
   description: The minimal, blazing-fast, and infinitely customizable prompt for any shell
-  tags:
-    - terminal
 
 - name: go-task/task
   description: A task runner / simpler Make alternative written in Go
-  tags:
-    - automation
 
 - name: sharkdp/fd
   description: A simple, fast and user-friendly alternative to 'find'
-  tags:
-    - terminal
 
 - name: knqyf263/pet
   description: Simple command-line snippet manager
-  tags:
-    - terminal
 
 - name: traefik/traefik
   description: The Cloud Native Application Proxy
-  tags:
-    - automation
 
 - name: casey/just
   description: Just a command runner
-  tags:
-    - automation
 
 - name: charmbracelet/glow
   description: Render markdown on the CLI, with pizzazz!
-  tags:
-    - terminal
 
 - name: lsd-rs/lsd
   description: The next gen ls command
-  tags:
-    - terminal
 
 - name: muesli/duf
   description: Disk Usage/Free Utility - a better 'df' alternative
-  tags:
-    - terminal
+
+- name: AlDanial/cloc
+  description: Count Lines of Code
 
 - name: FiloSottile/age
   description: A simple, modern and secure encryption tool
-  tags:
-    - security
 
 - name: chmln/sd
   description: Intuitive find & replace CLI
-  tags:
-    - terminal
 
 - name: rs/curlie
   description: The power of curl, the ease of use of httpie
-  tags:
-    - terminal
 
 - name: mikefarah/yq
   description: YAML, JSON, and XML processor
   extensions: "{{ .EXTENSION }}"
-  tags:
-    - processing
 
 - name: sharkdp/hyperfine
   description: A command-line benchmarking tool
   skip:
     reason: "hyperfine is for the Darwin platform only supporting amd64"
     condition: '{{ and (eq .OS "darwin") (ne .ARCH "amd64") }}'
-  tags:
-    - automation
 
 - name: sharkdp/diskus
   description: A minimal, fast alternative to 'du -sh'
   skip:
     reason: "diskus is for the Darwin platform only supporting amd64"
     condition: '{{ and (eq .OS "darwin") (ne .ARCH "amd64") }}'
-  tags:
-    - terminal
 
 - name: eza-community/eza
   description: A modern replacement for 'ls'
   skip:
     reason: "eza is not available on darwin"
     condition: '{{ eq .OS "darwin" }}'
-  tags:
-    - terminal
 
 - name: sorenisanerd/gotty
   description: Share your terminal as a web application
   skip:
     reason: "gotty is not available on windows"
     condition: '{{ eq .OS "windows" }}'
-  tags:
-    - terminal
 
 - name: kraanzu/dooit
   description: A TUI todo manager
   exe:
     patterns:
       - "^{{ .OS }}-{{ .Exe }}"
-  tags:
-    - terminal
 
 - name: homeport/dyff
   description: A diff tool for YAML files
   fallbacks:
     - go
-  tags:
-    - processing
+
+- name: moncho/dry
+  description: A Docker manager for the terminal
+  exe:
+    name: dry
+    patterns: ^dry
+  extensions: ""
 
 - name: so-fancy/diff-so-fancy
   description: Good-looking diffs with diff-highlight and more
@@ -210,8 +98,6 @@
     name: diff-so-fancy
     patterns: ^diff-so-fancy$
   extensions: ""
-  tags:
-    - processing
 
 - name: logdyhq/logdy-core
   description: A log management tool
@@ -220,8 +106,6 @@
     patterns: ^logdy
   fallbacks:
     - go
-  tags:
-    - processing
 
 - name: cespare/reflex
   description: Run a command when files change
@@ -230,8 +114,6 @@
       condition: '{{ eq .OS "windows" }}'
   fallbacks:
     - go
-  tags:
-    - automation
 
 - name: trntv/sshed
   description: SSH client with easy bookmarking and config management
@@ -245,30 +127,16 @@
   hints:
     - pattern: "{{ .OS }}"
       must: true
-  tags:
-    - terminal
-
-- name: AlDanial/cloc
-  description: Count Lines of Code
-  extensions:
-    - |
-      {{- if eq .OS "linux" -}}
-      .pl
-      {{- else -}}
-      .exe
-      {{- end -}}
-  tags:
-    - processing
+  source:
+    type: github
 
 - name: pemistahl/grex
   description: A command-line tool for generating regular expressions
   skip:
-    - reason: "grex is not available for ARM32 architecture"
+    - reason: "grex is not available for ARM architecture"
       condition: '{{ eq .ARCH "arm" }}'
   fallbacks:
     - rust
-  tags:
-    - processing
 
 - name: nivekuil/rip
   description: A safe and ergonomic alternative to rm
@@ -278,14 +146,12 @@
   skip:
     - reason: "rip is only available for Linux"
       condition: '{{ne .OS "linux"}}'
-    - reason: "rip is only available for amd64 and armv7 architectures"
+    - reason: "rip is only available for arm32 and amd64 architectures"
       condition: |-
         {{- and
+            (ne .ARCH "arm32")
             (ne .ARCH "amd64")
-            (not (and (eq .ARCH "arm") (eq .ARCH_VERSION 7)))
         -}}
-  tags:
-    - terminal
 
 - name: mgunyho/tere
   description: A faster alternative to cd + ls
@@ -297,8 +163,6 @@
   extensions: .zip
   fallbacks:
     - rust
-  tags:
-    - terminal
 
 - name: cli/cli
   description: GitHub's official command line tool
@@ -310,21 +174,41 @@
     - "{{ .Output }}/{{ .Exe }} extension install github/gh-copilot"
     - "{{ .Output }}/{{ .Exe }} extension upgrade gh-copilot"
     - echo 'eval "$(gh copilot alias -- bash)"' >> ~/.bashrc
+
+- name: jesseduffield/lazydocker
+  description: The lazier way to manage everything docker
+  aliases: lazy
   tags:
-    - terminal
+    - docker
+
+- name: ahmetb/kubectx
+  description: Faster way to switch between clusters and namespaces in kubectl
+  aliases: kbx
+  tags:
+    - docker
+
+- name: ahmetb/kubectx
+  description: Faster way to switch between clusters and namespaces in kubectl
+  exe: kubens
+  aliases: kbn
+  tags:
+    - docker
+
+- name: derailed/k9s
+  description: Kubernetes CLI To Manage Your Clusters In Style!
+  tags:
+    - docker
 
 - name: direnv/direnv
   description: Unclutter your .profile
   extensions: []
-  tags:
-    - terminal
 
 - name: antonmedv/walk
   description: Terminal file manager
+  source:
+    type: github
   fallbacks:
     - go
-  tags:
-    - terminal
 
 - name: TomWright/dasel
   description: Query and update data structures from the command line
@@ -340,64 +224,17 @@
       {{- end -}}
     go:
       command: v2/cmd/dasel
+
+- name: kdash-rs/kdash
+  description: A simple and fast dashboard for Kubernetes
   tags:
-    - processing
+    - docker
 
 - name: zyedidia/micro
   description: A modern and intuitive terminal-based text editor
   hints:
     - pattern: static
       weight: 1
-  tags:
-    - terminal
-
-- name: golangci/golangci-lint
-  description: Linters Runner for Go
-  tags:
-    - go
-
-- name: antonmedv/fx
-  description: Command-line JSON processing tool
-  skip:
-    - reason: "fx is not available for ARM32 architecture"
-      condition: '{{ eq .ARCH "arm" }}'
-  tags:
-    - processing
-
-- name: tidwall/jj
-  description: JSON Stream Editor
-  skip:
-    - reason: "jj not available for arm64"
-      condition: '{{ eq .ARCH "arm64" }}'
-    - reason: "jj not available for arm"
-      condition: '{{ eq .ARCH "arm" }}'
-  tags:
-    - processing
-
-- name: simeji/jid
-  description: json incremental digger
-  skip:
-    - reason: "jid is not available for ARM32 architecture"
-      condition: '{{ eq .ARCH "arm" }}'
-  extensions: .zip
-  tags:
-    - processing
-
-- name: ynqa/jnv
-  description: JSON navigator
-  skip:
-    - reason: "jnv not available for arm64"
-      condition: '{{ eq .ARCH "arm64" }}'
-    - reason: "jnv not available for arm"
-      condition: '{{ eq .ARCH "arm" }}'
-  extensions: |
-    {{- if eq .OS "windows" -}}
-        .zip
-    {{- else -}}
-        .xz
-    {{- end -}}
-  tags:
-    - processing
 
 - name: jqlang/jq
   description: Command-line JSON processor
@@ -423,8 +260,6 @@
         {{- else -}}
         0
         {{- end -}}
-  tags:
-    - processing
 
 - name: BurntSushi/ripgrep
   description: recursively searches directories for a regex pattern
@@ -432,16 +267,10 @@
   skip:
     - reason: "ripgrep is only available for Linux"
       condition: '{{ ne .OS "linux" }}'
-    - reason: "ripgrep is not available for armv6"
-      condition: '{{ and (eq .ARCH "arm") (eq .ARCH_VERSION 6) }}'
-  tags:
-    - terminal
 
 - name: jesseduffield/lazygit
   description: simple terminal UI for git commands
-  aliases: lg
-  tags:
-    - terminal
+  aliases: lazyg
 
 - name: Byron/dua-cli
   description: View disk space usage and delete unwanted data
@@ -449,16 +278,12 @@
   skip:
     reason: "dua-cli is for the Darwin platform only supporting amd64"
     condition: '{{ and (eq .OS "darwin") (ne .ARCH "amd64") }}'
-  tags:
-    - terminal
 
 - name: sharkdp/bat
   description: A cat(1) clone with wings
   skip:
     reason: "bat is for the Darwin platform only supporting amd64"
     condition: '{{ and (eq .OS "darwin") (ne .ARCH "amd64") }}'
-  tags:
-    - terminal
 
 - name: jarun/nnn
   description: The missing terminal file manager for X
@@ -472,15 +297,33 @@
   hints:
     - pattern: icons
       weight: 3
-  tags:
-    - terminal
 
-- name: hashicorp/terraform
-  description: Infrastructure as Code tool
-  path: https://releases.hashicorp.com/terraform/{{ .Version | trimPrefix "v" }}/terraform_{{ .Version | trimPrefix "v" }}_{{ .OS }}_{{ .ARCH }}.zip
-  aliases: tf
+- name: helm
+  description: The package manager for Kubernetes
+  version: 3.16.1
+  path: https://get.helm.sh/helm-v{{ .Version }}-{{ .OS }}-{{ .ARCH }}.tar.gz
+  source:
+    type: url
   tags:
-    - automation
+    - docker
+
+- name: kubectl
+  description: Command-line tool for controlling Kubernetes clusters
+  version: 1.31.0
+  path: https://dl.k8s.io/v{{ .Version }}/bin/{{ .OS }}/{{ .ARCH }}/kubectl{{ .EXTENSION }}
+  aliases: kc
+  source:
+    type: url
+  tags:
+    - docker
+
+- name: terraform
+  description: Infrastructure as Code tool
+  version: 1.9.5
+  path: https://releases.hashicorp.com/terraform/{{ .Version }}/terraform_{{ .Version }}_{{ .OS }}_{{ .ARCH }}.zip
+  aliases: tf
+  source:
+    type: url
 
 - name: nvbn/thefuck
   description: Magnificent app which corrects your previous console command
@@ -497,8 +340,8 @@
         {{ end }}
   tags:
     - python
+    - linux
     - native
-    - terminal
 
 - name: facebook/PathPicker
   description: A tool for selecting files from bash output
@@ -506,15 +349,19 @@
   source:
     type: command
     commands:
-      - cd {{ .Output }}
-      - rm -rf PathPicker
-      - git clone https://github.com/facebook/PathPicker.git
-      - cd PathPicker/
-      - ln -sf "$(pwd)/fpp" {{ .Output }}/fpp
+      - |
+        {{ if eq .OS "linux" }}
+        cd {{ .Output }}
+        rm -rf PathPicker
+        git clone https://github.com/facebook/PathPicker.git
+        cd PathPicker/
+        ln -sf "$(pwd)/fpp" {{ .Output }}/fpp
+        {{ else }}
+        echo "installation skipped"
+        {{ end }}
   tags:
     - linux
     - native
-    - terminal
 
 - name: sebglazebrook/aliases
   description: Contextual, dynamic aliases for the bash shell
@@ -522,17 +369,17 @@
   source:
     type: command
     commands:
-      - TMP_DIR=$(mktemp -d)
-      - echo curl -L -o ${TMP_DIR}/aliases_{{ .Version }}.deb https://github.com/sebglazebrook/aliases/raw/refs/heads/master/releases/{{ .Version }}/debian/aliases_{{ .Version }}.deb
-      - curl -L -o ${TMP_DIR}/aliases_{{ .Version }}.deb https://github.com/sebglazebrook/aliases/raw/refs/heads/master/releases/{{ .Version }}/debian/aliases_{{ .Version }}.deb
-      - apt-get install -y ${TMP_DIR}/aliases_{{ .Version }}.deb
-      - rm -rf ${TMP_DIR}
-      - aliases init --global >> ~/.bashrc
+      - |
+        TMP_DIR=$(mktemp -d)
+        echo curl -L -o ${TMP_DIR}/aliases_{{ .Version }}.deb https://github.com/sebglazebrook/aliases/raw/refs/heads/master/releases/{{ .Version }}/debian/aliases_{{ .Version }}.deb
+        curl -L -o ${TMP_DIR}/aliases_{{ .Version }}.deb https://github.com/sebglazebrook/aliases/raw/refs/heads/master/releases/{{ .Version }}/debian/aliases_{{ .Version }}.deb
+        apt-get install -y ${TMP_DIR}/aliases_{{ .Version }}.deb
+        rm -rf ${TMP_DIR}
+        aliases init --global >> ~/.bashrc
   tags:
     - elevated
     - linux
     - native
-    - terminal
 
 - name: shannonmoeller/up
   description: Quickly navigate to a parent directory
@@ -550,7 +397,6 @@
   tags:
     - linux
     - native
-    - terminal
 
 - name: nschloe/stressberry
   description: Stress tests for the Raspberry Pi
@@ -559,13 +405,21 @@
   source:
     type: command
     commands:
-      - apt-get update
-      - apt-get install -y {{ .Exe }}
+      - |
+        {{ if eq .OS "linux" }}
+        apt-get update
+        apt-get install -y {{ .Exe }}
+        {{ else }}
+        echo "installation skipped"
+        {{ end }}
   tags:
     - elevated
     - linux
     - native
-    - automation
+
+- name: bcicen/ctop
+  description: Top-like interface for container metrics
+  extensions: []
 
 - name: 89luca89/distrobox
   description: Use any linux distribution inside your terminal
@@ -574,13 +428,17 @@
   source:
     type: command
     commands:
-      - apt-get update
-      - apt-get install -y {{ .Exe }}
+      - |
+        {{ if eq .OS "linux" }}
+        apt-get update
+        apt-get install -y {{ .Exe }}
+        {{ else }}
+        echo "installation skipped"
+        {{ end }}
   tags:
     - elevated
     - linux
     - native
-    - virtualization
 
 - name: dominikwilkowski/cfonts
   description: Sexy ANSI fonts for the console
@@ -588,17 +446,17 @@
   source:
     type: command
     commands:
-      - TMPDIR=$(mktemp -d)
-      - export RUSTUP_HOME=${TMPDIR}/home
-      - export CARGO_HOME=${TMPDIR}/cargo
-      - curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y
-      - dir=$(dirname {{ .Output }})
-      - ${TMPDIR}/cargo/bin/cargo install {{ .Exe }} --root ${dir}
-      - rm -rf ${TMPDIR}
+      - |
+        TMPDIR=$(mktemp -d)
+        export RUSTUP_HOME=${TMPDIR}/home
+        export CARGO_HOME=${TMPDIR}/cargo
+        curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y
+        dir=$(dirname {{ .Output }})
+        ${TMPDIR}/cargo/bin/cargo install {{ .Exe }} --root ${dir}
+        rm -rf ${TMPDIR}
   tags:
     - rust
     - native
-    - terminal
 
 - name: yank
   description: Copy terminal output to clipboard
@@ -618,23 +476,3 @@
     - elevated
     - linux
     - native
-    - terminal
-
-- name: jpmens/jo
-  exe: jo
-  description: JSON output from a shell
-  source:
-    type: |-
-      {{- if eq .OS "windows" -}}
-          github
-      {{- else -}}
-          command
-      {{- end -}}
-    commands:
-      - apt-get update
-      - apt-get install -y {{ .Exe }}
-  extensions: .exe
-  tags:
-    - elevated
-    - native
-    - processing

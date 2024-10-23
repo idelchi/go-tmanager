@@ -1,0 +1,8 @@
+# ~ - prefix that tells the spell checker to only use the word when case sensitivity is turned off.
+# + - prefix/suffix that tells the spell checker that a word MUST be combined with another word to be valid.
+# * - prefix/suffix that tells the spell checker that a word can be combined with another word.
+# ! - prefix forbid a word.
+
+# cspell --config=.devenv/settings/cspell.yaml --words-only --unique "**/*.go" "**/*.py" "**/*.sh" | sort --ignore-case >> settings/project-words.txt
+
+idelchi

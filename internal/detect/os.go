@@ -1,16 +1,14 @@
-//go:build !linux
-
 package detect
 
 import (
 	"fmt"
-	"runtime"
 
 	"github.com/idelchi/godyl/internal/detect/platform"
+	"github.com/shirou/gopsutil/host"
 )
 
-// Detect gathers information about the current platform, including the operating system, architecture,
-// library, and file extension, and populates the Platform struct accordingly for Windows and macOS.
+// Detect gathers information about the current platform, such as the operating system, architecture,
+// distribution, library, and file extension, and populates the Platform struct accordingly.
 func (p *Platform) Detect() error {
 	var os platform.OS
 	var arch platform.Architecture
@@ -18,22 +16,32 @@ func (p *Platform) Detect() error {
 	var distro platform.Distribution
 	var extension platform.Extension
 
+	info, err := host.Info()
+	if err != nil {
+		return fmt.Errorf("getting host information: %w", err)
+	}
+
 	// Determine the OS from runtime information
-	if err := os.Parse(runtime.GOOS); err != nil {
+	if err := os.Parse(info.OS); err != nil {
 		return err
 	}
 
-	// Set the default library based on the OS (distribution is irrelevant for Windows/macOS)
+	// Determine the Linux distribution from system information
+	distro.Parse(info.Platform)
+
+	// Set the default library based on the OS and distribution
 	library = library.Default(os, distro)
 
-	// Determine the architecture from runtime information
-	if err := arch.Parse(runtime.GOARCH); err != nil {
+	// Determine the architecture from the system's kernel architecture
+	if err := arch.Parse(info.KernelArch); err != nil {
 		return err
 	}
 
-	if arch.Raw == "arm" {
-		arch.Version = platform.InferGoArmVersion()
-		arch.Raw = fmt.Sprintf("%sv%d", arch.Type, arch.Version)
+	if arch.Is64Bit() && os.Type == "linux" {
+		is32Bit, err := platform.Is32Bit()
+		if err == nil && is32Bit {
+			arch.To32BitUserLand()
+		}
 	}
 
 	// Populate the Platform struct with the detected values

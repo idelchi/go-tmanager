@@ -36,12 +36,14 @@ func flags() {
 	pflag.Bool("show-defaults", false, "Show the parsed default configuration and exit")
 	pflag.Bool("show-env", false, "Show the parsed environment variables and exit")
 	pflag.Bool("show-platform", false, "Detect the platform and exit")
+	pflag.Bool("detect", false, "Detect and exit")
 
 	// Application flags
 	pflag.Bool("update", false, "Update the tools")
 	pflag.Bool("dry", false, "Run without making any changes (dry run)")
 	pflag.String("log", string(logger.INFO), "Log level (DEBUG, INFO, WARN, ERROR)")
 	pflag.IntP("parallel", "j", 10, "Number of parallel downloads. 0 means unlimited.")
+	pflag.BoolP("interactive", "i", false, "Run in interactive mode")
 
 	// Tool flags
 	pflag.String("output", "", "Output path for the downloaded tools")

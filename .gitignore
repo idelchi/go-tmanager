@@ -15,4 +15,7 @@
 .task
 dist/
 .bin-*
+.bin
 .local
+bin
+.logs

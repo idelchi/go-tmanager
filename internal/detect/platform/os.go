@@ -21,32 +21,32 @@ type OSInfo struct {
 func (OSInfo) Supported() []OSInfo {
 	return []OSInfo{
 		{
-			Type:    "linux",
-			Aliases: []string{"linux"},
+			Type: "linux",
+			// Aliases: []string{"linux"},
 		},
 		{
 			Type:    "darwin",
-			Aliases: []string{"darwin", "macos", "mac", "osx"},
+			Aliases: []string{"macos", "mac", "osx"},
 		},
 		{
 			Type:    "windows",
-			Aliases: []string{"windows", "win"},
+			Aliases: []string{"win"},
 		},
 		{
-			Type:    "freebsd",
-			Aliases: []string{"freebsd"},
+			Type: "freebsd",
+			// Aliases: []string{"freebsd"},
 		},
 		{
-			Type:    "android",
-			Aliases: []string{"android"},
+			Type: "android",
+			// Aliases: []string{"android"},
 		},
 		{
-			Type:    "netbsd",
-			Aliases: []string{"netbsd"},
+			Type: "netbsd",
+			// Aliases: []string{"netbsd"},
 		},
 		{
-			Type:    "openbsd",
-			Aliases: []string{"openbsd"},
+			Type: "openbsd",
+			// Aliases: []string{"openbsd"},
 		},
 	}
 }
@@ -58,7 +58,8 @@ func (o *OS) Parse(name string) error {
 	info := OSInfo{}
 
 	for _, info := range info.Supported() {
-		for _, alias := range info.Aliases {
+		// for _, alias := range info.Aliases {
+		for _, alias := range append([]string{info.Type}, info.Aliases...) {
 			if strings.Contains(name, alias) {
 				o.Type = info.Type
 				o.Raw = alias
