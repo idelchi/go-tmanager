@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-24.04
     if: github.ref == 'refs/heads/dev'
     outputs:
-      tag: ${{ steps.last-tag.outputs.LAST_TAG }}
+      tag: ${{ steps.tag.outputs.LAST_TAG }}
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -53,6 +53,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: tag
+        id: tag
         run: |
           LAST_TAG=$(gh release list -L 1 --json tagName -q '.[0].tagName')
           echo "LAST_TAG=${LAST_TAG}" >> ${GITHUB_ENV}
