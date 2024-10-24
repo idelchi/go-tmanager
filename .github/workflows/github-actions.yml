@@ -36,13 +36,27 @@ jobs:
   #     - name: Run tests
   #       run: go run ./cmd/godyl --show-platform
 
+  last-tag:
+    permissions:
+      contents: write
+      actions: write
+    runs-on: ubuntu-24.04
+    if: github.ref == 'refs/heads/dev'
+
+    # tag=$(gh release list -L 1 --json tagName -q '.[0].tagName')-beta
+    steps:
+      - name: env
+        run: |
+          echo "HELLO=MEEEE" >> $GITHUB_ENV
+
   tag:
     # needs: test
     permissions:
       contents: write
       actions: write
     runs-on: ubuntu-24.04
-    if: github.ref == 'refs/heads/dev'
+    # if: github.ref == 'refs/heads/dev'
+    if: false
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -55,9 +69,10 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
 
-      - name: delete ${{ env.TAG }} release & tag
+      - name: delete beta release & tag
         run: |
-          gh release delete ${{ env.TAG }} --yes --cleanup-tag || true
+          tag=$(gh release list -L 1 --json tagName -q '.[0].tagName')-beta
+          gh release delete ${tag} --yes --cleanup-tag || true
         continue-on-error: true
 
       - name: delete ${{ env.TAG }} tag
@@ -99,3 +114,8 @@ jobs:
           distribution: goreleaser
           version: "~> v2"
           args: release --clean
+
+      # - name: Cleanup old workflows
+      #   run: |
+      #     gh run list --limit 500 --workflow github-actions.yml --json databaseId -q ".[].databaseId"  | xargs -n 1 gh run delete
+      #   continue-on-error: true
