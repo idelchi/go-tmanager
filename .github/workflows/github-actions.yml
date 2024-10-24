@@ -72,8 +72,6 @@ jobs:
           -q ".[].databaseId"
           | xargs -n 1 gh run delete
 
-      # gh run list --limit 500 --workflow github-actions.yml --json databaseId -q ".[].databaseId"  | xargs -n 1 gh run delete
-
   tag:
     needs: last-tag
     permissions:
@@ -82,7 +80,7 @@ jobs:
     runs-on: ubuntu-24.04
     if: github.ref == 'refs/heads/dev'
     env:
-      TAG: ${{ needs.last-tag.outputs.tag }}-rc1
+      TAG: ${{ needs.last-tag.outputs.tag }}-beta
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
@@ -91,11 +89,6 @@ jobs:
         with:
           fetch-depth: 0
           fetch-tags: true
-
-      - name: env
-        run: |
-          echo "TAG=${TAG}"
-          echo "TAG=${{ env.TAG }}"
 
       - name: delete ${{ env.TAG }} tag & release
         run: |
