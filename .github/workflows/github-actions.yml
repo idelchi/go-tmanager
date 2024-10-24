@@ -47,7 +47,6 @@ jobs:
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    # tag=$(gh release list -L 1 --json tagName -q '.[0].tagName')-beta
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -83,11 +82,8 @@ jobs:
     runs-on: ubuntu-24.04
     if: github.ref == 'refs/heads/dev'
     env:
-      TAG: ${{ needs.last-tag.outputs.tag }}-beta
-      # env:
+      TAG: ${{ needs.last-tag.outputs.tag }}-rc1
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    #   TAG: v0.1-beta
 
     steps:
       - name: Checkout
