@@ -69,7 +69,6 @@ func (a *Architecture) Parse(name string) error {
 	info := ArchInfo{}
 
 	for _, info := range info.Supported() {
-		// for _, alias := range info.Aliases {
 		for i, alias := range append([]string{info.Type}, info.Aliases...) {
 			if info.Type == "arm" && i == 0 {
 				// Skip the arm type since it's the default and will be checked last

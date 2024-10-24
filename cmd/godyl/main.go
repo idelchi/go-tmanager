@@ -63,6 +63,10 @@ func (app *App) Run() error {
 		return app.processUpdate()
 	}
 
+	if app.cfg.Interactive {
+		app.cfg.Log = logger.SILENT
+	}
+
 	app.log = logger.New(app.cfg.Log)
 
 	app.logStartupInfo()

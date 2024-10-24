@@ -26,7 +26,6 @@ func (LibraryInfo) Supported() []LibraryInfo {
 		},
 		{
 			Type: "musl",
-			// Aliases: []string{"musl"},
 		},
 		{
 			Type:    "msvc",
@@ -34,7 +33,6 @@ func (LibraryInfo) Supported() []LibraryInfo {
 		},
 		{
 			Type: "android",
-			// Aliases: []string{"android"},
 		},
 	}
 }
@@ -46,7 +44,6 @@ func (l *Library) Parse(name string) error {
 	info := LibraryInfo{}
 
 	for _, info := range info.Supported() {
-		// for _, alias := range info.Aliases {
 		for _, alias := range append([]string{info.Type}, info.Aliases...) {
 			if strings.Contains(name, alias) {
 				l.Type = info.Type

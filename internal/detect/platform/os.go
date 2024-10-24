@@ -22,7 +22,6 @@ func (OSInfo) Supported() []OSInfo {
 	return []OSInfo{
 		{
 			Type: "linux",
-			// Aliases: []string{"linux"},
 		},
 		{
 			Type:    "darwin",
@@ -34,19 +33,15 @@ func (OSInfo) Supported() []OSInfo {
 		},
 		{
 			Type: "freebsd",
-			// Aliases: []string{"freebsd"},
 		},
 		{
 			Type: "android",
-			// Aliases: []string{"android"},
 		},
 		{
 			Type: "netbsd",
-			// Aliases: []string{"netbsd"},
 		},
 		{
 			Type: "openbsd",
-			// Aliases: []string{"openbsd"},
 		},
 	}
 }
@@ -58,7 +53,6 @@ func (o *OS) Parse(name string) error {
 	info := OSInfo{}
 
 	for _, info := range info.Supported() {
-		// for _, alias := range info.Aliases {
 		for _, alias := range append([]string{info.Type}, info.Aliases...) {
 			if strings.Contains(name, alias) {
 				o.Type = info.Type

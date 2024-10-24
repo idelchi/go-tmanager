@@ -133,7 +133,10 @@ func (m model) listView() string {
 			cursor = ">"
 		}
 
-		name := m.items[i].Name
+		// Ensure a consistent fixed width for both the cursor and the item
+		cursor = fmt.Sprintf("%-2s", cursor) // Ensure cursor always has two characters width
+		name := fmt.Sprintf("%-30s", m.items[i].Name)
+
 		if i == m.cursor {
 			s.WriteString(selectedStyle.Render(fmt.Sprintf("%s %s\n", cursor, name)))
 		} else {

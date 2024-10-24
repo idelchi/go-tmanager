@@ -22,15 +22,12 @@ func (DistroInfo) Supported() []DistroInfo {
 	return []DistroInfo{
 		{
 			Type: "debian",
-			// Aliases: []string{"debian"},
 		},
 		{
 			Type: "ubuntu",
-			// Aliases: []string{"ubuntu"},
 		},
 		{
 			Type: "centos",
-			// Aliases: []string{"centos"},
 		},
 		{
 			Type:    "redhat",
@@ -38,11 +35,9 @@ func (DistroInfo) Supported() []DistroInfo {
 		},
 		{
 			Type: "arch",
-			// Aliases: []string{"arch"},
 		},
 		{
 			Type: "alpine",
-			// Aliases: []string{"alpine"},
 		},
 		{
 			Type:    "raspbian",
@@ -58,7 +53,6 @@ func (d *Distribution) Parse(name string) error {
 	info := DistroInfo{}
 
 	for _, info := range info.Supported() {
-		// for _, alias := range info.Aliases {
 		for _, alias := range append([]string{info.Type}, info.Aliases...) {
 			if strings.Contains(name, alias) {
 				d.Type = info.Type

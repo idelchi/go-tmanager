@@ -78,7 +78,7 @@ go install github.com/idelchi/godyl/cmd/godyl@latest
 ## From installation script
 
 ```sh
-curl -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/scripts/install.sh | sh -s -- -v v0.1-beta -o ~/.local/bin
+curl -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/install.sh | sh -s -- -v v0.1-beta -o ~/.local/bin
 ```
 
 ## Update
@@ -847,6 +847,10 @@ Only certain fields are templated. Below is a list of fields where templating is
 | Linux   | linux                   |
 | Darwin  | darwin, macos, mac, osx |
 | Windows | windows, win            |
+| FreeBSD | freebsd                 |
+| Android | android                 |
+| NetBSD  | netbsd                  |
+| OpenBSD | openbsd                 |
 
 ### Architectures
 
