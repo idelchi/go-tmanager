@@ -95,6 +95,11 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
 
+      - name: env
+        run: |
+          echo "TAG=${TAG}"
+          echo "TAG=${{ env.TAG }}"
+
       - name: delete ${{ env.TAG }} tag & release
         run: |
           gh release delete ${{ env.TAG }} --yes --cleanup-tag || true
