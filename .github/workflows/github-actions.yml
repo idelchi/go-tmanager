@@ -49,6 +49,9 @@ jobs:
 
     # tag=$(gh release list -L 1 --json tagName -q '.[0].tagName')-beta
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: tag
         run: |
           LAST_TAG=$(gh release list -L 1 --json tagName -q '.[0].tagName')
