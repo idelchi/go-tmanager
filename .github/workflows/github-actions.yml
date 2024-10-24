@@ -54,7 +54,7 @@ jobs:
       - name: tag
         id: tag
         run: |
-          LAST_TAG=$(gh release list -L 1 --exclude-pre-release --json tagName -q '.[0].tagName')
+          LAST_TAG=$(gh release list -L 1 --exclude-pre-releases --json tagName -q '.[0].tagName')
           echo "LAST_TAG=${LAST_TAG}" >> ${GITHUB_ENV}
           echo "LAST_TAG=${LAST_TAG}" >> ${GITHUB_OUTPUT}
 
