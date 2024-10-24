@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-24.04
     if: github.ref == 'refs/heads/dev'
     outputs:
-      tag: ${{ steps.tag.outputs.LAST_TAG }}
+      tag: ${{ steps.last-tag.outputs.LAST_TAG }}
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
