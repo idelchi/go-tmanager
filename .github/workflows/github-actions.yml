@@ -44,6 +44,9 @@ jobs:
     if: github.ref == 'refs/heads/dev'
     outputs:
       tag: ${{ steps.tag.outputs.LAST_TAG }}
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     # tag=$(gh release list -L 1 --json tagName -q '.[0].tagName')-beta
     steps:
       - name: tag
@@ -54,6 +57,16 @@ jobs:
       - name: check-env
         run: |
           echo "The last tag is '${LAST_TAG}'"
+
+      - name: cleanup old builds
+        run: >
+          gh run list --limit 500
+          --workflow github-actions.yml
+          --status completed
+          --branch dev
+          --json databaseId
+          -q ".[].databaseId"
+          | xargs -n 1 gh run delete
 
       # gh run list --limit 500 --workflow github-actions.yml --json databaseId -q ".[].databaseId"  | xargs -n 1 gh run delete
 
@@ -66,8 +79,8 @@ jobs:
     if: github.ref == 'refs/heads/dev'
     env:
       TAG: ${{ needs.last-tag.outputs.tag }}-beta
-    # env:
-    #   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     #   TAG: v0.1-beta
 
@@ -125,6 +138,6 @@ jobs:
 
       # - name: Cleanup old workflows
       #   run: |
-      #     gh run list --limit 500 --workflow github-actions.yml --json databaseId -q ".[].databaseId"  | xargs -n 1 gh run delete
+      #     gh run list --limit 500 --workflow github-actions.yml --status completed --branch dev --json databaseId -q ".[].databaseId"  | xargs -n 1 gh run delete
       #   continue-on-error: true
 #
