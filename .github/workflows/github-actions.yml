@@ -54,7 +54,7 @@ jobs:
       - name: tag
         id: tag
         run: |
-          LAST_TAG=$(gh release list -L 1 --json tagName -q '.[0].tagName')
+          LAST_TAG=$(gh release list -L 1 --exclude-pre-release --json tagName -q '.[0].tagName')
           echo "LAST_TAG=${LAST_TAG}" >> ${GITHUB_ENV}
           echo "LAST_TAG=${LAST_TAG}" >> ${GITHUB_OUTPUT}
 
@@ -72,7 +72,7 @@ jobs:
           -q ".[].databaseId"
           | xargs -n 1 gh run delete
 
-  tag:
+  tag-prerelease:
     needs: last-tag
     permissions:
       contents: write
@@ -92,7 +92,8 @@ jobs:
 
       - name: delete ${{ env.TAG }} tag & release
         run: |
-          gh release delete ${{ env.TAG }} --yes --cleanup-tag || true
+          gh release list --json tagName,isPrerelease -q '.[] | select(.isPrerelease == true) | .tagName' | xargs -I {} gh release delete {}
+          gh release delete ${{ env.TAG }} --yes --cleanup-tag
         continue-on-error: true
 
       - name: delete ${{ env.TAG }} tag
