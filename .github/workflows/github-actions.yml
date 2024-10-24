@@ -55,6 +55,7 @@ jobs:
       - name: tag
         run: |
           LAST_TAG=$(gh release list -L 1 --json tagName -q '.[0].tagName')
+          echo "LAST_TAG=${LAST_TAG}" >> ${GITHUB_ENV}
           echo "LAST_TAG=${LAST_TAG}" >> ${GITHUB_OUTPUT}
 
       - name: check-env
