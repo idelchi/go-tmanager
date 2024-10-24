@@ -42,29 +42,34 @@ jobs:
       actions: write
     runs-on: ubuntu-24.04
     if: github.ref == 'refs/heads/dev'
-
+    outputs:
+      tag: ${{ steps.tag.outputs.LAST_TAG }}
     # tag=$(gh release list -L 1 --json tagName -q '.[0].tagName')-beta
     steps:
-      - name: set-env
+      - name: tag
         run: |
-          echo "HELLO=MEEEE" >> $GITHUB_ENV
+          LAST_TAG=$(gh release list -L 1 --json tagName -q '.[0].tagName')
+          echo "LAST_TAG=${LAST_TAG}" >> ${GITHUB_OUTPUT}
 
       - name: check-env
         run: |
-          echo $HELLO
+          echo "The last tag is '${LAST_TAG}'"
+
+      # gh run list --limit 500 --workflow github-actions.yml --json databaseId -q ".[].databaseId"  | xargs -n 1 gh run delete
 
   tag:
-    # needs: test
+    needs: last-tag
     permissions:
       contents: write
       actions: write
     runs-on: ubuntu-24.04
-    # if: github.ref == 'refs/heads/dev'
-    if: false
+    if: github.ref == 'refs/heads/dev'
     env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      TAG: v0.1-beta
+      TAG: ${{ needs.last-tag.outputs.tag }}-beta
+    # env:
+    #   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #   TAG: v0.1-beta
 
     steps:
       - name: Checkout
@@ -73,10 +78,9 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
 
-      - name: delete beta release & tag
+      - name: delete ${{ env.TAG }} tag & release
         run: |
-          tag=$(gh release list -L 1 --json tagName -q '.[0].tagName')-beta
-          gh release delete ${tag} --yes --cleanup-tag || true
+          gh release delete ${{ env.TAG }} --yes --cleanup-tag || true
         continue-on-error: true
 
       - name: delete ${{ env.TAG }} tag
