@@ -127,3 +127,4 @@ jobs:
       #   run: |
       #     gh run list --limit 500 --workflow github-actions.yml --json databaseId -q ".[].databaseId"  | xargs -n 1 gh run delete
       #   continue-on-error: true
+#
