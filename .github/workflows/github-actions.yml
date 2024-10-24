@@ -45,9 +45,13 @@ jobs:
 
     # tag=$(gh release list -L 1 --json tagName -q '.[0].tagName')-beta
     steps:
-      - name: env
+      - name: set-env
         run: |
           echo "HELLO=MEEEE" >> $GITHUB_ENV
+
+      - name: check-env
+        run: |
+          echo $HELLO
 
   tag:
     # needs: test
