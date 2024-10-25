@@ -228,13 +228,7 @@ install() {
     # Download and extract/install
     success "Downloading '${BINARY_NAME}' from '${URL}'"
 
-    if [ "${DISABLE_SSL}" -eq 1 ]; then
-        SSL_FLAG="-k"
-    else
-        SSL_FLAG=""
-    fi
-
-    code=$(curl ${SSL_FLAG} -s -w '%{http_code}' -L -o "${tmp}" "${URL}")
+    code=$(curl ${DISABLE_SSL:+-k} -s -w '%{http_code}' -L -o "${tmp}" "${URL}")
 
     if [ "${code}" != "200" ]; then
         warning "Failed to download ${URL}: ${code}"

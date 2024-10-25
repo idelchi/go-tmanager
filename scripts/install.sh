@@ -126,9 +126,6 @@ setup_temp_dir() {
 
 # Install godyl and tools
 install_tools() {
-    local ssl_flag=""
-    [ "${DISABLE_SSL}" -eq 1 ] && ssl_flag="-k"
-
     debug "Installing godyl version ${GODYL_VERSION}"
     if [ "${DRY_RUN}" -eq 1 ]; then
         info "Would download and install godyl ${GODYL_VERSION}"
@@ -137,8 +134,8 @@ install_tools() {
     fi
 
     # Download and run godyl installer
-    curl ${ssl_flag} -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/install.sh | \
-        sh -s -- -v "${GODYL_VERSION}" -d "${TEMP_DIR}" ${ssl_flag:+-k}
+    curl ${DISABLE_SSL:+-k} -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/install.sh | \
+        sh -s -- -v "${GODYL_VERSION}" -d "${TEMP_DIR}" ${DISABLE_SSL:+-k}
 
     success "Installing tools to ${INSTALL_DIR}"
 
