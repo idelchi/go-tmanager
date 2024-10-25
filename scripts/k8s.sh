@@ -1,5 +1,5 @@
 #!/bin/sh
-set -eo pipefail
+set -e
 
 # Allow setting via environment variables, will be overridden by flags
 INSTALL_DIR=${KUBE_INSTALL_DIR:-"${HOME}/.local/bin"}
