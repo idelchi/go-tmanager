@@ -140,7 +140,7 @@ install_tools() {
     success "Installing tools to ${INSTALL_DIR}"
 
     # Install tools using godyl
-    "${TEMP_DIR}/godyl" --output="${INSTALL_DIR}" - <<YAML
+    "${TEMP_DIR}/godyl" ${DISABLE_SSL:+-k} --output="${INSTALL_DIR}" - <<YAML
 - name: helm/helm
   path: https://get.helm.sh/helm-{{ .Version }}-{{ .OS }}-{{ .ARCH }}.tar.gz
 - name: kubernetes/kubernetes
