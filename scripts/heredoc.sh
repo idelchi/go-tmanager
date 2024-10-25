@@ -6,7 +6,7 @@ dir=$(mktemp -d)
 
 install_dir=${1:-~/.local/bin}
 
-curl -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/scripts/install.sh | sh -s -- -v v0.2-beta -d ${dir}
+curl -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/install.sh | sh -s -- -v v0.2-beta -d ${dir}
 
 ${dir}/godyl --output=${install_dir} - <<YAML
 - name: helm/helm
