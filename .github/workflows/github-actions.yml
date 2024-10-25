@@ -108,6 +108,7 @@ jobs:
       actions: write
     runs-on: ubuntu-24.04
     if: github.ref == 'refs/heads/dev'
+    continue-on-error: true
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
