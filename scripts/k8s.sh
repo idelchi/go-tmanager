@@ -2,12 +2,12 @@
 set -e
 
 # Allow setting via environment variables, will be overridden by flags
-INSTALL_DIR=${KUBE_INSTALL_DIR:-"${HOME}/.local/bin"}
-TEMP_DIR=${KUBE_TEMP_DIR:-""}
-DEBUG=${KUBE_DEBUG:-0}
-DRY_RUN=${KUBE_DRY_RUN:-0}
-DISABLE_SSL=${KUBE_DISABLE_SSL:-""}
-GODYL_VERSION=${KUBE_GODYL_VERSION:-"v0.2-beta"}
+INSTALL_DIR=${GODYL_INSTALL_DIR:-"${HOME}/.local/bin"}
+TEMP_DIR=${GODYL_TEMP_DIR}
+DEBUG=${GODYL_DEBUG:-0}
+DRY_RUN=${GODYL_DRY_RUN:-0}
+DISABLE_SSL=${GODYL_DISABLE_SSL}
+GODYL_VERSION=${GODYL_GODYL_VERSION:-"v0.2-beta"}
 
 # Output formatting
 format_message() {
@@ -64,12 +64,12 @@ Installs Kubernetes-related tools using godyl.
 Flags and environment variables:
     Flag  Env                Default              Description
     -----------------------------------------------------------------
-    -d    KUBE_INSTALL_DIR   "${HOME}/.local/bin" Installation directory
-    -t    KUBE_TEMP_DIR      <auto>              Temporary directory
-    -v    KUBE_GODYL_VERSION "v0.2-beta"         Godyl version to use
-    -x    KUBE_DEBUG                             Enable debug output
-    -n    KUBE_DRY_RUN                           Dry run mode
-    -k    KUBE_DISABLE_SSL                       Disable SSL verification, when set to non-empty value
+    -d    GODYL_INSTALL_DIR   "${HOME}/.local/bin" Installation directory
+    -t    GODYL_TEMP_DIR      <auto>              Temporary directory
+    -v    GODYL_GODYL_VERSION "v0.2-beta"         Godyl version to use
+    -x    GODYL_DEBUG                             Enable debug output
+    -n    GODYL_DRY_RUN                           Dry run mode
+    -k    GODYL_DISABLE_SSL                       Disable SSL verification, when set to non-empty value
     -h                                           Show this help message
 
 Flags take precedence over environment variables when both are set.
