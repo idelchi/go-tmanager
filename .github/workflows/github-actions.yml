@@ -60,7 +60,8 @@ jobs:
 
           curl -sSL https://raw.githubusercontent.com/idelchi/go-next-tag/refs/heads/dev/install.sh | sh -s -- -v v0.1 -d ~/.local/bin
 
-          NEXT_TAG=$(go-next-tag ${LAST_TAG})
+          echo "go-next-tag ${LAST_TAG}"
+          echo NEXT_TAG=$(go-next-tag ${LAST_TAG})
 
           echo "NEXT_TAG=${NEXT_TAG}" >> ${GITHUB_ENV}
           echo "NEXT_TAG=${NEXT_TAG}" >> ${GITHUB_OUTPUT}
@@ -167,12 +168,6 @@ jobs:
 #           distribution: goreleaser
 #           version: "~> v2"
 #           args: release --clean
-
-#       # - name: Cleanup old workflows
-#       #   run: |
-#       #     gh run list --limit 500 --workflow github-actions.yml --status completed --branch dev --json databaseId -q ".[].databaseId"  | xargs -n 1 gh run delete
-#       #   continue-on-error: true
-# #
 
 # # TODO(Idelchi): Handle release workflows.
 # # https://github.com/skills/release-based-workflow
