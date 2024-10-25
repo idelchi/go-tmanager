@@ -69,14 +69,15 @@ func (d Downloader) Download(url, output string) (file.File, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), d.ContextTimeout)
 	defer cancel()
 
+	httpClient := cleanhttp.DefaultClient()
+
 	httpGetter := &getter.HttpGetter{
 		Netrc:                 true,
 		XTerraformGetDisabled: true,
 		HeadFirstTimeout:      d.HeadTimeout,
 		ReadTimeout:           d.ReadTimeout,
+		Client:                httpClient,
 	}
-
-	httpClient := cleanhttp.DefaultClient()
 
 	// Modify the default HTTP client's transport to skip SSL verification if requested
 	if d.InsecureSkipVerify {
