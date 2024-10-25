@@ -258,12 +258,11 @@ check_requirements() {
 }
 
 main() {
+    # Parse arguments
     parse_args "$@"
 
     # Check for required commands
     check_requirements
-
-    echo "moving on..."
 
     # Only detect OS if not manually specified
     [ -z "${OS}" ] && detect_os
@@ -277,9 +276,11 @@ main() {
         FORMAT="zip"
     fi
 
+    # Check for required commands
     [ "${FORMAT}" = "tar.gz" ] && need_cmd tar
     [ "${FORMAT}" = "zip" ] && need_cmd unzip
 
+    # Install the binary
     install "${FORMAT}"
 }
 
