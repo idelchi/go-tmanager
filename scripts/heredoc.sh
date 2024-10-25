@@ -13,8 +13,6 @@ else
     flag=""
 fi
 
-echo "${flag} -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/install.sh | sh -s -- -v v0.2-beta -d ${dir}"
-
 curl ${flag} -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/install.sh | sh -s -- -v v0.2-beta -d ${dir}
 
 ${dir}/godyl --output=${install_dir} - <<YAML
