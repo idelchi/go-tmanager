@@ -165,3 +165,8 @@ jobs:
       #     gh run list --limit 500 --workflow github-actions.yml --status completed --branch dev --json databaseId -q ".[].databaseId"  | xargs -n 1 gh run delete
       #   continue-on-error: true
 #
+
+# TODO(Idelchi): Handle release workflows.
+# https://github.com/skills/release-based-workflow
+# https://birtony.medium.com/setting-up-automated-release-workflow-with-github-actions-628dbca2446e
+# https://rangle.io/blog/release-process-github-actions
