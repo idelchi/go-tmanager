@@ -244,15 +244,34 @@ install() {
     success "'${BINARY}' installed to '${OUTPUT_DIR}'"
 }
 
+check_requirements() {
+   REQUIRED_COMMANDS="
+       curl
+       uname
+       mktemp
+       mkdir
+       grep
+       tr
+       sed
+       printf
+       basename
+       dirname
+       tar
+       unzip"
+
+   for cmd in $REQUIRED_COMMANDS; do
+       need_cmd "$cmd"
+   done
+
+   [ "${FORMAT}" = "tar.gz" ] && need_cmd tar
+   [ "${FORMAT}" = "zip" ] && need_cmd unzip
+}
+
 main() {
     parse_args "$@"
 
     # Check for required commands
-    need_cmd curl
-    need_cmd uname
-    need_cmd mktemp
-    [ "${FORMAT}" = "tar.gz" ] && need_cmd tar
-    [ "${FORMAT}" = "zip" ] && need_cmd unzip
+    check_requirements
 
     # Only detect OS if not manually specified
     [ -z "${OS}" ] && detect_os

@@ -133,9 +133,9 @@ install_tools() {
         return 0
     fi
 
-    # Download and run godyl installer
-    curl ${DISABLE_SSL:+-k} -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/install.sh | \
-        sh -s -- -v "${GODYL_VERSION}" -d "${TEMP_DIR}" ${DISABLE_SSL:+-k}
+    tempfile="${TEMP_DIR}/install.sh"
+    curl ${DISABLE_SSL:+-k} -sSL "https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/install.sh" -o "${tempfile}"
+    sh -s -- -v "${GODYL_VERSION}" -d "${TEMP_DIR}" ${DISABLE_SSL:+-k} < "${tempfile}"
 
     success "Installing tools to ${INSTALL_DIR}"
 
