@@ -1,12 +1,21 @@
 #!/bin/sh
 
-# curl -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/heredoc.sh | sh -s
+# curl -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/scripts/heredoc.sh | sh -s
 
 dir=$(mktemp -d)
 
 install_dir=${1:-~/.local/bin}
+disable_ssl=${2:-0}
 
-curl -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/install.sh | sh -s -- -v v0.2-beta -d ${dir}
+if [ "${disable_ssl}" -eq 1 ]; then
+    flag="-k"
+else
+    flag=""
+fi
+
+echo "${flag} -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/install.sh | sh -s -- -v v0.2-beta -d ${dir}"
+
+curl ${flag} -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/install.sh | sh -s -- -v v0.2-beta -d ${dir}
 
 ${dir}/godyl --output=${install_dir} - <<YAML
 - name: helm/helm

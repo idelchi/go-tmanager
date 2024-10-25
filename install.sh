@@ -3,12 +3,13 @@ set -e
 
 # Allow setting via environment variables, will be overridden by flags
 BINARY=${GODYL_BINARY:-"godyl"}
-VERSION=${GODYL_VERSION:-"v0.0"}
+VERSION=${GODYL_VERSION:-"v0.1"}
 OUTPUT_DIR=${GODYL_OUTPUT_DIR:-"./bin"}
 DEBUG=${GODYL_DEBUG:-0}
 DRY_RUN=${GODYL_DRY_RUN:-0}
 ARCH=${GODYL_ARCH:-""}
 OS=${GODYL_OS:-""}
+DISABLE_SSL=${GODYL_DISABLE_SSL:-0}
 
 # Output formatting
 format_message() {
@@ -72,6 +73,7 @@ Flags and environment variables:
     -a    GODYL_ARCH           <detected>      Override architecture
     -x    GODYL_DEBUG                          Enable debug output
     -n    GODYL_DRY_RUN                        Dry run mode
+    -k    GODYL_DISABLE_SSL                    Disable SSL certificate verification
     -h                                         Show this help message
 
 Flags take precedence over environment variables when both are set.
@@ -176,7 +178,7 @@ verify_platform() {
 
 # Parse arguments
 parse_args() {
-    while getopts ":b:v:d:a:o:xnh" opt; do
+    while getopts ":b:v:d:a:o:xnkh" opt; do
         case "${opt}" in
             b) BINARY="${OPTARG}" ;;
             v) VERSION="${OPTARG}" ;;
@@ -185,6 +187,7 @@ parse_args() {
             o) OS="${OPTARG}" ;;
             x) DEBUG=1 ;;
             n) DRY_RUN=1 ;;
+            k) DISABLE_SSL=1 ;;
             h) usage ;;
             :) warning "Option -${OPTARG} requires an argument"; usage ;;
             *) warning "Invalid option: -${OPTARG}"; usage ;;
@@ -224,7 +227,14 @@ install() {
 
     # Download and extract/install
     success "Downloading '${BINARY_NAME}' from '${URL}'"
-    code=$(curl -s -w '%{http_code}' -L -o "${tmp}" "${URL}")
+
+    if [ "${DISABLE_SSL}" -eq 1 ]; then
+        SSL_FLAG="-k"
+    else
+        SSL_FLAG=""
+    fi
+
+    code=$(curl ${SSL_FLAG} -s -w '%{http_code}' -L -o "${tmp}" "${URL}")
 
     if [ "${code}" != "200" ]; then
         warning "Failed to download ${URL}: ${code}"
