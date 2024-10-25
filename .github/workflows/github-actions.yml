@@ -62,16 +62,6 @@ jobs:
         run: |
           echo "The last tag is '${LAST_TAG}'"
 
-      - name: cleanup old builds
-        run: >
-          gh run list --limit 500
-          --workflow github-actions.yml
-          --status completed
-          --branch dev
-          --json databaseId
-          -q ".[].databaseId"
-          | xargs -n 1 gh run delete
-
   tag-prerelease:
     needs: last-tag
     permissions:
@@ -110,6 +100,39 @@ jobs:
       - name: run workflow for ${{ env.TAG }} tag
         run: |
           gh workflow run ${{ github.workflow }} --ref ${{ env.TAG }}
+
+  cleanup:
+    needs: tag-prerelease
+    permissions:
+      contents: write
+      actions: write
+    runs-on: ubuntu-24.04
+    if: github.ref == 'refs/heads/dev'
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: cleanup old builds
+        run: >
+          gh run list --limit 500
+          --workflow github-actions.yml
+          --status completed
+          --branch dev
+          --json databaseId
+          -q ".[].databaseId"
+          | xargs -n 1 gh run delete
+
+      - name: cleanup old builds
+        run: >
+          gh run list --limit 500 \
+            --workflow github-actions.yml \
+            --status completed \
+            --json databaseId,headBranch \
+            -q '.[] | select(.headBranch | endswith("-beta")) | .databaseId' \
+            | xargs -n 1 gh run delete
 
   release:
     permissions:
