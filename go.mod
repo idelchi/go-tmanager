@@ -4,7 +4,6 @@ go 1.23
 
 require (
 	github.com/agnivade/levenshtein v1.2.0
-	github.com/charmbracelet/bubbles v0.20.0
 	github.com/charmbracelet/bubbletea v1.1.1
 	github.com/charmbracelet/lipgloss v0.13.1
 	github.com/cheggaaa/pb/v3 v3.1.5
@@ -16,6 +15,7 @@ require (
 	github.com/go-task/slim-sprig/v3 v3.0.0
 	github.com/google/go-github/v64 v64.0.0
 	github.com/google/uuid v1.6.0
+	github.com/hashicorp/go-cleanhttp v0.5.2
 	github.com/hashicorp/go-getter/v2 v2.2.3
 	github.com/idelchi/go-next-tag v0.0.0-20241009171622-1f3cb2ac9867
 	github.com/inconshreveable/go-update v0.0.0-20160112193335-8152e7eb6ccf
@@ -49,7 +49,6 @@ require (
 	github.com/go-playground/universal-translator v0.18.1 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
 	github.com/hashicorp/errwrap v1.1.0 // indirect
-	github.com/hashicorp/go-cleanhttp v0.5.2 // indirect
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
 	github.com/hashicorp/go-safetemp v1.0.0 // indirect
 	github.com/hashicorp/go-version v1.7.0 // indirect
