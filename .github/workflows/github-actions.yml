@@ -58,115 +58,123 @@ jobs:
           echo "LAST_TAG=${LAST_TAG}" >> ${GITHUB_ENV}
           echo "LAST_TAG=${LAST_TAG}" >> ${GITHUB_OUTPUT}
 
+          curl -sSL https://raw.githubusercontent.com/idelchi/go-next-tag/refs/heads/dev/install.sh | sh -s -- -v v0.1 -d ~/.local/bin
+
+          NEXT_TAG=$(go-next-tag ${LAST_TAG})
+
+          echo "NEXT_TAG=${NEXT_TAG}" >> ${GITHUB_ENV}
+          echo "NEXT_TAG=${NEXT_TAG}" >> ${GITHUB_OUTPUT}
+
       - name: check-env
         run: |
           echo "The last tag is '${LAST_TAG}'"
+          echo "The next tag is '${NEXT_TAG}'"
 
-  tag-prerelease:
-    needs: last-tag
-    permissions:
-      contents: write
-      actions: write
-    runs-on: ubuntu-24.04
-    if: github.ref == 'refs/heads/dev'
-    env:
-      TAG: ${{ needs.last-tag.outputs.tag }}-beta
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#   tag-prerelease:
+#     needs: last-tag
+#     permissions:
+#       contents: write
+#       actions: write
+#     runs-on: ubuntu-24.04
+#     if: github.ref == 'refs/heads/dev'
+#     env:
+#       TAG: ${{ needs.last-tag.outputs.tag }}-beta
+#       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          fetch-tags: true
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v4
+#         with:
+#           fetch-depth: 0
+#           fetch-tags: true
 
-      - name: delete ${{ env.TAG }} tag & release
-        run: |
-          gh release list --json tagName,isPrerelease -q '.[] | select(.isPrerelease == true) | .tagName' | xargs -I {} gh release delete {}
-          gh release delete ${{ env.TAG }} --yes --cleanup-tag
-        continue-on-error: true
+#       - name: delete ${{ env.TAG }} tag & release
+#         run: |
+#           gh release list --json tagName,isPrerelease -q '.[] | select(.isPrerelease == true) | .tagName' | xargs -I {} gh release delete {}
+#           gh release delete ${{ env.TAG }} --yes --cleanup-tag
+#         continue-on-error: true
 
-      - name: delete ${{ env.TAG }} tag
-        run: |
-          git tag --delete ${{ env.TAG }}
-          git push origin --delete ${{ env.TAG }}
-        continue-on-error: true
+#       - name: delete ${{ env.TAG }} tag
+#         run: |
+#           git tag --delete ${{ env.TAG }}
+#           git push origin --delete ${{ env.TAG }}
+#         continue-on-error: true
 
-      - name: create ${{ env.TAG }} tag
-        run: |
-          git tag ${{ env.TAG }}
-          git push origin ${{ env.TAG }}
+#       - name: create ${{ env.TAG }} tag
+#         run: |
+#           git tag ${{ env.TAG }}
+#           git push origin ${{ env.TAG }}
 
-      - name: run workflow for ${{ env.TAG }} tag
-        run: |
-          gh workflow run ${{ github.workflow }} --ref ${{ env.TAG }}
+#       - name: run workflow for ${{ env.TAG }} tag
+#         run: |
+#           gh workflow run ${{ github.workflow }} --ref ${{ env.TAG }}
 
-  cleanup:
-    needs: tag-prerelease
-    permissions:
-      contents: write
-      actions: write
-    runs-on: ubuntu-24.04
-    if: github.ref == 'refs/heads/dev'
-    continue-on-error: true
-    env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#   cleanup:
+#     needs: tag-prerelease
+#     permissions:
+#       contents: write
+#       actions: write
+#     runs-on: ubuntu-24.04
+#     if: github.ref == 'refs/heads/dev'
+#     continue-on-error: true
+#     env:
+#       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v4
 
-      - name: cleanup old builds
-        run: >
-          gh run list --limit 500
-          --workflow github-actions.yml
-          --status completed
-          --branch dev
-          --json databaseId
-          -q ".[].databaseId"
-          | xargs -n 1 gh run delete
+#       - name: cleanup old builds
+#         run: >
+#           gh run list --limit 500
+#           --workflow github-actions.yml
+#           --status completed
+#           --branch dev
+#           --json databaseId
+#           -q ".[].databaseId"
+#           | xargs -n 1 gh run delete
 
-      - name: cleanup old builds
-        run: >
-          gh run list --limit 500 \
-            --workflow github-actions.yml \
-            --status completed \
-            --json databaseId,headBranch \
-            -q '.[] | select(.headBranch | endswith("-beta")) | .databaseId' \
-            | xargs -n 1 gh run delete
+#       - name: cleanup old builds
+#         run: >
+#           gh run list --limit 500 \
+#             --workflow github-actions.yml \
+#             --status completed \
+#             --json databaseId,headBranch \
+#             -q '.[] | select(.headBranch | endswith("-beta")) | .databaseId' \
+#             | xargs -n 1 gh run delete
 
-  release:
-    permissions:
-      contents: write
-    runs-on: ubuntu-24.04
-    if: startsWith(github.ref, 'refs/tags/')
-    env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#   release:
+#     permissions:
+#       contents: write
+#     runs-on: ubuntu-24.04
+#     if: startsWith(github.ref, 'refs/tags/')
+#     env:
+#       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v4
+#         with:
+#           fetch-depth: 0
 
-      - name: Set up Go
-        uses: actions/setup-go@v5
+#       - name: Set up Go
+#         uses: actions/setup-go@v5
 
-      - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v6
-        with:
-          distribution: goreleaser
-          version: "~> v2"
-          args: release --clean
+#       - name: Run GoReleaser
+#         uses: goreleaser/goreleaser-action@v6
+#         with:
+#           distribution: goreleaser
+#           version: "~> v2"
+#           args: release --clean
 
-      # - name: Cleanup old workflows
-      #   run: |
-      #     gh run list --limit 500 --workflow github-actions.yml --status completed --branch dev --json databaseId -q ".[].databaseId"  | xargs -n 1 gh run delete
-      #   continue-on-error: true
-#
+#       # - name: Cleanup old workflows
+#       #   run: |
+#       #     gh run list --limit 500 --workflow github-actions.yml --status completed --branch dev --json databaseId -q ".[].databaseId"  | xargs -n 1 gh run delete
+#       #   continue-on-error: true
+# #
 
-# TODO(Idelchi): Handle release workflows.
-# https://github.com/skills/release-based-workflow
-# https://birtony.medium.com/setting-up-automated-release-workflow-with-github-actions-628dbca2446e
-# https://rangle.io/blog/release-process-github-actions
+# # TODO(Idelchi): Handle release workflows.
+# # https://github.com/skills/release-based-workflow
+# # https://birtony.medium.com/setting-up-automated-release-workflow-with-github-actions-628dbca2446e
+# # https://rangle.io/blog/release-process-github-actions
