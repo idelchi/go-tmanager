@@ -60,7 +60,6 @@ jobs:
 
           curl -sSL https://raw.githubusercontent.com/idelchi/go-next-tag/refs/heads/dev/install.sh | sh -s -- -v v0.1 -d ~/.local/bin
 
-          echo "NEXT_TAG=$(echo ${LAST_TAG} | go-next-tag)"
           NEXT_TAG=$(echo ${LAST_TAG} | go-next-tag)
 
           echo "NEXT_TAG=${NEXT_TAG}" >> ${GITHUB_ENV}
