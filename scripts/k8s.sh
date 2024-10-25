@@ -6,7 +6,7 @@ INSTALL_DIR=${KUBE_INSTALL_DIR:-"${HOME}/.local/bin"}
 TEMP_DIR=${KUBE_TEMP_DIR:-""}
 DEBUG=${KUBE_DEBUG:-0}
 DRY_RUN=${KUBE_DRY_RUN:-0}
-DISABLE_SSL=${KUBE_DISABLE_SSL:-0}
+DISABLE_SSL=${KUBE_DISABLE_SSL:-""}
 GODYL_VERSION=${KUBE_GODYL_VERSION:-"v0.2-beta"}
 
 # Output formatting
@@ -69,7 +69,7 @@ Flags and environment variables:
     -v    KUBE_GODYL_VERSION "v0.2-beta"         Godyl version to use
     -x    KUBE_DEBUG                             Enable debug output
     -n    KUBE_DRY_RUN                           Dry run mode
-    -k    KUBE_DISABLE_SSL                       Disable SSL verification
+    -k    KUBE_DISABLE_SSL                       Disable SSL verification, when set to non-empty value
     -h                                           Show this help message
 
 Flags take precedence over environment variables when both are set.
