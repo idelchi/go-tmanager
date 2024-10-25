@@ -120,8 +120,9 @@ func (app *App) initialize() error {
 // processUpdate handles the update process based on the configuration.
 func (app *App) processUpdate() error {
 	updater := GodylUpdater{
-		Strategy: app.cfg.Update.Strategy,
-		Defaults: app.defaults.Defaults,
+		Strategy:    app.cfg.Update.Strategy,
+		Defaults:    app.defaults.Defaults,
+		NoVerifySSL: app.cfg.NoVerifySSL,
 	}
 
 	if err := updater.Update(); err != nil {
@@ -273,6 +274,10 @@ func (tp *ToolProcessor) processTool(tool *tools.Tool, tags, withoutTags []strin
 	if tp.app.cfg.Dry {
 		tp.resultCh <- result{tool: tool, err: nil}
 		return nil
+	}
+
+	if tp.app.cfg.NoVerifySSL {
+		tool.NoVerifySSL = true
 	}
 
 	msg, found, err := tool.Download()

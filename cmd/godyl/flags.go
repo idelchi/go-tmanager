@@ -43,6 +43,7 @@ func flags() {
 	pflag.Bool("dry", false, "Run without making any changes (dry run)")
 	pflag.String("log", string(logger.INFO), "Log level (DEBUG, INFO, WARN, ERROR)")
 	pflag.IntP("parallel", "j", 10, "Number of parallel downloads. 0 means unlimited.")
+	pflag.BoolP("no-verify-ssl", "k", false, "Skip SSL verification")
 	pflag.BoolP("interactive", "i", false, "Run in interactive mode")
 
 	// Tool flags

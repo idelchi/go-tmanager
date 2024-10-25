@@ -28,8 +28,11 @@ package download
 
 import (
 	"context"
+	"crypto/tls"
+	"net/http"
 	"time"
 
+	"github.com/hashicorp/go-cleanhttp"
 	"github.com/hashicorp/go-getter/v2"
 
 	"github.com/idelchi/godyl/pkg/file"
@@ -44,14 +47,18 @@ type Downloader struct {
 	ReadTimeout time.Duration
 	// HeadTimeout is the maximum duration to wait for the HTTP HEAD request.
 	HeadTimeout time.Duration
+	// InsecureSkipVerify controls whether to verify SSL certificates.
+	// WARNING: Setting this to true is insecure and should only be used in testing.
+	InsecureSkipVerify bool
 }
 
 // New returns a new Downloader instance with default timeout values set to 5 minutes.
 func New() *Downloader {
 	return &Downloader{
-		ContextTimeout: 5 * time.Minute,
-		ReadTimeout:    5 * time.Minute,
-		HeadTimeout:    5 * time.Minute,
+		ContextTimeout:     5 * time.Minute,
+		ReadTimeout:        5 * time.Minute,
+		HeadTimeout:        5 * time.Minute,
+		InsecureSkipVerify: false,
 	}
 }
 
@@ -62,20 +69,31 @@ func (d Downloader) Download(url, output string) (file.File, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), d.ContextTimeout)
 	defer cancel()
 
+	httpGetter := &getter.HttpGetter{
+		Netrc:                 true,
+		XTerraformGetDisabled: true,
+		HeadFirstTimeout:      d.HeadTimeout,
+		ReadTimeout:           d.ReadTimeout,
+	}
+
+	httpClient := cleanhttp.DefaultClient()
+
+	// Modify the default HTTP client's transport to skip SSL verification if requested
+	if d.InsecureSkipVerify {
+		httpClient.Transport = &http.Transport{
+			TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+		}
+	}
+
 	req := &getter.Request{
 		Src:     url,
 		Dst:     output,
 		GetMode: getter.ModeAny,
-		// ProgressListener: NewProgressTracker(),
 	}
+
 	client := &getter.Client{
 		Getters: []getter.Getter{
-			&getter.HttpGetter{
-				Netrc:                 true,
-				XTerraformGetDisabled: true,
-				HeadFirstTimeout:      d.HeadTimeout,
-				ReadTimeout:           d.ReadTimeout,
-			},
+			httpGetter,
 		},
 	}
 

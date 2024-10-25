@@ -59,6 +59,8 @@ type Tool struct {
 	Env env.Env
 	// Check defines a set of instructions for verifying the tool's integrity or functionality.
 	Check Checker
+	//
+	NoVerifySSL bool `json:"-" yaml:"-" mapstructure:"-"`
 }
 
 // UnmarshalYAML implements custom unmarshaling for Tool with KnownFields check.

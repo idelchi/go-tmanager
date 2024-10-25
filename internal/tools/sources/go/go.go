@@ -61,7 +61,7 @@ var mu sync.Mutex
 // and returns the output, the found file, and any error encountered during installation.
 func (g *Go) Install(d common.InstallData) (output string, found file.File, err error) {
 	mu.Lock()
-	binary, err := goi.New()
+	binary, err := goi.New(d.NoVerifySSL)
 	if err != nil {
 		return "", "", err
 	}

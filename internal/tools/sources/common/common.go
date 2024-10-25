@@ -13,14 +13,15 @@ import (
 // InstallData holds the details required for downloading and installing files,
 // including the path, executable name, output directory, and environment settings.
 type InstallData struct {
-	Path     string   // The URL or path to download from
-	Name     string   // The name of the file or project
-	Exe      string   // The name of the executable
-	Patterns []string // Patterns to match files for the executable
-	Output   string   // Output directory for the installation
-	Aliases  []string // Aliases for the executable
-	Mode     string   // Mode of operation, such as "find" for locating executables
-	Env      env.Env  // Environment variables for the installation process
+	Path        string   // The URL or path to download from
+	Name        string   // The name of the file or project
+	Exe         string   // The name of the executable
+	Patterns    []string // Patterns to match files for the executable
+	Output      string   // Output directory for the installation
+	Aliases     []string // Aliases for the executable
+	Mode        string   // Mode of operation, such as "find" for locating executables
+	Env         env.Env  // Environment variables for the installation process
+	NoVerifySSL bool     // Skip SSL verification
 }
 
 // Download handles downloading files based on the InstallData configuration.
@@ -43,6 +44,7 @@ func Download(d InstallData) (string, file.File, error) {
 	}
 
 	downloader := download.New()
+	downloader.InsecureSkipVerify = d.NoVerifySSL
 
 	destination, err := downloader.Download(d.Path, folder.Path())
 	if err != nil {

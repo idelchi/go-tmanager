@@ -65,6 +65,8 @@ type Config struct {
 	Log logger.Level
 	// Number of parallel downloads (>= 0)
 	Parallel int `validate:"gte=0"`
+	// Skip SSL verification
+	NoVerifySSL bool `mapstructure:"no-verify-ssl"`
 
 	// Run in interactive mode
 	Interactive bool

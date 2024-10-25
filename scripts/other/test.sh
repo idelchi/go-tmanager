@@ -15,4 +15,3 @@ echo "-------- os: darwin, arch: arm64"
 go run ./cmd/godyl ${ARGS} --os=darwin --arch=arm64 --output=".bin-{{ .OS }}-{{ .ARCH }}"
 echo "-------- os: windows, arch: amd64"
 go run ./cmd/godyl ${ARGS} --os=windows --arch=amd64 --output=".bin-{{ .OS }}-{{ .ARCH }}"
-

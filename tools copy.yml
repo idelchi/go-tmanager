@@ -379,6 +379,8 @@
   skip:
     - reason: "jid is not available for ARM32 architecture"
       condition: '{{ eq .ARCH "arm" }}'
+    - reason: "jid is not available for darwin arm64"
+      condition: '{{ and (eq .OS "darwin") (eq .ARCH "arm64") }}'
   extensions: .zip
   tags:
     - processing

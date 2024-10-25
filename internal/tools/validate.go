@@ -218,14 +218,15 @@ func (t *Tool) Download() (string, file.File, error) {
 	}
 
 	data := common.InstallData{
-		Path:     t.Path,
-		Name:     t.Name,
-		Exe:      t.Exe.Name,
-		Patterns: t.Exe.Patterns,
-		Output:   t.Output,
-		Aliases:  t.Aliases,
-		Mode:     t.Mode.String(),
-		Env:      t.Env,
+		Path:        t.Path,
+		Name:        t.Name,
+		Exe:         t.Exe.Name,
+		Patterns:    t.Exe.Patterns,
+		Output:      t.Output,
+		Aliases:     t.Aliases,
+		Mode:        t.Mode.String(),
+		Env:         t.Env,
+		NoVerifySSL: t.NoVerifySSL,
 	}
 
 	return installer.Install(data)

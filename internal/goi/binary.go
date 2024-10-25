@@ -19,15 +19,19 @@ type Binary struct {
 	File file.File   // File holds the file information for the Go binary.
 	Dir  file.Folder // Dir refers to the directory where the binary is stored.
 	Env  Env         // Env contains the environment variables for running the binary.
+
+	noVerifySSL bool
 }
 
 var mu sync.Mutex
 
 // New creates a new Binary instance, setting up the directory, downloading the latest release if necessary,
 // and initializing environment variables. It ensures thread-safe execution by using a mutex lock.
-func New() (binary Binary, err error) {
+func New(noVerifySSL bool) (binary Binary, err error) {
 	mu.Lock()
 	defer mu.Unlock()
+
+	binary.noVerifySSL = noVerifySSL
 
 	dir := file.NewFolder(".godyl-go")
 	if err := dir.CreateInTempDir(); err != nil && !errors.Is(err, os.ErrExist) {
@@ -99,6 +103,7 @@ func (b *Binary) Download(path string) error {
 	url := fmt.Sprintf("https://go.dev/dl/%s", path)
 
 	downloader := download.New()
+	downloader.InsecureSkipVerify = b.noVerifySSL
 
 	destination, err := downloader.Download(url, b.Dir.Path())
 	if err != nil {

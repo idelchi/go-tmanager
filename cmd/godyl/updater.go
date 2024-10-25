@@ -16,8 +16,9 @@ import (
 
 // GodylUpdater is responsible for updating the godyl tool using the specified update strategy and defaults.
 type GodylUpdater struct {
-	Strategy tools.Strategy // Strategy defines how updates are applied (e.g., Upgrade, Downgrade, None).
-	Defaults tools.Defaults // Defaults holds tool-specific default values for the update process.
+	Strategy    tools.Strategy // Strategy defines how updates are applied (e.g., Upgrade, Downgrade, None).
+	Defaults    tools.Defaults // Defaults holds tool-specific default values for the update process.
+	NoVerifySSL bool           // NoVerifySSL disables SSL verification for the update process.
 }
 
 // Update performs the update process for the godyl tool, applying the specified strategy.
@@ -42,7 +43,8 @@ func (gu GodylUpdater) Update() error {
 		Source: sources.Source{
 			Type: sources.GITHUB,
 		},
-		Strategy: gu.Strategy,
+		Strategy:    gu.Strategy,
+		NoVerifySSL: gu.NoVerifySSL,
 	}
 
 	// Apply any default values to the tool.
