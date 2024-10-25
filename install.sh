@@ -9,7 +9,7 @@ DEBUG=${GODYL_DEBUG:-0}
 DRY_RUN=${GODYL_DRY_RUN:-0}
 ARCH=${GODYL_ARCH:-""}
 OS=${GODYL_OS:-""}
-DISABLE_SSL=${GODYL_DISABLE_SSL:-0}
+DISABLE_SSL=${GODYL_DISABLE_SSL:-""}
 
 # Output formatting
 format_message() {
