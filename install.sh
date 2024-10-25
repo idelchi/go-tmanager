@@ -197,12 +197,8 @@ parse_args() {
 
 # Main installation function
 install() {
-    local FORMAT tmp code
-    # Set the format based on OS
-    FORMAT="tar.gz"
-    if [ "${OS}" = "windows" ]; then
-        FORMAT="zip"
-    fi
+    local FORMAT="$1"
+    local tmp code
 
     # Construct the download URL
     local BASE_URL BINARY_NAME URL
@@ -245,26 +241,20 @@ install() {
 }
 
 check_requirements() {
-   REQUIRED_COMMANDS="
-       curl
-       uname
-       mktemp
-       mkdir
-       grep
-       tr
-       sed
-       printf
-       basename
-       dirname
-       tar
-       unzip"
+    REQUIRED_COMMANDS="
+        curl
+        uname
+        mktemp
+        mkdir
+        grep
+        tr
+        sed
+        basename
+        dirname"
 
-   for cmd in $REQUIRED_COMMANDS; do
-       need_cmd "$cmd"
-   done
-
-   [ "${FORMAT}" = "tar.gz" ] && need_cmd tar
-   [ "${FORMAT}" = "zip" ] && need_cmd unzip
+    for cmd in $REQUIRED_COMMANDS; do
+        need_cmd "$cmd"
+    done
 }
 
 main() {
@@ -273,12 +263,24 @@ main() {
     # Check for required commands
     check_requirements
 
+    echo "moving on..."
+
     # Only detect OS if not manually specified
     [ -z "${OS}" ] && detect_os
     # Only detect arch if not manually specified
     [ -z "${ARCH}" ] && detect_arch
     verify_platform
-    install
+
+    # Set the format based on the OS
+    FORMAT="tar.gz"
+    if [ "${OS}" = "windows" ]; then
+        FORMAT="zip"
+    fi
+
+    [ "${FORMAT}" = "tar.gz" ] && need_cmd tar
+    [ "${FORMAT}" = "zip" ] && need_cmd unzip
+
+    install "${FORMAT}"
 }
 
 main "$@"
