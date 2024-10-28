@@ -5,41 +5,46 @@ on:
   push:
     branches:
       - dev
-      - master
+      - main
     tags:
       - "*"
 
 jobs:
-  # test:
-  #   if: ${{ ! startsWith(github.ref, 'refs/tags/') }}
-  #   permissions:
-  #     contents: write
-  #   strategy:
-  #     matrix:
-  #       os:
-  #         - ubuntu-24.04
-  #         - windows-2022
-  #         - macos-14
-  #   runs-on: ${{ matrix.os }}
-  #   env:
-  #     GODYL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v4
+  verify:
+    if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+    uses: idelchi/devenv/.github/workflows/devenv-actions.yml@dev
+    with:
+      image: idelchi/devenv:dev
+      devenv: .devenv
 
-  #     - name: Set up Go
-  #       uses: actions/setup-go@v5
-  #       with:
-  #         go-version: "1.23.2"
-  #         check-latest: true
-
-  #     - name: Run tests
-  #       run: go run ./cmd/godyl --show-platform
-
-  last-tag:
+  test:
+    needs: verify
+    if: ${{ ! startsWith(github.ref, 'refs/tags/') }}
     permissions:
       contents: write
-      actions: write
+    strategy:
+      matrix:
+        os:
+          - ubuntu-24.04
+          - windows-2022
+          - macos-14
+    runs-on: ${{ matrix.os }}
+    env:
+      GODYL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.23.2"
+          check-latest: true
+
+      - name: Run tests
+        run: go run ./cmd/godyl --show-platform
+
+  last-tag:
     runs-on: ubuntu-24.04
     if: github.ref == 'refs/heads/dev'
     outputs:
@@ -58,9 +63,9 @@ jobs:
           echo "LAST_TAG=${LAST_TAG}" >> ${GITHUB_ENV}
           echo "LAST_TAG=${LAST_TAG}" >> ${GITHUB_OUTPUT}
 
-          curl -sSL https://raw.githubusercontent.com/idelchi/go-next-tag/refs/heads/dev/install.sh | sh -s -- -v v0.1 -d ~/.local/bin
+          curl -sSL https://raw.githubusercontent.com/idelchi/go-next-tag/refs/heads/main/install.sh | sh -s -- -d ~/.local/bin
 
-          NEXT_TAG=$(echo ${LAST_TAG} | go-next-tag)
+          NEXT_TAG=$(go-next-tag ${LAST_TAG})
 
           echo "NEXT_TAG=${NEXT_TAG}" >> ${GITHUB_ENV}
           echo "NEXT_TAG=${NEXT_TAG}" >> ${GITHUB_OUTPUT}
@@ -88,9 +93,13 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
 
-      - name: delete ${{ env.TAG }} tag & release
+      - name: delete old pre-release
         run: |
           gh release list --json tagName,isPrerelease -q '.[] | select(.isPrerelease == true) | .tagName' | xargs -I {} gh release delete {}
+        continue-on-error: true
+
+      - name: delete ${{ env.TAG }} release
+        run: |
           gh release delete ${{ env.TAG }} --yes --cleanup-tag
         continue-on-error: true
 
@@ -112,10 +121,9 @@ jobs:
   cleanup:
     needs: tag-prerelease
     permissions:
-      contents: write
       actions: write
     runs-on: ubuntu-24.04
-    if: github.ref == 'refs/heads/dev'
+    if: github.ref == 'refs/heads/dev' && always()
     continue-on-error: true
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
