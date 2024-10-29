@@ -3,7 +3,7 @@ set -e
 
 INSTALL_DIR="./bin"
 DISABLE_SSL=""
-GITHUB_TOKEN=${GITHUB_TOKEN}
+GODYL_GITHUB_TOKEN=${GODYL_GITHUB_TOKEN}
 
 # Usage function
 usage() {
@@ -23,7 +23,7 @@ Options:
 
     -d  DIR     Output directory for installed tools (default: ./bin)
     -k          Disable SSL verification
-    -t          GitHub Token to use for API requests. Can be set with environment variable GITHUB_TOKEN as well.
+    -t          GitHub Token to use for API requests. Can be set with environment variable GODYL_GITHUB_TOKEN as well.
 
 All remaining arguments are passed to godyl.
 EOF
@@ -39,7 +39,7 @@ parse_args() {
         case "${opt}" in
             d) INSTALL_DIR="${OPTARG}" ;;
             k) DISABLE_SSL=yes ;;
-            t) GITHUB_TOKEN="${OPTARG}" ;;
+            t) GODYL_GITHUB_TOKEN="${OPTARG}" ;;
             h) usage ;;
             \?) # Unknown option
                 REMAINING_ARGS="$REMAINING_ARGS $1"
@@ -84,7 +84,7 @@ install_tools() {
         sh -s -- \
         -d "${tmp}" \
         ${DISABLE_SSL:+-k} \
-        -t "${GITHUB_TOKEN}"
+        -t "${GODYL_GITHUB_TOKEN}"
 
     curl ${DISABLE_SSL:+-k} -sSL "https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/tools.yml" -o "${tmp}/tools.yml"
 
@@ -93,8 +93,7 @@ install_tools() {
     [ -n "$REMAINING_ARGS" ] && printf "Calling godyl with extra arguments: '${REMAINING_ARGS}'\n"
 
     # Install tools using godyl
-    export GODYL_GITHUB_TOKEN=${GITHUB_TOKEN}
-    "${tmp}/godyl" ${REMAINING_ARGS} ${DISABLE_SSL:+-k} --output="${INSTALL_DIR}" ${tmp}/tools.yml
+    GODYL_GITHUB_TOKEN=${GODYL_GITHUB_TOKEN} "${tmp}/godyl" ${REMAINING_ARGS} ${DISABLE_SSL:+-k} --output="${INSTALL_DIR}" ${tmp}/tools.yml
 
     rm -rf ${tmp}
     printf "All tools installed successfully to ${INSTALL_DIR}\n"
