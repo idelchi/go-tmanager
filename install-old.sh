@@ -1,23 +1,15 @@
 #!/bin/sh
 set -e
 
-# Arguments passed by calling script
-TOOL=${INSTALLER_TOOL:-"example"}
-OWNER=${INSTALLER_OWNER:-"idelchi"}
-VERSION=${INSTALLER_VERSION}
-PREFIX=$(printf "%s" "${TOOL}" | tr 'a-z' 'A-Z' | tr -c 'A-Z' '_')
-
 # Allow setting via environment variables, will be overridden by flags
-eval BINARY=\${${PREFIX}_BINARY:-\"${TOOL}\"}
-eval VERSION=\${${PREFIX}_VERSION:-\"${VERSION}\"}
-eval OUTPUT_DIR=\${${PREFIX}_OUTPUT_DIR:-\"./bin\"}
-eval DEBUG=\${${PREFIX}_DEBUG:-0}
-eval DRY_RUN=\${${PREFIX}_DRY_RUN:-0}
-eval ARCH=\${${PREFIX}_ARCH}
-eval OS=\${${PREFIX}_OS}
-eval DISABLE_SSL=\${${PREFIX}_DISABLE_SSL:-0}
-
-# DISABLE_SSL=${GODYL_DISABLE_SSL}
+BINARY=${GODYL_BINARY:-"godyl"}
+VERSION=${GODYL_VERSION:-"v0.1"}
+OUTPUT_DIR=${GODYL_OUTPUT_DIR:-"./bin"}
+DEBUG=${GODYL_DEBUG:-0}
+DRY_RUN=${GODYL_DRY_RUN:-0}
+ARCH=${GODYL_ARCH}
+OS=${GODYL_OS}
+DISABLE_SSL=${GODYL_DISABLE_SSL}
 
 # Output formatting
 format_message() {
@@ -64,122 +56,36 @@ need_cmd() {
     fi
     debug "Found required command: ${1}"
 }
-usage() {
-    # Define column widths
-    local flag_width=8
-    local env_width=40
-    local default_width=28
-    local desc_width=40
 
+# Usage function
+usage() {
     cat <<EOF
 Usage: ${0} [OPTIONS]
-Installs '${BINARY}' binary by downloading from GitHub releases.
+Installs ${BINARY} binary by downloading from GitHub releases.
 
-Options:
-EOF
-
-    # Print header with printf
-    printf "%-${flag_width}s %-${env_width}s %-${default_width}s %s\n" \
-        "Flag" "Env" "Default" "Description"
-    printf "%s\n" "-----------------------------------------------------------------------------------------------------"
-
-    # Print each row with printf
-    printf "%-${flag_width}s %-${env_width}s %-${default_width}s %s\n" \
-        "-b" "${PREFIX}_BINARY" "\"${BINARY}\"" "Binary name to install"
-    printf "%-${flag_width}s %-${env_width}s %-${default_width}s %s\n" \
-        "-d" "${PREFIX}_OUTPUT_DIR" "\"${OUTPUT_DIR}\"" "Output directory"
-    printf "%-${flag_width}s %-${env_width}s %-${default_width}s %s\n" \
-        "-v" "${PREFIX}_VERSION" "<detected>" "Version to install"
-    printf "%-${flag_width}s %-${env_width}s %-${default_width}s %s\n" \
-        "-o" "${PREFIX}_OS" "<detected>" "Operating system"
-    printf "%-${flag_width}s %-${env_width}s %-${default_width}s %s\n" \
-        "-a" "${PREFIX}_ARCH" "<detected>" "Architecture"
-    printf "%-${flag_width}s %-${env_width}s %-${default_width}s %s\n" \
-        "-x" "${PREFIX}_DEBUG" "false" "Enable debug output"
-    printf "%-${flag_width}s %-${env_width}s %-${default_width}s %s\n" \
-        "-n" "${PREFIX}_DRY_RUN" "false" "Dry run mode"
-    printf "%-${flag_width}s %-${env_width}s %-${default_width}s %s\n" \
-        "-k" "${PREFIX}_DISABLE_SSL" "false" "Disable SSL certificate verification"
-    printf "%-${flag_width}s %-${env_width}s %-${default_width}s %s\n" \
-        "-h" "" "false" "Show this help message"
-
-    cat <<EOF
+Flags and environment variables:
+    Flag  Env                  Default         Description
+    -----------------------------------------------------------------
+    -b    GODYL_BINARY         "godyl"         Binary name to install
+    -v    GODYL_VERSION        "v0.0"          Version to install
+    -d    GODYL_OUTPUT_DIR     "./bin"         Output directory
+    -o    GODYL_OS             <detected>      Override operating system
+    -a    GODYL_ARCH           <detected>      Override architecture
+    -x    GODYL_DEBUG                          Enable debug output
+    -n    GODYL_DRY_RUN                        Dry run mode
+    -k    GODYL_DISABLE_SSL                    Disable SSL certificate verification
+    -h                                         Show this help message
 
 Flags take precedence over environment variables when both are set.
 
 Example:
-    ${PREFIX}_VERSION="v1.0" ./install.sh -o /usr/local/bin
+    GODYL_VERSION="v1.0" ./install.sh -o /usr/local/bin
 
-Set \`-a\` or \`${PREFIX}_ARCH\` to download a specific architecture binary.
+Set \`-a\` or \`GODYL_ARCH\` to download a specific architecture binary.
 This can be useful for edge-cases such as running a 32-bit userland on a 64-bit system.
 
-Version will be retrieved from the latest release if not specified. This requires 'jq' to be installed.
-If not available, 'jq' will be downloaded for the current OS and architecture and removed after use.
 EOF
     exit 1
-}
-
-# Download and setup JQ binary if not installed
-get_jq() {
-    if command -v "jqs" >/dev/null 2>&1; then
-        return 0
-    fi
-
-    JQ_VERSION="1.7.1"
-
-    # Set JQ_ARCH based on ARCH
-    JQ_ARCH="${ARCH}"
-    case "${ARCH}" in
-        armv*) JQ_ARCH="armhf" ;;
-    esac
-
-    # Set extension for Windows
-    EXT=""
-    if [ "${OS}" = "windows" ]; then
-        EXT=".exe"
-    fi
-
-    JQ_OS="${OS}"
-    if [ "${OS}" = "darwin" ]; then
-        JQ_OS="macos"
-    fi
-
-    echo "https://github.com/jqlang/jq/releases/download/jq-${JQ_VERSION}/jq-${JQ_OS}-${JQ_ARCH}${EXT}"
-}
-
-# Get the latest release tag
-get_latest_release() {
-    local jq_url
-    local tmp
-
-    jq_url=$(get_jq)
-
-    success $jq_url
-    if [ -z "${jq_url}" ]; then
-        # System jq is available
-        VERSION=$(curl -s --location "https://api.github.com/repos/${OWNER}/${TOOL}/releases/latest" | jq -r '.tag_name')
-    else
-        warning "Required command 'jq' not found, downloading it from '${jq_url}'"
-        # Need to download jq
-        tmp=$(mktemp -d)
-        trap 'rm -rf "${tmp}"' EXIT
-
-        code=$(curl -s -w '%{http_code}' -L -o "${tmp}/jq" "${jq_url}")
-
-        if [ "${code}" != "200" ]; then
-            warning "Failed to download '${jq_url}': ${code}"
-            warning "Either pass the desired version manually with '-v' or install jq manually"
-            rm -rf "${tmp}"
-
-            exit 1
-        fi
-
-        chmod +x "${tmp}/jq"
-        VERSION=$(curl -s --location "https://api.github.com/repos/${OWNER}/${TOOL}/releases/latest" | "${tmp}/jq" -r '.tag_name')
-        rm -rf "${tmp}"
-    fi
-
-    success "Latest version detected as: ${VERSION}"
 }
 
 # Detect architecture with userland check
@@ -262,12 +168,12 @@ verify_platform() {
     debug "Checking platform: ${platform}"
 
     if ! printf '%s' "${supported}" | grep -q -w "${platform}"; then
-        warning "Platform '${platform}' is not supported"
+        warning "Platform ${platform} is not supported"
         warning "Supported platforms: ${supported}"
         exit 1
     fi
 
-    debug "Platform '${platform}' is supported"
+    debug "Platform ${platform} is supported"
 }
 
 # Parse arguments
@@ -296,9 +202,12 @@ install() {
 
     # Construct the download URL
     local BASE_URL BINARY_NAME URL
-    BASE_URL="https://github.com/${OWNER}/${BINARY}/releases/download"
+    BASE_URL="https://github.com/idelchi/${BINARY}/releases/download"
     BINARY_NAME="${BINARY}_${OS}_${ARCH}.${FORMAT}"
     URL="${BASE_URL}/${VERSION}/${BINARY_NAME}"
+
+    # Create output directory if it doesn't exist
+    mkdir -p "${OUTPUT_DIR}"
 
     success "Selecting '${VERSION}': '${BINARY_NAME}'"
     debug "Starting download process..."
@@ -308,9 +217,6 @@ install() {
         info "Would install to: '${OUTPUT_DIR}'"
         exit 0
     fi
-
-    # Create output directory if it doesn't exist
-    mkdir -p "${OUTPUT_DIR}"
 
     tmp=$(mktemp)
     trap 'rm -f "${tmp}"' EXIT
@@ -328,12 +234,10 @@ install() {
     if [ "${FORMAT}" = "tar.gz" ]; then
         tar -C "${OUTPUT_DIR}" -xzf "${tmp}"
     else
-        unzip -qq -o -d "${OUTPUT_DIR}" "${tmp}"
+        unzip -d "${OUTPUT_DIR}" "${tmp}"
     fi
 
     success "'${BINARY}' installed to '${OUTPUT_DIR}'"
-
-    rm -f "${tmp}"
 }
 
 check_requirements() {
@@ -353,14 +257,6 @@ check_requirements() {
     done
 }
 
-check_default() {
-    # If `TOOL` is example, exit with an error
-    if [ "${TOOL}" = "example" ]; then
-        warning "Please set the INSTALLER_TOOL environment variable to the desired tool name"
-        exit 1
-    fi
-}
-
 main() {
     # Parse arguments
     parse_args "$@"
@@ -368,19 +264,11 @@ main() {
     # Check for required commands
     check_requirements
 
-    # Check for default values
-    check_default
-
     # Only detect OS if not manually specified
     [ -z "${OS}" ] && detect_os
     # Only detect arch if not manually specified
     [ -z "${ARCH}" ] && detect_arch
     verify_platform
-
-    # If `VERSION` is not set, get the latest release
-    if [ -z "${VERSION}" ]; then
-        get_latest_release
-    fi
 
     # Set the format based on the OS
     FORMAT="tar.gz"
