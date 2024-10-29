@@ -12,7 +12,7 @@ Installs Kubernetes-related tools using godyl.
 
 This script will install all tools defined in 'tools.yaml' file.
 
-Output directory can be controlled with the '-o' flag. Defaults to './bin'.
+Output directory can be controlled with the '-d' flag. Defaults to './bin'.
 
 Example:
 
@@ -21,7 +21,7 @@ Example:
 EOF
     printf "Options:\n"
 
-    printf "  -o DIR\tOutput directory for installed tools (default: ./bin)\n"
+    printf "  -d DIR\tOutput directory for installed tools (default: ./bin)\n"
     printf "  -k    \tDisable SSL verification\n"
 
     exit 1
@@ -29,9 +29,9 @@ EOF
 
 # Parse arguments
 parse_args() {
-    while getopts ":o:h" opt; do
+    while getopts ":d:h" opt; do
         case "${opt}" in
-            o) INSTALL_DIR="${OPTARG}" ;;
+            d) INSTALL_DIR="${OPTARG}" ;;
             k) DISABLE_SSL=yes ;;
             h) usage ;;
         esac

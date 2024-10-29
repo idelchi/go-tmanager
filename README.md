@@ -84,10 +84,18 @@ curl -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/install
 Run
 
 ```sh
-curl -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/main/install.sh | sh -s -- -h
+curl -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/install.sh | sh -s -- -h
 ```
 
 for all available options.
+
+Run
+
+```sh
+curl -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/scripts/tools.sh | sh -s -- -d ~/.local/bin
+```
+
+to install all [tools](./tools.yml) listed in the `tools.yml` file.
 
 ## Update
 
