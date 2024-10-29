@@ -79,13 +79,12 @@ install_tools() {
     trap 'rm -rf "${tmp}"' EXIT
 
     curl ${DISABLE_SSL:+-k} -sSL "https://raw.githubusercontent.com/idelchi/scripts/refs/heads/dev/install.sh" | INSTALLER_TOOL=godyl sh -s -- -d "${tmp}" ${DISABLE_SSL:+-k} -t "${GITHUB_TOKEN}"
-    printf "godyl installed to '${tmp}'\n"
 
     curl ${DISABLE_SSL:+-k} -sSL "https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/tools.yml" -o "${tmp}/tools.yml"
 
     printf "Installing tools from '${tmp}/tools.yml' to '${INSTALL_DIR}'\n"
 
-    [ -n "$REMAINING_ARGS" ] && printf "Calling godyl with extra arguments :${REMAINING_ARGS}"
+    [ -n "$REMAINING_ARGS" ] && printf "Calling godyl with extra arguments: '${REMAINING_ARGS}'\n"
 
     # Install tools using godyl
     "${tmp}/godyl" ${REMAINING_ARGS} ${DISABLE_SSL:+-k} --output="${INSTALL_DIR}" ${tmp}/tools.yml
