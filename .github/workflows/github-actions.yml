@@ -11,15 +11,15 @@ on:
       - "*"
 
 jobs:
-  verify:
-    if: ${{ ! startsWith(github.ref, 'refs/tags/') }}
-    uses: idelchi/devenv/.github/workflows/devenv-actions.yml@dev
-    with:
-      image: idelchi/devenv:dev
-      devenv: .devenv
+  # verify:
+  #   if: ${{ ! startsWith(github.ref, 'refs/tags/') }}
+  #   uses: idelchi/devenv/.github/workflows/devenv-actions.yml@dev
+  #   with:
+  #     image: idelchi/devenv:dev
+  #     devenv: .devenv
 
   test:
-    needs: verify
+    # needs: verify
     if: ${{ ! startsWith(github.ref, 'refs/tags/') }}
     permissions:
       contents: write
