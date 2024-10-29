@@ -38,19 +38,26 @@ EOF
 parse_args() {
     REMAINING_ARGS=""
 
+    printf "Parsing arguments: $@\n"
+
     # Handle known options with getopts
     while getopts ":d:kh" opt; do
         case "${opt}" in
             d) INSTALL_DIR="${OPTARG}" ;;
             k) DISABLE_SSL=yes ;;
             h) usage ;;
-            *) REMAINING_ARGS="$REMAINING_ARGS $1" ;;
+            \?) # Unknown option
+                REMAINING_ARGS="$REMAINING_ARGS $1"
+                shift
+                continue
+                ;;
         esac
         shift $((OPTIND-1))
         OPTIND=1
     done
 
     # Collect remaining args
+    shift $((OPTIND-1))  # Shift off any remaining getopts-processed args
     while [ $# -gt 0 ]; do
         REMAINING_ARGS="$REMAINING_ARGS $1"
         shift
