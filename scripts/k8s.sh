@@ -22,27 +22,38 @@ Output directory can be controlled with the '-o' flag. Defaults to './bin'.
 
 Example:
 
-  curl -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/scripts/k8s.sh | sh -s
+    curl -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/scripts/k8s.sh | sh -s
 
+Options:
+
+    -d  DIR     Output directory for installed tools (default: ./bin)
+    -k          Disable SSL verification
+
+All remaining arguments are passed to godyl.
 EOF
-    printf "Options:\n"
-
-    printf "  -o DIR\tOutput directory for installed tools (default: ./bin)\n"
-    printf "  -k    \tDisable SSL verification\n"
-
-    # curl ${DISABLE_SSL:+-k} -sSL https://raw.githubusercontent.com/idelchi/scripts/refs/heads/dev/install.sh | INSTALLER_TOOL="godyl" sh -s -- -p
-
     exit 1
 }
 
 # Parse arguments
 parse_args() {
-    while getopts ":o:h" opt; do
+    REMAINING_ARGS=""
+
+    # Handle known options with getopts
+    while getopts ":d:kh" opt; do
         case "${opt}" in
-            o) INSTALL_DIR="${OPTARG}" ;;
+            d) INSTALL_DIR="${OPTARG}" ;;
             k) DISABLE_SSL=yes ;;
             h) usage ;;
+            *) REMAINING_ARGS="$REMAINING_ARGS $1" ;;
         esac
+        shift $((OPTIND-1))
+        OPTIND=1
+    done
+
+    # Collect remaining args
+    while [ $# -gt 0 ]; do
+        REMAINING_ARGS="$REMAINING_ARGS $1"
+        shift
     done
 }
 
@@ -70,8 +81,10 @@ install_tools() {
 
     printf "Installing tools to '${INSTALL_DIR}'\n"
 
+    [ -n "$REMAINING_ARGS" ] && echo "Calling godyl with extra arguments :${REMAINING_ARGS}"
+
     # Install tools using godyl
-    "${tmp}/godyl" ${DISABLE_SSL:+-k} --output="${INSTALL_DIR}" - <<YAML
+    "${tmp}/godyl" ${REMAINING_ARGS} ${DISABLE_SSL:+-k} --output="${INSTALL_DIR}" - <<YAML
 - name: helm/helm
   path: https://get.helm.sh/helm-{{ .Version }}-{{ .OS }}-{{ .ARCH }}.tar.gz
 - name: kubernetes/kubernetes

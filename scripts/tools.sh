@@ -16,10 +16,9 @@ Output directory can be controlled with the '-d' flag. Defaults to './bin'.
 
 Example:
 
-  curl -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/scripts/tools.sh | sh -s
+    curl -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/scripts/tools.sh | sh -s
 
-
-    Options:
+Options:
 
     -d  DIR     Output directory for installed tools (default: ./bin)
     -k          Disable SSL verification
