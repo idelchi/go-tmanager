@@ -10,27 +10,19 @@ usage() {
 Usage: ${0} [OPTIONS]
 Installs Kubernetes-related tools using godyl.
 
-This script will install:
-- helm
-- kubectl (with alias 'kc')
-- k9s
-- kubectx
-- kubens
-- task
+This script will install all tools defined in 'tools.yaml' file.
 
 Output directory can be controlled with the '-o' flag. Defaults to './bin'.
 
 Example:
 
-  curl -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/scripts/k8s.sh | sh -s
+  curl -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/scripts/tools.sh | sh -s
 
 EOF
     printf "Options:\n"
 
     printf "  -o DIR\tOutput directory for installed tools (default: ./bin)\n"
     printf "  -k    \tDisable SSL verification\n"
-
-    # curl ${DISABLE_SSL:+-k} -sSL https://raw.githubusercontent.com/idelchi/scripts/refs/heads/dev/install.sh | INSTALLER_TOOL="godyl" sh -s -- -p
 
     exit 1
 }
@@ -68,22 +60,12 @@ install_tools() {
     curl ${DISABLE_SSL:+-k} -sSL "https://raw.githubusercontent.com/idelchi/scripts/refs/heads/dev/install.sh" | INSTALLER_TOOL=godyl sh -s -- -d "${tmp}" ${DISABLE_SSL:+-k}
     printf "godyl installed to '${tmp}'\n"
 
-    printf "Installing tools to '${INSTALL_DIR}'\n"
+    curl ${DISABLE_SSL:+-k} -sSL "https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/tools.yml" -o "${tmp}/tools.yml"
+
+    printf "Installing tools from '${tmp}/tools.yml' to '${INSTALL_DIR}'\n"
 
     # Install tools using godyl
-    "${tmp}/godyl" ${DISABLE_SSL:+-k} --output="${INSTALL_DIR}" - <<YAML
-- name: helm/helm
-  path: https://get.helm.sh/helm-{{ .Version }}-{{ .OS }}-{{ .ARCH }}.tar.gz
-- name: kubernetes/kubernetes
-  exe: kubectl
-  path: https://dl.k8s.io/{{ .Version }}/bin/{{ .OS }}/{{ .ARCH }}/kubectl{{ .EXTENSION }}
-  aliases: kc
-- derailed/k9s
-- name: ahmetb/kubectx
-- name: ahmetb/kubectx
-  exe: kubens
-- name: go-task/task
-YAML
+    "${tmp}/godyl" ${DISABLE_SSL:+-k} --output="${INSTALL_DIR}" ${tmp}/tools.yml
 
     rm -rf ${tmp}
     printf "All tools installed successfully to ${INSTALL_DIR}\n"

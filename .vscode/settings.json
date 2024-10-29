@@ -40,7 +40,7 @@
     },
     /* ****** ****** ****** */
     /* ****** OTHER ****** */
-    "prettier.devenvPath": ".devenv/settings/.prettierrc.yml",
+    "prettier.configPath": ".devenv/settings/.prettierrc.yml",
     /* ****** ****** ****** */
     /* ****** PYTHON ****** */
     "python.defaultInterpreterPath": "python3",
