@@ -86,11 +86,22 @@ install_tools() {
 
     curl ${DISABLE_SSL:+-k} -sSL "https://raw.githubusercontent.com/idelchi/scripts/refs/heads/dev/install.sh" | INSTALLER_TOOL=godyl sh -s -- -d "${tmp}" ${DISABLE_SSL:+-k} -t "${GITHUB_TOKEN}"
 
+
+    curl ${DISABLE_SSL:+-k} -sSL \
+        "https://raw.githubusercontent.com/idelchi/scripts/refs/heads/dev/install.sh" | \
+        INSTALLER_TOOL=godyl \
+        sh -s -- \
+        -d "${tmp}" \
+        ${DISABLE_SSL:+-k} \
+        -t "${GITHUB_TOKEN}"
+
+
     printf "Installing tools to '${INSTALL_DIR}'\n"
 
     [ -n "$REMAINING_ARGS" ] && printf "Calling godyl with extra arguments: '${REMAINING_ARGS}'\n"
 
     # Install tools using godyl
+    export GODYL_GITHUB_TOKEN=${GITHUB_TOKEN}
     "${tmp}/godyl" ${REMAINING_ARGS} ${DISABLE_SSL:+-k} --output="${INSTALL_DIR}" - <<YAML
 - name: helm/helm
   path: https://get.helm.sh/helm-{{ .Version }}-{{ .OS }}-{{ .ARCH }}.tar.gz
