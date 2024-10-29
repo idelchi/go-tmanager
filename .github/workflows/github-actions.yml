@@ -2,6 +2,7 @@ name: godyl
 
 on:
   workflow_dispatch:
+  pull_request:
   push:
     branches:
       - dev
@@ -11,7 +12,7 @@ on:
 
 jobs:
   verify:
-    if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+    if: ${{ ! startsWith(github.ref, 'refs/tags/') }}
     uses: idelchi/devenv/.github/workflows/devenv-actions.yml@dev
     with:
       image: idelchi/devenv:dev
@@ -63,7 +64,7 @@ jobs:
           echo "LAST_TAG=${LAST_TAG}" >> ${GITHUB_ENV}
           echo "LAST_TAG=${LAST_TAG}" >> ${GITHUB_OUTPUT}
 
-          curl -sSL https://raw.githubusercontent.com/idelchi/go-next-tag/refs/heads/main/install.sh | sh -s -- -d ~/.local/bin
+          curl -sSL https://raw.githubusercontent.com/idelchi/go-next-tag/refs/heads/dev/install.sh | sh -s -- -d ~/.local/bin
 
           NEXT_TAG=$(go-next-tag ${LAST_TAG})
 
