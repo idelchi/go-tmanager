@@ -4,6 +4,8 @@
 
 dir=$(mktemp -d)
 
+trap 'rm -rf "${tmp}"' EXIT
+
 install_dir=${1:-~/.local/bin}
 disable_ssl=${2:-0}
 
@@ -13,7 +15,7 @@ else
     flag=""
 fi
 
-curl ${flag} -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/install.sh | sh -s -- -v v0.2-beta -d ${dir}
+curl ${flag} -sSL https://raw.githubusercontent.com/idelchi/scripts/refs/heads/dev/install.sh | sh -s -- -d ${dir}
 
 ${dir}/godyl --output=${install_dir} - <<YAML
 - name: helm/helm
