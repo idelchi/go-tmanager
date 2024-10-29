@@ -1,0 +1,6 @@
+https://github.com/jqlang/jq/releases/download/jq-1.7.1/jq-linux-amd64
+{
+  "message": "Bad credentials",
+  "documentation_url": "https://docs.github.com/rest",
+  "status": "401"
+}

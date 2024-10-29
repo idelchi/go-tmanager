@@ -9,4 +9,4 @@ for arg in "$@"; do
   fi
 done
 
-curl ${DISABLE_SSL:+-k} -sSL https://raw.githubusercontent.com/idelchi/scripts/refs/heads/dev/install.sh | INSTALLER_TOOL="godyl" sh -s -- "$@"
+curl ${DISABLE_SSL:+-k} -sSL https://raw.githubusercontent.com/idelchi/scripts/refs/heads/dev/install.sh | INSTALLER_TOOL="godyl" sh -s -- "$@" -t "${GITHUB_TOKEN}"

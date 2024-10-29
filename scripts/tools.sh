@@ -78,7 +78,7 @@ install_tools() {
     tmp=$(mktemp -d)
     trap 'rm -rf "${tmp}"' EXIT
 
-    curl ${DISABLE_SSL:+-k} -sSL "https://raw.githubusercontent.com/idelchi/scripts/refs/heads/dev/install.sh" | INSTALLER_TOOL=godyl sh -s -- -d "${tmp}" ${DISABLE_SSL:+-k} -t ${GITHUB_TOKEN}
+    curl ${DISABLE_SSL:+-k} -sSL "https://raw.githubusercontent.com/idelchi/scripts/refs/heads/dev/install.sh" | INSTALLER_TOOL=godyl sh -s -- -d "${tmp}" ${DISABLE_SSL:+-k} -t "${GITHUB_TOKEN}"
     printf "godyl installed to '${tmp}'\n"
 
     curl ${DISABLE_SSL:+-k} -sSL "https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/tools.yml" -o "${tmp}/tools.yml"
