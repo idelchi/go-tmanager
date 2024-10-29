@@ -81,6 +81,14 @@ go install github.com/idelchi/godyl/cmd/godyl@latest
 curl -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/dev/install.sh | sh -s -- -d ~/.local/bin
 ```
 
+Run
+
+```sh
+curl -sSL https://raw.githubusercontent.com/idelchi/godyl/refs/heads/main/install.sh | sh -s -- -h
+```
+
+for all available options.
+
 ## Update
 
 ```sh
@@ -92,7 +100,7 @@ godyl --update
 Use together with `yaml` file:
 
 ```sh
-godyl tools.yml  --output ./bin
+godyl [tools.yml]  --output ./bin
 ```
 
 Or use to download a single tool:
@@ -891,7 +899,3 @@ However, to be certain that the right binary is downloaded, it's recommended to 
 [na]: https://img.shields.io/badge/N%2FA-lightgrey
 
 <!-- Badges -->
-
-```
-
-```
