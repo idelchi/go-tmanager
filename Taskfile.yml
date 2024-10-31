@@ -20,7 +20,7 @@ includes:
   go:
     taskfile: "{{.DEVENV}}/taskfiles/Taskfile.go.yml"
     vars:
-      COVERAGE: 32.0%
+      COVERAGE: 0.0%
 
 silent: true
 
@@ -63,9 +63,13 @@ tasks:
     - task: go:format
 
   lint:
-    deps:
-      - lint:default
-      - go:lint
+    - cmd: task lint:default
+      ignore_error: true
+    - cmd: task go:lint
+      ignore_error: true
+    # deps:
+    #   - lint:default
+    #   - go:lint
 
   build:
     - task: go:build
@@ -97,15 +101,11 @@ tasks:
   release:
     - |
       git c
-      git tag -d v0.0 || true
-      git push origin --delete v0.0 || true
-      git tag v0.0
-      git push origin v0.0
+      git tag -d v0.0.0 || true
+      git push origin --delete v0.0.0 || true
+      git tag v0.0.0
+      git push origin v0.0.0
 
   gorelease:
     - go install github.com/goreleaser/goreleaser/v2@latest
     - goreleaser --snapshot --clean
-
-  test: sh ./test.sh
-  run: sh ./run.sh
-

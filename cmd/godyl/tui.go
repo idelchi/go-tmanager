@@ -7,6 +7,7 @@ import (
 
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
+
 	"github.com/idelchi/godyl/internal/tools"
 	"github.com/idelchi/godyl/pkg/pretty"
 )
@@ -204,7 +205,7 @@ func (m model) detailView() string {
 	return s.String()
 }
 
-// getTerminalHeight returns the terminal height or a default value
+// getTerminalHeight returns the terminal height or a default value.
 func getTerminalHeight() int {
 	// You might want to use termenv or similar to get actual terminal size
 	return 20 // Default height, adjust as needed

@@ -111,7 +111,11 @@ func FindAndSymlink(destination file.File, d InstallData) (file.File, error) {
 		}
 
 		if !found {
-			return destination, fmt.Errorf("finding executable: no executable matching patterns %v found in %q", d.Patterns, searchDir)
+			return destination, fmt.Errorf(
+				"finding executable: no executable matching patterns %v found in %q",
+				d.Patterns,
+				searchDir,
+			)
 		}
 	}
 

@@ -9,6 +9,7 @@ import (
 	"github.com/idelchi/go-next-tag/pkg/stdin"
 	"github.com/idelchi/godyl/internal/tools/sources"
 	"github.com/idelchi/godyl/pkg/utils"
+
 	"gopkg.in/yaml.v3"
 )
 
@@ -16,13 +17,13 @@ import (
 type Tools []Tool
 
 // Load reads a tool configuration file and loads it into the Tools collection.
-// If the configuration is not a YAML file, it assumes a tool is being referenced by name or URL and creates a simple tool entry.
+// If the configuration is not a YAML file, it assumes a tool is being referenced by name or URL and creates a simple
+// tool entry.
 func (t *Tools) Load(cfg string) (err error) {
 	// Check if the configuration is not a YAML file.
 	if !strings.HasSuffix(cfg, ".yml") && !strings.HasSuffix(cfg, ".yaml") && cfg != "-" {
 		// If the configuration starts with "http", assume it's a URL.
 		if utils.IsURL(cfg) {
-
 			tool := Tool{
 				Name: filepath.Base(cfg),
 				Path: cfg,

@@ -24,17 +24,17 @@ func (u *URL) Get(attribute string) string {
 	return u.Data.Get(attribute)
 }
 
-// Initialize prepares the URL based on the given name. (Ineffective)
+// Initialize prepares the URL based on the given name. (Ineffective).
 func (u *URL) Initialize(name string) error {
 	return nil
 }
 
-// Exe executes the URL's associated action. (Ineffective)
+// Exe executes the URL's associated action. (Ineffective).
 func (u *URL) Exe() error {
 	return nil
 }
 
-// Version sets the version for the URL. (Ineffective)
+// Version sets the version for the URL. (Ineffective).
 func (u *URL) Version(name string) error {
 	return nil
 }

@@ -10,19 +10,19 @@ import (
 )
 
 // ProgressTracker implements getter.ProgressTracker interface
-// and uses cheggaaa/pb library for progress visualization
+// and uses cheggaaa/pb library for progress visualization.
 type ProgressTracker0 struct {
 	bars map[string]*pb.ProgressBar
 }
 
-// NewProgressTracker creates a new progress tracker instance
+// NewProgressTracker creates a new progress tracker instance.
 func NewProgressTracker0() *ProgressTracker0 {
 	return &ProgressTracker0{
 		bars: make(map[string]*pb.ProgressBar),
 	}
 }
 
-// TrackProgress implements getter.ProgressTracker interface
+// TrackProgress implements getter.ProgressTracker interface.
 func (t *ProgressTracker) TrackProgress0(src string, currentSize, totalSize int64, stream io.ReadCloser) io.ReadCloser {
 	filename := filepath.Base(src)
 	bar := pb.Full.Start64(totalSize)

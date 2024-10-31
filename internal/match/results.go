@@ -38,7 +38,6 @@ func (m Results) ToString() string {
 		result += fmt.Sprintf("		  arch: %s\n", r.Asset.Platform.Architecture)
 		result += fmt.Sprintf("		  library: %s\n", r.Asset.Platform.Library)
 		result += fmt.Sprintf("		  extension: %s\n", r.Asset.Platform.Extension)
-
 	}
 	return result
 }

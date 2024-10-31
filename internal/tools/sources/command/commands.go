@@ -12,27 +12,27 @@ import (
 // Commands represents a slice of shell commands.
 type Commands []Command
 
-// Get retrieves a specific attribute of the commands. (Ineffective)
+// Get retrieves a specific attribute of the commands. (Ineffective).
 func (c *Commands) Get(attribute string) string {
 	return ""
 }
 
-// Initialize prepares the Commands based on the given string. (Ineffective)
+// Initialize prepares the Commands based on the given string. (Ineffective).
 func (*Commands) Initialize(_ string) error {
 	return nil
 }
 
-// Exe executes the commands. (Ineffective)
+// Exe executes the commands. (Ineffective).
 func (*Commands) Exe() error {
 	return nil
 }
 
-// Version sets the version for the commands. (Ineffective)
+// Version sets the version for the commands. (Ineffective).
 func (*Commands) Version(_ string) error {
 	return nil
 }
 
-// Path sets up the path for the commands, using the provided parameters. (Ineffective)
+// Path sets up the path for the commands, using the provided parameters. (Ineffective).
 func (*Commands) Path(_ string, _ []string, _ string, _ match.Requirements) error {
 	return nil
 }

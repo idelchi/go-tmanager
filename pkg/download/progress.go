@@ -9,14 +9,14 @@ import (
 )
 
 // ProgressTracker implements getter.ProgressTracker interface
-// and uses cheggaaa/pb library for progress visualization
+// and uses cheggaaa/pb library for progress visualization.
 type ProgressTracker struct {
 	pool  *pb.Pool
 	bars  map[string]*pb.ProgressBar
 	mutex sync.Mutex
 }
 
-// NewProgressTracker creates a new progress tracker instance
+// NewProgressTracker creates a new progress tracker instance.
 func NewProgressTracker() *ProgressTracker {
 	pool, _ := pb.StartPool()
 	return &ProgressTracker{
@@ -25,7 +25,7 @@ func NewProgressTracker() *ProgressTracker {
 	}
 }
 
-// TrackProgress implements getter.ProgressTracker interface
+// TrackProgress implements getter.ProgressTracker interface.
 func (t *ProgressTracker) TrackProgress(src string, currentSize, totalSize int64, stream io.ReadCloser) io.ReadCloser {
 	t.mutex.Lock()
 	defer t.mutex.Unlock()
@@ -66,7 +66,7 @@ func (t *ProgressTracker) TrackProgress(src string, currentSize, totalSize int64
 	}
 }
 
-// progressReadCloser wraps a Reader with a custom closer function
+// progressReadCloser wraps a Reader with a custom closer function.
 type progressReadCloser struct {
 	io.Reader
 	closer func() error

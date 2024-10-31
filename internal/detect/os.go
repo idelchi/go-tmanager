@@ -3,8 +3,9 @@ package detect
 import (
 	"fmt"
 
-	"github.com/idelchi/godyl/internal/detect/platform"
 	"github.com/shirou/gopsutil/host"
+
+	"github.com/idelchi/godyl/internal/detect/platform"
 )
 
 // Detect gathers information about the current platform, such as the operating system, architecture,

@@ -9,7 +9,7 @@ type Hint struct {
 	Weight  string // Weight used to adjust the score for non-mandatory hints.
 	Must    bool   // Indicates if the hint is mandatory for a match.
 
-	weightInt int `mapstructure:"-" yaml:"-" json:"-"`
+	weightInt int `json:"-" mapstructure:"-" yaml:"-"`
 }
 
 // SetWeight converts the weight string to an integer.

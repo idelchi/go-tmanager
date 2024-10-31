@@ -9,7 +9,7 @@ import (
 	"github.com/charmbracelet/lipgloss"
 )
 
-// Item represents any struct with a Name field
+// Item represents any struct with a Name field.
 type Item interface{}
 
 type model struct {

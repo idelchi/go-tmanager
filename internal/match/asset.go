@@ -68,15 +68,18 @@ func (a Asset) PlatformMatch(req Requirements) (int, bool) {
 	}
 
 	if req.Platform.Architecture.IsCompatibleWith(a.Platform.Architecture) {
-		// fmt.Printf("Architecture %q is compatible with Architecture %q\n", req.Platform.Architecture, a.Platform.Architecture)
+		// fmt.Printf("Architecture %q is compatible with Architecture %q\n", req.Platform.Architecture,
+		// a.Platform.Architecture)
 
 		score++
 	} else if !a.Platform.Architecture.IsUnset() && !req.Platform.Architecture.IsUnset() {
-		// fmt.Printf("Architecture %q is not compatible with Architecture %q\n", req.Platform.Architecture, a.Platform.Architecture)
+		// fmt.Printf("Architecture %q is not compatible with Architecture %q\n", req.Platform.Architecture,
+		// a.Platform.Architecture)
 
 		qualified = false
 	} else {
-		// fmt.Printf("Architecture %q is not compatible with Architecture %q\n", req.Platform.Architecture, a.Platform.Architecture)
+		// fmt.Printf("Architecture %q is not compatible with Architecture %q\n", req.Platform.Architecture,
+		// a.Platform.Architecture)
 
 		score--
 	}

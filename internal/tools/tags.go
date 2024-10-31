@@ -4,6 +4,7 @@ import (
 	"slices"
 
 	"github.com/idelchi/godyl/pkg/unmarshal"
+
 	"gopkg.in/yaml.v3"
 )
 

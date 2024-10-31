@@ -11,6 +11,7 @@ import (
 	"sync"
 
 	"github.com/go-resty/resty/v2"
+
 	"github.com/idelchi/godyl/pkg/download"
 	"github.com/idelchi/godyl/pkg/file"
 )

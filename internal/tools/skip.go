@@ -4,6 +4,7 @@ import (
 	"strconv"
 
 	"github.com/idelchi/godyl/pkg/unmarshal"
+
 	"gopkg.in/yaml.v3"
 )
 
@@ -12,14 +13,16 @@ type Skip []Condition
 
 // Condition defines a condition and an optional reason for skipping an operation.
 type Condition struct {
-	// Condition is a string that represents a boolean expression (e.g., "true" or "false") that determines whether the operation should be skipped.
+	// Condition is a string that represents a boolean expression (e.g., "true" or "false") that determines whether the
+	// operation should be skipped.
 	Condition string
 	// Reason provides an optional explanation for why the operation is being skipped.
 	Reason string
 }
 
 // True checks if any condition in the Skip list evaluates to true.
-// It returns a boolean indicating if the skip should occur, the associated reason, and any error encountered while evaluating the condition.
+// It returns a boolean indicating if the skip should occur, the associated reason, and any error encountered while
+// evaluating the condition.
 func (s Skip) True() (bool, string, error) {
 	for _, condition := range s {
 		// Parse the condition string into a boolean value.

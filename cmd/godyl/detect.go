@@ -8,10 +8,11 @@ import (
 	"strings"
 
 	"github.com/elastic/go-sysinfo"
-	"github.com/idelchi/godyl/internal/detect"
-	"github.com/idelchi/godyl/pkg/pretty"
 	"github.com/matishsiao/goInfo"
 	"github.com/shirou/gopsutil/host"
+
+	"github.com/idelchi/godyl/internal/detect"
+	"github.com/idelchi/godyl/pkg/pretty"
 )
 
 func is64Bit() bool {

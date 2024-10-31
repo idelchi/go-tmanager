@@ -2,6 +2,7 @@ package tools
 
 import (
 	"github.com/fatih/structs"
+
 	"github.com/idelchi/godyl/internal/detect"
 	"github.com/idelchi/godyl/internal/match"
 	"github.com/idelchi/godyl/internal/tools/sources"
@@ -51,7 +52,8 @@ type Tool struct {
 	Skip Skip
 	// Post defines commands that should be run after the main operation, such as post-installation steps.
 	Post command.Commands
-	// Mode defines the operating mode for the tool, potentially controlling behavior such as silent mode or verbose mode.
+	// Mode defines the operating mode for the tool, potentially controlling behavior such as silent mode or verbose
+	// mode.
 	Mode Mode
 	// Settings contains custom settings or options that modify the behavior of the tool.
 	Settings Settings
@@ -60,7 +62,7 @@ type Tool struct {
 	// Check defines a set of instructions for verifying the tool's integrity or functionality.
 	Check Checker
 	//
-	NoVerifySSL bool `json:"-" yaml:"-" mapstructure:"-"`
+	NoVerifySSL bool `json:"-" mapstructure:"-" yaml:"-"`
 }
 
 // UnmarshalYAML implements custom unmarshaling for Tool with KnownFields check.

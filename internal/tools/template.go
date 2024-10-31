@@ -36,7 +36,6 @@ func (t *Tool) TemplateFirst() error {
 	}
 	t.Source.Type.From(output)
 
-
 	// Apply templating to the Skip conditions
 	for i := range t.Skip {
 		err = templates.ApplyAndSet(&t.Skip[i].Condition, values)

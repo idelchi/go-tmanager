@@ -11,18 +11,16 @@ on:
       - "*"
 
 jobs:
-  # verify:
-  #   if: ${{ ! startsWith(github.ref, 'refs/tags/') }}
-  #   uses: idelchi/devenv/.github/workflows/devenv-actions.yml@dev
-  #   with:
-  #     image: idelchi/devenv:dev
-  #     devenv: .devenv
+  info:
+    uses: idelchi/devenv/.github/workflows/info.yml@dev
+
+  verify:
+    if: ${{ ! startsWith(github.ref, 'refs/tags/') }}
+    uses: idelchi/devenv/.github/workflows/task.yml@dev
 
   test:
-    # needs: verify
+    needs: verify
     if: ${{ ! startsWith(github.ref, 'refs/tags/') }}
-    permissions:
-      contents: write
     strategy:
       matrix:
         os:
@@ -36,8 +34,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Go
-        uses: actions/setup-go@v5
+      - uses: actions/setup-go@v5
         with:
           go-version: "1.23.2"
           check-latest: true
@@ -45,138 +42,34 @@ jobs:
       - name: Run tests
         run: go run ./cmd/godyl --show-platform
 
-  last-tag:
-    runs-on: ubuntu-24.04
+  next-tag:
+    uses: idelchi/devenv/.github/workflows/next-tag.yml@dev
     if: github.ref == 'refs/heads/dev'
-    outputs:
-      tag: ${{ steps.tag.outputs.NEXT_TAG }}
-    env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    needs: test
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: tag
-        id: tag
-        run: |
-          LAST_TAG=$(gh release list -L 1 --exclude-pre-releases --json tagName -q '.[0].tagName')
-          echo "LAST_TAG=${LAST_TAG}" >> ${GITHUB_ENV}
-          echo "LAST_TAG=${LAST_TAG}" >> ${GITHUB_OUTPUT}
-
-          curl -sSL https://raw.githubusercontent.com/idelchi/go-next-tag/refs/heads/dev/install.sh | sh -s -- -d ~/.local/bin
-
-          NEXT_TAG=$(go-next-tag ${LAST_TAG})
-
-          echo "NEXT_TAG=${NEXT_TAG}" >> ${GITHUB_ENV}
-          echo "NEXT_TAG=${NEXT_TAG}" >> ${GITHUB_OUTPUT}
-
-      - name: check-env
-        run: |
-          echo "The last tag is '${LAST_TAG}'"
-          echo "The next tag is '${NEXT_TAG}'"
-
-  tag-prerelease:
-    needs: last-tag
+  prerelease:
+    uses: idelchi/devenv/.github/workflows/prerelease.yml@dev
+    if: github.ref == 'refs/heads/dev'
+    needs: next-tag
     permissions:
       contents: write
       actions: write
-    runs-on: ubuntu-24.04
-    if: github.ref == 'refs/heads/dev'
-    env:
-      TAG: ${{ needs.last-tag.outputs.tag }}-beta
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          fetch-tags: true
-
-      - name: delete old pre-release
-        run: |
-          gh release list --json tagName,isPrerelease -q '.[] | select(.isPrerelease == true) | .tagName' | xargs -I {} gh release delete {}
-        continue-on-error: true
-
-      - name: delete ${{ env.TAG }} release
-        run: |
-          gh release delete ${{ env.TAG }} --yes --cleanup-tag
-        continue-on-error: true
-
-      - name: delete ${{ env.TAG }} tag
-        run: |
-          git tag --delete ${{ env.TAG }}
-          git push origin --delete ${{ env.TAG }}
-        continue-on-error: true
-
-      - name: create ${{ env.TAG }} tag
-        run: |
-          git tag ${{ env.TAG }}
-          git push origin ${{ env.TAG }}
-
-      - name: run workflow for ${{ env.TAG }} tag
-        run: |
-          gh workflow run ${{ github.workflow }} --ref ${{ env.TAG }}
-
-  cleanup:
-    needs: tag-prerelease
-    permissions:
-      actions: write
-    runs-on: ubuntu-24.04
-    if: github.ref == 'refs/heads/dev' && always()
-    continue-on-error: true
-    env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: cleanup old builds
-        run: >
-          gh run list --limit 500
-          --workflow github-actions.yml
-          --status completed
-          --branch dev
-          --json databaseId
-          -q ".[].databaseId"
-          | xargs -n 1 gh run delete
-
-      - name: cleanup old builds
-        run: >
-          gh run list --limit 500 \
-            --workflow github-actions.yml \
-            --status completed \
-            --json databaseId,headBranch \
-            -q '.[] | select(.headBranch | endswith("-beta")) | .databaseId' \
-            | xargs -n 1 gh run delete
+    with:
+      tag: ${{ needs.next-tag.outputs.next }}-beta
 
   release:
+    uses: idelchi/devenv/.github/workflows/gorelease.yml@dev
+    if: startsWith(github.ref, 'refs/tags/')
+    needs: info
     permissions:
       contents: write
-    runs-on: ubuntu-24.04
-    if: startsWith(github.ref, 'refs/tags/')
-    env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Set up Go
-        uses: actions/setup-go@v5
-
-      - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v6
-        with:
-          distribution: goreleaser
-          version: "~> v2"
-          args: release --clean
-# # TODO(Idelchi): Handle release workflows.
-# # https://github.com/skills/release-based-workflow
-# # https://birtony.medium.com/setting-up-automated-release-workflow-with-github-actions-628dbca2446e
-# # https://rangle.io/blog/release-process-github-actions
+  cleanup:
+    uses: idelchi/devenv/.github/workflows/cleanup.yml@dev
+    if: github.ref == 'refs/heads/dev' && always()
+    needs: release
+    permissions:
+      actions: write
+# https://github.com/skills/release-based-workflow
+# https://birtony.medium.com/setting-up-automated-release-workflow-with-github-actions-628dbca2446e
+# https://rangle.io/blog/release-process-github-actions
