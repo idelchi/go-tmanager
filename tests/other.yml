@@ -1,0 +1,23 @@
+- name: idelchi/gocry
+  tags:
+    - other
+
+- name: idelchi/gogen
+  tags:
+    - other
+
+- name: idelchi/go-match
+  tags:
+    - other
+
+- name: idelchi/gonc
+  tags:
+    - other
+
+- name: idelchi/go-next-tag
+  tags:
+    - other
+
+- name: idelchi/wslint
+  tags:
+    - other

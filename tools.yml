@@ -71,11 +71,6 @@
   tags:
     - kubernetes
 
-- name: idelchi/gocry
-  description: Encrypt files or lines
-  tags:
-    - security
-
 - name: syncthing/syncthing
   description: Open Source Continuous File Synchronization
   tags:
