@@ -3,6 +3,7 @@ package commands
 import (
 	"fmt"
 	"os"
+	"runtime"
 	"strings"
 
 	"github.com/mitchellh/mapstructure"
@@ -43,9 +44,8 @@ func flags() {
 	pflag.Bool("dump-tools", false, "Dump out default tools.yml as stdout")
 	pflag.Bool("dry", false, "Run without making any changes (dry run)")
 	pflag.String("log", string(logger.INFO), "Log level (DEBUG, INFO, WARN, ERROR)")
-	pflag.IntP("parallel", "j", 10, "Number of parallel downloads. 0 means unlimited.")
+	pflag.IntP("parallel", "j", runtime.NumCPU(), "Number of parallel downloads. 0 means unlimited.")
 	pflag.BoolP("no-verify-ssl", "k", false, "Skip SSL verification")
-	pflag.BoolP("interactive", "i", false, "Run in interactive mode")
 
 	// Tool flags
 	pflag.String("output", "", "Output path for the downloaded tools")

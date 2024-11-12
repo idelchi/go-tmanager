@@ -77,10 +77,6 @@ func (app *App) Run() error {
 		return app.processUpdate()
 	}
 
-	if app.cfg.Interactive {
-		app.cfg.Log = logger.SILENT
-	}
-
 	app.log = logger.New(app.cfg.Log)
 
 	app.logStartupInfo()
@@ -211,21 +207,6 @@ func (tp *ToolProcessor) Process(tags, withoutTags []string) error {
 	tp.waitGroup = &sync.WaitGroup{}
 	tp.waitGroup.Add(1)
 
-	var tuiErr error
-	var tuiDone sync.WaitGroup
-
-	if tp.app.cfg.Interactive {
-		tp.app.cfg.Dry = true
-		tuiDone.Add(1)
-		go func() {
-			defer tuiDone.Done()
-			if err := launchTUI(tp.toolChan); err != nil {
-				tuiErr = err
-				tp.app.log.Error("TUI error: %v", err)
-			}
-		}()
-	}
-
 	go tp.collectResults()
 
 	for _, tool := range tp.app.toolsList {
@@ -240,13 +221,6 @@ func (tp *ToolProcessor) Process(tags, withoutTags []string) error {
 
 	close(tp.resultCh)
 	tp.waitGroup.Wait()
-
-	if tp.app.cfg.Interactive {
-		tuiDone.Wait()
-		if tuiErr != nil {
-			return fmt.Errorf("TUI error: %v", tuiErr)
-		}
-	}
 
 	if tp.app.hasInstallError {
 		return errors.New("one or more tools failed to install")
@@ -270,9 +244,6 @@ func (tp *ToolProcessor) collectResults() {
 
 	for res := range tp.resultCh {
 		tp.app.processResult(res)
-		if tp.app.cfg.Interactive {
-			tp.toolChan <- *res.tool
-		}
 	}
 }
 
