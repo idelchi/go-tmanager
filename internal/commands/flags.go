@@ -40,6 +40,7 @@ func flags() {
 
 	// Application flags
 	pflag.Bool("update", false, "Update the tools")
+	pflag.Bool("dump-tools", false, "Dump out default tools.yml as stdout")
 	pflag.Bool("dry", false, "Run without making any changes (dry run)")
 	pflag.String("log", string(logger.INFO), "Log level (DEBUG, INFO, WARN, ERROR)")
 	pflag.IntP("parallel", "j", 10, "Number of parallel downloads. 0 means unlimited.")
@@ -67,7 +68,7 @@ func flags() {
 // parseFlags parses the application configuration (in order of precedence) from:
 //   - command-line flags
 //   - environment variables
-func parseFlags() (cfg Config, err error) {
+func parseFlags(version string, defaults []byte) (cfg Config, err error) {
 	flags()
 
 	// Parse the command-line flags with suggestions enabled
@@ -106,7 +107,7 @@ func parseFlags() (cfg Config, err error) {
 	}
 
 	// Handle the commandline flags that exit the application
-	handleExitFlags(cfg)
+	handleExitFlags(version, cfg, defaults)
 
 	return cfg, nil
 }
@@ -125,7 +126,7 @@ func validateInput(cfg *Config) error {
 }
 
 //nolint:forbidigo // Function will print & exit for various help messages.
-func handleExitFlags(cfg Config) {
+func handleExitFlags(version string, cfg Config, defaultEmbedded []byte) {
 	// Check if the version flag was provided
 	if cfg.Version {
 		fmt.Println(version)
@@ -154,7 +155,7 @@ func handleExitFlags(cfg Config) {
 
 	if cfg.Show.Defaults {
 		defaults := Defaults{}
-		if err := defaults.Load(cfg.Defaults.Name()); err != nil {
+		if err := defaults.Load(cfg.Defaults.Name(), defaultEmbedded); err != nil {
 			fmt.Fprintf(os.Stderr, "Error loading defaults: %v\n", err)
 
 			os.Exit(1)
@@ -195,16 +196,3 @@ func loadDotEnv(path file.File) error {
 
 	return nil
 }
-
-// func setEnv(envs ...env.Env) error {
-// 	env := env.Env{}
-// 	for _, e := range envs {
-// 		env = env.Merged(e.Normalized())
-// 	}
-
-// 	if err := env.ToEnv(); err != nil {
-// 		return fmt.Errorf("setting environment variables: %w", err)
-// 	}
-
-// 	return nil
-// }

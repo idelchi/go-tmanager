@@ -12,9 +12,6 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-//go:embed defaults.yml
-var defaultsFile []byte
-
 // Defaults holds all the configuration options for godyl, including tool-specific defaults.
 type Defaults struct {
 	// Inline tool-specific defaults.
@@ -36,8 +33,8 @@ func (d *Defaults) FromFile(path string) error {
 }
 
 // Default loads the embedded default YAML configuration.
-func (d *Defaults) Default() error {
-	return d.Unmarshal(defaultsFile)
+func (d *Defaults) Default(defaults []byte) error {
+	return d.Unmarshal(defaults)
 }
 
 // Validate checks the Defaults struct to ensure all required fields are properly set.
@@ -81,13 +78,13 @@ func (d *Defaults) Merge(cfg Config) (err error) {
 }
 
 // Load loads configuration defaults from a file or uses embedded defaults if not specified.
-func (d *Defaults) Load(path string) error {
+func (d *Defaults) Load(path string, defaults []byte) error {
 	if IsSet("defaults") {
 		if err := d.FromFile(path); err != nil {
 			return fmt.Errorf("loading defaults from %q: %w", path, err)
 		}
 	} else {
-		if err := d.Default(); err != nil {
+		if err := d.Default(defaults); err != nil {
 			return fmt.Errorf("setting defaults: %w", err)
 		}
 	}

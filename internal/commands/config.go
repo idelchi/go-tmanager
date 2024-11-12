@@ -57,6 +57,9 @@ type Config struct {
 	// Show various configurations
 	Show Show `mapstructure:",squash"`
 
+	// DumpTools dump out default tools.yml as stdout
+	DumpTools bool `mapstructure:"dump-tools"`
+
 	// Update the tools
 	Update Update `mapstructure:",squash"`
 	// Run without making any changes (dry run)
