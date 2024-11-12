@@ -8,9 +8,7 @@ before:
     - go mod tidy
 
 builds:
-  - main: ./cmd/godyl
-
-    env:
+  - env:
       - CGO_ENABLED=0
 
     goos:

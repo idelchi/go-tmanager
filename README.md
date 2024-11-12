@@ -197,7 +197,7 @@ In general, settings can be set in the following ways (order of priority):
   output: ~/.local/bin
   ```
 
-If none of the above are fulfilled, the default configuration embedded from [defaults.yml](./cmd/godyl/defaults.yml) will be used.
+If none of the above are fulfilled, the default configuration embedded from [defaults.yml](./defaults.yml) will be used.
 
 ## Tools
 
@@ -664,7 +664,7 @@ A default configuration may be used to specify default settings for all tools. T
 
 The following is embedded and used by default if no default configuration is provided:
 
-[defaults.yml](./cmd/godyl/defaults.yml)
+[defaults.yml](./defaults.yml)
 
 The example above defines:
 

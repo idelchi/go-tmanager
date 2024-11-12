@@ -48,7 +48,7 @@ jobs:
           check-latest: true
 
       - name: Run tests
-        run: go run ./cmd/godyl --show-platform
+        run: go run . --show-platform
 
   next-tag:
     uses: idelchi/devenv/.github/workflows/next-tag.yml@dev
@@ -71,7 +71,6 @@ jobs:
     needs: info
     permissions:
       contents: write
-
 # https://github.com/skills/release-based-workflow
 # https://birtony.medium.com/setting-up-automated-release-workflow-with-github-actions-628dbca2446e
 # https://rangle.io/blog/release-process-github-actions
