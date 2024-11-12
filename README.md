@@ -72,7 +72,7 @@ Tool is inspired by [task](https://github.com/go-task/task), [dra](https://githu
 ### From source
 
 ```sh
-go install github.com/idelchi/godyl/cmd/godyl@latest
+go install github.com/idelchi/godyl@latest
 ```
 
 ### From installation script
