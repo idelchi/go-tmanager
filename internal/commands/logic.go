@@ -1,4 +1,4 @@
-package main
+package commands
 
 import (
 	"errors"
@@ -41,7 +41,7 @@ type result struct {
 }
 
 func main() {
-	app := NewApp()
+	app := commands.NewApp()
 	if err := app.Run(); err != nil {
 		fmt.Fprintf(os.Stderr, "%v\n", err)
 		os.Exit(1)

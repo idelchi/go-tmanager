@@ -8,14 +8,6 @@
             "mode": "debug",
             "program": "main.go",
             "args": ["-w", "file"]
-        },
-        {
-            "name": "Python: Current File",
-            "type": "python",
-            "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal",
-            "justMyCode": false
         }
     ]
 }

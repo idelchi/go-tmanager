@@ -24,7 +24,7 @@ jobs:
   verify:
     if: ${{ ! startsWith(github.ref, 'refs/tags/') }}
     uses: idelchi/devenv/.github/workflows/task.yml@dev
-    needs: cleanup
+    needs: info
 
   test:
     needs: verify

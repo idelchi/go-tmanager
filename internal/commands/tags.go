@@ -1,4 +1,4 @@
-package main
+package commands
 
 // splitTags separates the provided tags into two slices: one for tags without the '!' prefix (with),
 // and another for tags that have the '!' prefix (without).

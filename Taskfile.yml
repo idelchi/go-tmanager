@@ -7,7 +7,7 @@ dotenv: ["taskfile.env"]
 
 vars:
   # This environment variable must exist (i.e it's not enough that it's set in the .env file)
-  DEVENV: $DEVENV
+  DEVENV: .devenv
 
 env:
   CSPELL_CONFIG: ./settings/cspell.yaml
@@ -21,6 +21,7 @@ includes:
     taskfile: "{{.DEVENV}}/taskfiles/Taskfile.go.yml"
     vars:
       COVERAGE: 0.0%
+  github: "{{.DEVENV}}/taskfiles/Taskfile.github.yml"
 
 silent: true
 
@@ -37,7 +38,7 @@ tasks:
     cmds:
       - docker rm -f devenv > /dev/null 2>&1 || true
       - docker compose -f {{.DEVENV}}/docker-compose.yml build --build-arg CACHEBUST=$(date +%s) devenv
-      - docker compose -f {{.DEVENV}}/docker-compose.yml run --name devenv --rm --service-ports devenv {{.CLI_ARGS}}
+      - docker compose -f {{.DEVENV}}/docker-compose.yml run --rm devenv {{.CLI_ARGS}}
     interactive: true
 
   push:
@@ -97,15 +98,3 @@ tasks:
 
   update:
     - task: git:update
-
-  release:
-    - |
-      git c
-      git tag -d v0.0.0 || true
-      git push origin --delete v0.0.0 || true
-      git tag v0.0.0
-      git push origin v0.0.0
-
-  gorelease:
-    - go install github.com/goreleaser/goreleaser/v2@latest
-    - goreleaser --snapshot --clean
