@@ -3,7 +3,6 @@ package commands
 import (
 	"errors"
 	"fmt"
-	"os"
 	"path/filepath"
 	"sync"
 
@@ -110,12 +109,6 @@ func (app *App) initialize() error {
 		return fmt.Errorf("error validating configuration: %v", err)
 	}
 
-	if app.cfg.Show.Detect {
-		app.detect()
-
-		os.Exit(0)
-	}
-
 	app.defaults = Defaults{}
 	if err := app.defaults.Load(app.cfg.Defaults.Name(), app.embedded.defaults); err != nil {
 		return fmt.Errorf("error loading defaults: %v", err)
@@ -135,7 +128,7 @@ func (app *App) processUpdate() error {
 		NoVerifySSL: app.cfg.NoVerifySSL,
 	}
 
-	if err := updater.Update(); err != nil {
+	if err := updater.Update(app.version); err != nil {
 		return fmt.Errorf("error updating: %v", err)
 	}
 

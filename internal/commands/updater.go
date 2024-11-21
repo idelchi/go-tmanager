@@ -22,7 +22,7 @@ type GodylUpdater struct {
 }
 
 // Update performs the update process for the godyl tool, applying the specified strategy.
-func (gu GodylUpdater) Update() error {
+func (gu GodylUpdater) Update(version string) error {
 	// Set default strategy if none is provided.
 	if gu.Strategy == tools.None {
 		gu.Strategy = tools.Upgrade
@@ -49,6 +49,12 @@ func (gu GodylUpdater) Update() error {
 
 	// Apply any default values to the tool.
 	tool.ApplyDefaults(gu.Defaults)
+
+	if tool.Version != version {
+		fmt.Println("godyl is already up-to-date")
+
+		return nil
+	}
 
 	// Download the tool.
 	output, err := gu.Get(tool)
