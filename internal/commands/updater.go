@@ -50,6 +50,8 @@ func (gu GodylUpdater) Update(version string) error {
 	// Apply any default values to the tool.
 	tool.ApplyDefaults(gu.Defaults)
 
+	fmt.Printf("Update from %q -> %q\n", tool.Version, version)
+
 	if tool.Version != version {
 		fmt.Println("godyl is already up-to-date")
 
