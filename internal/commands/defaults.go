@@ -4,6 +4,7 @@ import (
 	_ "embed"
 	"fmt"
 	"os"
+	"path/filepath"
 
 	"github.com/go-playground/validator/v10"
 
@@ -25,10 +26,11 @@ func (d *Defaults) Unmarshal(data []byte) error {
 
 // FromFile reads and parses a YAML file from the given path into the Defaults struct.
 func (d *Defaults) FromFile(path string) error {
-	data, err := os.ReadFile(path)
+	data, err := os.ReadFile(filepath.Clean(path))
 	if err != nil {
 		return err
 	}
+
 	return d.Unmarshal(data)
 }
 
@@ -43,6 +45,7 @@ func (d *Defaults) Validate() error {
 	if err := validate.Struct(d); err != nil {
 		return fmt.Errorf("validating Defaults: %w", err)
 	}
+
 	return nil
 }
 

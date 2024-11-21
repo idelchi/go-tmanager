@@ -64,13 +64,11 @@ tasks:
     - task: go:format
 
   lint:
+    # TODO(Idelchi): Move as `deps` when fixed.
     - cmd: task lint:default
       ignore_error: true
     - cmd: task go:lint
       ignore_error: true
-    # deps:
-    #   - lint:default
-    #   - go:lint
 
   build:
     - task: go:build
