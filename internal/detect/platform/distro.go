@@ -57,6 +57,7 @@ func (d *Distribution) Parse(name string) error {
 			if strings.Contains(name, alias) {
 				d.Type = info.Type
 				d.Raw = alias
+
 				return nil
 			}
 		}

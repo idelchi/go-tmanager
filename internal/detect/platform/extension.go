@@ -25,19 +25,15 @@ func (e Extension) String() string {
 }
 
 func (e *Extension) Parse(name string) error {
-	ext := filepath.Ext(name)
-
-	switch ext {
-	case ".exe":
-		*e = Extension(".exe")
+	switch ext := filepath.Ext(name); ext {
 	case ".gz":
 		if strings.HasSuffix(name, ".tar.gz") {
 			*e = Extension(".tar.gz")
+		} else {
+			*e = Extension(ext)
 		}
-	case ".zip":
-		*e = Extension(".zip")
 	default:
-		*e = Extension("")
+		*e = Extension(ext)
 	}
 
 	return nil

@@ -49,10 +49,13 @@ func (gu GodylUpdater) Update(version string) error {
 
 	// Apply any default values to the tool.
 	tool.ApplyDefaults(gu.Defaults)
+	if err := tool.Resolve(nil, nil); err != nil {
+		return fmt.Errorf("resolving tool: %w", err)
+	}
 
-	fmt.Printf("Update requested from %q -> %q\n", tool.Version, version)
+	fmt.Printf("Update requested from %q -> %q\n", version, tool.Version)
 
-	if tool.Version != version {
+	if tool.Version == version {
 		fmt.Println("godyl is already up-to-date")
 
 		return nil

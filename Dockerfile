@@ -48,7 +48,7 @@ ARG GODYL_VERSION="unofficial & built by unknown"
 RUN --mount=type=cache,target=${GOMODCACHE},uid=1001,gid=1001 \
     --mount=type=cache,target=${GOCACHE},uid=1001,gid=1001 \
     # go install golang.org/x/tools/cmd/stringer && \
-    GOOS=${TARGETOS} GOARCH=${TARGETARCH} CGO_ENABLED=0 go build -ldflags="-s -w -X 'main.version=${GODYL_VERSION}'" -o bin/ ./cmd/...
+    GOOS=${TARGETOS} GOARCH=${TARGETARCH} CGO_ENABLED=0 go build -ldflags="-s -w -X 'main.version=${GODYL_VERSION}'" -o bin/ .
 
 # RUN go mod download
 

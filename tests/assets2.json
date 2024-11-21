@@ -2268,48 +2268,48 @@
   ],
   "idelchi/godyl": [
     {
-      "name": "godyl_0.1-beta_checksums.txt",
-      "browser_download_url": "https://github.com/idelchi/godyl/releases/download/v0.1-beta/godyl_0.1-beta_checksums.txt",
+      "name": "godyl_0.2_checksums.txt",
+      "browser_download_url": "https://github.com/idelchi/godyl/releases/download/v0.2/godyl_0.2_checksums.txt",
       "content_type": "text/plain; charset=utf-8"
     },
     {
       "name": "godyl_darwin_amd64.tar.gz",
-      "browser_download_url": "https://github.com/idelchi/godyl/releases/download/v0.1-beta/godyl_darwin_amd64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/godyl/releases/download/v0.2/godyl_darwin_amd64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "godyl_darwin_arm64.tar.gz",
-      "browser_download_url": "https://github.com/idelchi/godyl/releases/download/v0.1-beta/godyl_darwin_arm64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/godyl/releases/download/v0.2/godyl_darwin_arm64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "godyl_linux_amd64.tar.gz",
-      "browser_download_url": "https://github.com/idelchi/godyl/releases/download/v0.1-beta/godyl_linux_amd64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/godyl/releases/download/v0.2/godyl_linux_amd64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "godyl_linux_arm64.tar.gz",
-      "browser_download_url": "https://github.com/idelchi/godyl/releases/download/v0.1-beta/godyl_linux_arm64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/godyl/releases/download/v0.2/godyl_linux_arm64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "godyl_linux_armv6.tar.gz",
-      "browser_download_url": "https://github.com/idelchi/godyl/releases/download/v0.1-beta/godyl_linux_armv6.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/godyl/releases/download/v0.2/godyl_linux_armv6.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "godyl_linux_armv7.tar.gz",
-      "browser_download_url": "https://github.com/idelchi/godyl/releases/download/v0.1-beta/godyl_linux_armv7.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/godyl/releases/download/v0.2/godyl_linux_armv7.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "godyl_linux_x86.tar.gz",
-      "browser_download_url": "https://github.com/idelchi/godyl/releases/download/v0.1-beta/godyl_linux_x86.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/godyl/releases/download/v0.2/godyl_linux_x86.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "godyl_windows_amd64.zip",
-      "browser_download_url": "https://github.com/idelchi/godyl/releases/download/v0.1-beta/godyl_windows_amd64.zip",
+      "browser_download_url": "https://github.com/idelchi/godyl/releases/download/v0.2/godyl_windows_amd64.zip",
       "content_type": "application/zip"
     }
   ],
