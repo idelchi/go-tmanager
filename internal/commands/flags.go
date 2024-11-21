@@ -37,7 +37,6 @@ func flags() {
 	pflag.Bool("show-defaults", false, "Show the parsed default configuration and exit")
 	pflag.Bool("show-env", false, "Show the parsed environment variables and exit")
 	pflag.Bool("show-platform", false, "Detect the platform and exit")
-	pflag.Bool("detect", false, "Detect and exit")
 
 	// Application flags
 	pflag.Bool("update", false, "Update the tools")
