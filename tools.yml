@@ -479,6 +479,13 @@
   tags:
     - automation
 
+- name: hashicorp/vault
+  description: Infrastructure as Code tool
+  path: https://releases.hashicorp.com/vault/{{ .Version | trimPrefix "v" }}/vault_{{ .Version | trimPrefix "v" }}_{{ .OS }}_{{ .ARCH }}.zip
+  aliases: tf
+  tags:
+    - automation
+
 - name: nvbn/thefuck
   description: Magnificent app which corrects your previous console command
   exe: thefuck
