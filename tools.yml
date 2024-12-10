@@ -302,9 +302,8 @@
     patterns:
       - bin/gh{{ .EXTENSION }}$
   post:
-    - "{{ .Output }}/{{ .Exe }} extension install github/gh-copilot"
-    - "{{ .Output }}/{{ .Exe }} extension upgrade gh-copilot"
-    - echo 'eval "$(gh copilot alias -- bash)"' >> ~/.bashrc
+    - "{{ .Output }}/{{ .Exe }} extension install github/gh-copilot || true"
+    - "{{ .Output }}/{{ .Exe }} extension upgrade gh-copilot || true"
   tags:
     - terminal
 

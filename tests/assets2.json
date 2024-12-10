@@ -2221,48 +2221,48 @@
   ],
   "idelchi/gocry": [
     {
-      "name": "gocry_0.0_checksums.txt",
-      "browser_download_url": "https://github.com/idelchi/gocry/releases/download/v0.0/gocry_0.0_checksums.txt",
+      "name": "gocry_0.0.0_checksums.txt",
+      "browser_download_url": "https://github.com/idelchi/gocry/releases/download/v0.0.0/gocry_0.0.0_checksums.txt",
       "content_type": "text/plain; charset=utf-8"
     },
     {
       "name": "gocry_darwin_amd64.tar.gz",
-      "browser_download_url": "https://github.com/idelchi/gocry/releases/download/v0.0/gocry_darwin_amd64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/gocry/releases/download/v0.0.0/gocry_darwin_amd64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "gocry_darwin_arm64.tar.gz",
-      "browser_download_url": "https://github.com/idelchi/gocry/releases/download/v0.0/gocry_darwin_arm64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/gocry/releases/download/v0.0.0/gocry_darwin_arm64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "gocry_linux_amd64.tar.gz",
-      "browser_download_url": "https://github.com/idelchi/gocry/releases/download/v0.0/gocry_linux_amd64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/gocry/releases/download/v0.0.0/gocry_linux_amd64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "gocry_linux_arm64.tar.gz",
-      "browser_download_url": "https://github.com/idelchi/gocry/releases/download/v0.0/gocry_linux_arm64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/gocry/releases/download/v0.0.0/gocry_linux_arm64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "gocry_linux_armv6.tar.gz",
-      "browser_download_url": "https://github.com/idelchi/gocry/releases/download/v0.0/gocry_linux_armv6.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/gocry/releases/download/v0.0.0/gocry_linux_armv6.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "gocry_linux_armv7.tar.gz",
-      "browser_download_url": "https://github.com/idelchi/gocry/releases/download/v0.0/gocry_linux_armv7.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/gocry/releases/download/v0.0.0/gocry_linux_armv7.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "gocry_linux_x86.tar.gz",
-      "browser_download_url": "https://github.com/idelchi/gocry/releases/download/v0.0/gocry_linux_x86.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/gocry/releases/download/v0.0.0/gocry_linux_x86.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "gocry_windows_amd64.zip",
-      "browser_download_url": "https://github.com/idelchi/gocry/releases/download/v0.0/gocry_windows_amd64.zip",
+      "browser_download_url": "https://github.com/idelchi/gocry/releases/download/v0.0.0/gocry_windows_amd64.zip",
       "content_type": "application/zip"
     }
   ],
@@ -4967,98 +4967,98 @@
   ],
   "traefik/traefik": [
     {
-      "name": "traefik-v3.1.6.src.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.1.6/traefik-v3.1.6.src.tar.gz",
+      "name": "traefik-v3.2.1.src.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik-v3.2.1.src.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.1.6_checksums.txt",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.1.6/traefik_v3.1.6_checksums.txt",
+      "name": "traefik_v3.2.1_checksums.txt",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_checksums.txt",
       "content_type": "text/plain; charset=utf-8"
     },
     {
-      "name": "traefik_v3.1.6_darwin_amd64.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.1.6/traefik_v3.1.6_darwin_amd64.tar.gz",
+      "name": "traefik_v3.2.1_darwin_amd64.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_darwin_amd64.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.1.6_darwin_arm64.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.1.6/traefik_v3.1.6_darwin_arm64.tar.gz",
+      "name": "traefik_v3.2.1_darwin_arm64.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_darwin_arm64.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.1.6_freebsd_386.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.1.6/traefik_v3.1.6_freebsd_386.tar.gz",
+      "name": "traefik_v3.2.1_freebsd_386.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_freebsd_386.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.1.6_freebsd_amd64.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.1.6/traefik_v3.1.6_freebsd_amd64.tar.gz",
+      "name": "traefik_v3.2.1_freebsd_amd64.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_freebsd_amd64.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.1.6_linux_386.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.1.6/traefik_v3.1.6_linux_386.tar.gz",
+      "name": "traefik_v3.2.1_linux_386.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_linux_386.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.1.6_linux_amd64.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.1.6/traefik_v3.1.6_linux_amd64.tar.gz",
+      "name": "traefik_v3.2.1_linux_amd64.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_linux_amd64.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.1.6_linux_arm64.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.1.6/traefik_v3.1.6_linux_arm64.tar.gz",
+      "name": "traefik_v3.2.1_linux_arm64.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_linux_arm64.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.1.6_linux_armv6.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.1.6/traefik_v3.1.6_linux_armv6.tar.gz",
+      "name": "traefik_v3.2.1_linux_armv6.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_linux_armv6.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.1.6_linux_armv7.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.1.6/traefik_v3.1.6_linux_armv7.tar.gz",
+      "name": "traefik_v3.2.1_linux_armv7.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_linux_armv7.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.1.6_linux_ppc64le.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.1.6/traefik_v3.1.6_linux_ppc64le.tar.gz",
+      "name": "traefik_v3.2.1_linux_ppc64le.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_linux_ppc64le.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.1.6_linux_riscv64.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.1.6/traefik_v3.1.6_linux_riscv64.tar.gz",
+      "name": "traefik_v3.2.1_linux_riscv64.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_linux_riscv64.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.1.6_linux_s390x.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.1.6/traefik_v3.1.6_linux_s390x.tar.gz",
+      "name": "traefik_v3.2.1_linux_s390x.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_linux_s390x.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.1.6_openbsd_386.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.1.6/traefik_v3.1.6_openbsd_386.tar.gz",
+      "name": "traefik_v3.2.1_openbsd_386.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_openbsd_386.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.1.6_openbsd_amd64.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.1.6/traefik_v3.1.6_openbsd_amd64.tar.gz",
+      "name": "traefik_v3.2.1_openbsd_amd64.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_openbsd_amd64.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.1.6_windows_386.zip",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.1.6/traefik_v3.1.6_windows_386.zip",
+      "name": "traefik_v3.2.1_windows_386.zip",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_windows_386.zip",
       "content_type": "application/zip"
     },
     {
-      "name": "traefik_v3.1.6_windows_amd64.zip",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.1.6/traefik_v3.1.6_windows_amd64.zip",
+      "name": "traefik_v3.2.1_windows_amd64.zip",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_windows_amd64.zip",
       "content_type": "application/zip"
     },
     {
-      "name": "traefik_v3.1.6_windows_arm64.zip",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.1.6/traefik_v3.1.6_windows_arm64.zip",
+      "name": "traefik_v3.2.1_windows_arm64.zip",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_windows_arm64.zip",
       "content_type": "application/zip"
     }
   ],
