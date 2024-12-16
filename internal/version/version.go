@@ -29,9 +29,9 @@ func NewDefaultVersionParser() *Version {
 		},
 		Commands: [][]string{
 			{"--version"}, // Attempt to get version with --version flag.
-			{"version"},   // Attempt to get version with version command.
-			{"-version"},  // Attempt to get version with -version flag.
 			{"-v"},        // Attempt to get version with -v flag.
+			{"-version"},  // Attempt to get version with -version flag.
+			{"version"},   // Attempt to get version with version command.
 		},
 	}
 }
