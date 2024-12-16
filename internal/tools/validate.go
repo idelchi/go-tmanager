@@ -17,6 +17,8 @@ import (
 var (
 	// ErrAlreadyExists indicates that the tool already exists in the system.
 	ErrAlreadyExists = fmt.Errorf("tool already exists")
+	// ErrUpToDate indicates that the tool is already up to date.
+	ErrUpToDate = fmt.Errorf("tool is up to date")
 	// ErrDoesHaveTags indicates that the tool has tags that are in the excluded tags list.
 	ErrDoesHaveTags = fmt.Errorf("tool contains excluded tags")
 	// ErrDoesNotHaveTags indicates that the tool does not contain required tags.

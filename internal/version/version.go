@@ -12,7 +12,7 @@ type Version struct {
 	// Patterns contains the list of regex patterns for parsing the version from output strings.
 	Patterns []*regexp.Regexp
 	// Commands contains the list of command strategies used to extract the version.
-	Commands [][]string
+	Commands []string
 	// String holds the string representation of the parsed version.
 	String string
 }
@@ -27,11 +27,11 @@ func NewDefaultVersionParser() *Version {
 			// Pattern for versions formatted as X.X, surrounded by any characters.
 			regexp.MustCompile(`.*?(\d+\.\d+).*`),
 		},
-		Commands: [][]string{
-			{"--version"}, // Attempt to get version with --version flag.
-			{"-v"},        // Attempt to get version with -v flag.
-			{"-version"},  // Attempt to get version with -version flag.
-			{"version"},   // Attempt to get version with version command.
+		Commands: []string{
+			"--version", // Attempt to get version with --version flag.
+			"-v",        // Attempt to get version with -v flag.
+			"-version",  // Attempt to get version with -version flag.
+			"version",   // Attempt to get version with version command.
 		},
 	}
 }

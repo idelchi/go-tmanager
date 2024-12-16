@@ -108,6 +108,7 @@
 
 - name: traefik/traefik
   description: The Cloud Native Application Proxy
+  parse: version
   tags:
     - automation
 
@@ -143,6 +144,7 @@
 
 - name: rs/curlie
   description: The power of curl, the ease of use of httpie
+  parse: version
   tags:
     - terminal
 
@@ -225,6 +227,7 @@
       condition: '{{ eq .OS "windows" }}'
   fallbacks:
     - go
+  parse: "-"
   tags:
     - automation
 
@@ -240,6 +243,7 @@
   hints:
     - pattern: "{{ .OS }}"
       must: true
+  parse: "-"
   tags:
     - terminal
 

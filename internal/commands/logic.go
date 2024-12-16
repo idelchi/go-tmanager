@@ -296,6 +296,7 @@ func (app *App) processResult(res result) {
 // handleToolError logs errors encountered during tool processing.
 func (app *App) handleToolError(tool *tools.Tool, err error, msg string) {
 	if errors.Is(err, tools.ErrAlreadyExists) ||
+		errors.Is(err, tools.ErrUpToDate) ||
 		errors.Is(err, tools.ErrDoesNotHaveTags) ||
 		errors.Is(err, tools.ErrDoesHaveTags) ||
 		errors.Is(err, tools.ErrSkipped) {

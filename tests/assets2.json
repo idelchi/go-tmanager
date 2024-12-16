@@ -175,33 +175,33 @@
   ],
   "Byron/dua-cli": [
     {
-      "name": "dua-v2.29.2-aarch64-unknown-linux-musl.tar.gz",
-      "browser_download_url": "https://github.com/Byron/dua-cli/releases/download/v2.29.2/dua-v2.29.2-aarch64-unknown-linux-musl.tar.gz",
+      "name": "dua-v2.29.4-aarch64-unknown-linux-musl.tar.gz",
+      "browser_download_url": "https://github.com/Byron/dua-cli/releases/download/v2.29.4/dua-v2.29.4-aarch64-unknown-linux-musl.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "dua-v2.29.2-arm-unknown-linux-gnueabihf.tar.gz",
-      "browser_download_url": "https://github.com/Byron/dua-cli/releases/download/v2.29.2/dua-v2.29.2-arm-unknown-linux-gnueabihf.tar.gz",
+      "name": "dua-v2.29.4-arm-unknown-linux-gnueabihf.tar.gz",
+      "browser_download_url": "https://github.com/Byron/dua-cli/releases/download/v2.29.4/dua-v2.29.4-arm-unknown-linux-gnueabihf.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "dua-v2.29.2-i686-pc-windows-msvc.zip",
-      "browser_download_url": "https://github.com/Byron/dua-cli/releases/download/v2.29.2/dua-v2.29.2-i686-pc-windows-msvc.zip",
+      "name": "dua-v2.29.4-i686-pc-windows-msvc.zip",
+      "browser_download_url": "https://github.com/Byron/dua-cli/releases/download/v2.29.4/dua-v2.29.4-i686-pc-windows-msvc.zip",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "dua-v2.29.2-x86_64-apple-darwin.tar.gz",
-      "browser_download_url": "https://github.com/Byron/dua-cli/releases/download/v2.29.2/dua-v2.29.2-x86_64-apple-darwin.tar.gz",
+      "name": "dua-v2.29.4-x86_64-apple-darwin.tar.gz",
+      "browser_download_url": "https://github.com/Byron/dua-cli/releases/download/v2.29.4/dua-v2.29.4-x86_64-apple-darwin.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "dua-v2.29.2-x86_64-pc-windows-msvc.zip",
-      "browser_download_url": "https://github.com/Byron/dua-cli/releases/download/v2.29.2/dua-v2.29.2-x86_64-pc-windows-msvc.zip",
+      "name": "dua-v2.29.4-x86_64-pc-windows-msvc.zip",
+      "browser_download_url": "https://github.com/Byron/dua-cli/releases/download/v2.29.4/dua-v2.29.4-x86_64-pc-windows-msvc.zip",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "dua-v2.29.2-x86_64-unknown-linux-musl.tar.gz",
-      "browser_download_url": "https://github.com/Byron/dua-cli/releases/download/v2.29.2/dua-v2.29.2-x86_64-unknown-linux-musl.tar.gz",
+      "name": "dua-v2.29.4-x86_64-unknown-linux-musl.tar.gz",
+      "browser_download_url": "https://github.com/Byron/dua-cli/releases/download/v2.29.4/dua-v2.29.4-x86_64-unknown-linux-musl.tar.gz",
       "content_type": "application/octet-stream"
     }
   ],
@@ -672,87 +672,52 @@
   "casey/just": [
     {
       "name": "CHANGELOG.md",
-      "browser_download_url": "https://github.com/casey/just/releases/download/1.36.0/CHANGELOG.md",
+      "browser_download_url": "https://github.com/casey/just/releases/download/1.38.0/CHANGELOG.md",
       "content_type": "text/markdown"
     },
     {
-      "name": "just-1.36.0-aarch64-apple-darwin.tar.gz",
-      "browser_download_url": "https://github.com/casey/just/releases/download/1.36.0/just-1.36.0-aarch64-apple-darwin.tar.gz",
+      "name": "just-1.38.0-aarch64-apple-darwin.tar.gz",
+      "browser_download_url": "https://github.com/casey/just/releases/download/1.38.0/just-1.38.0-aarch64-apple-darwin.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "just-1.36.0-aarch64-apple-darwin.tar.gz.sha256sum",
-      "browser_download_url": "https://github.com/casey/just/releases/download/1.36.0/just-1.36.0-aarch64-apple-darwin.tar.gz.sha256sum",
-      "content_type": "application/octet-stream"
-    },
-    {
-      "name": "just-1.36.0-aarch64-pc-windows-msvc.zip",
-      "browser_download_url": "https://github.com/casey/just/releases/download/1.36.0/just-1.36.0-aarch64-pc-windows-msvc.zip",
+      "name": "just-1.38.0-aarch64-pc-windows-msvc.zip",
+      "browser_download_url": "https://github.com/casey/just/releases/download/1.38.0/just-1.38.0-aarch64-pc-windows-msvc.zip",
       "content_type": "application/zip"
     },
     {
-      "name": "just-1.36.0-aarch64-pc-windows-msvc.zip.sha256sum",
-      "browser_download_url": "https://github.com/casey/just/releases/download/1.36.0/just-1.36.0-aarch64-pc-windows-msvc.zip.sha256sum",
-      "content_type": "application/octet-stream"
-    },
-    {
-      "name": "just-1.36.0-aarch64-unknown-linux-musl.tar.gz",
-      "browser_download_url": "https://github.com/casey/just/releases/download/1.36.0/just-1.36.0-aarch64-unknown-linux-musl.tar.gz",
+      "name": "just-1.38.0-aarch64-unknown-linux-musl.tar.gz",
+      "browser_download_url": "https://github.com/casey/just/releases/download/1.38.0/just-1.38.0-aarch64-unknown-linux-musl.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "just-1.36.0-aarch64-unknown-linux-musl.tar.gz.sha256sum",
-      "browser_download_url": "https://github.com/casey/just/releases/download/1.36.0/just-1.36.0-aarch64-unknown-linux-musl.tar.gz.sha256sum",
-      "content_type": "application/octet-stream"
-    },
-    {
-      "name": "just-1.36.0-arm-unknown-linux-musleabihf.tar.gz",
-      "browser_download_url": "https://github.com/casey/just/releases/download/1.36.0/just-1.36.0-arm-unknown-linux-musleabihf.tar.gz",
+      "name": "just-1.38.0-arm-unknown-linux-musleabihf.tar.gz",
+      "browser_download_url": "https://github.com/casey/just/releases/download/1.38.0/just-1.38.0-arm-unknown-linux-musleabihf.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "just-1.36.0-arm-unknown-linux-musleabihf.tar.gz.sha256sum",
-      "browser_download_url": "https://github.com/casey/just/releases/download/1.36.0/just-1.36.0-arm-unknown-linux-musleabihf.tar.gz.sha256sum",
-      "content_type": "application/octet-stream"
-    },
-    {
-      "name": "just-1.36.0-armv7-unknown-linux-musleabihf.tar.gz",
-      "browser_download_url": "https://github.com/casey/just/releases/download/1.36.0/just-1.36.0-armv7-unknown-linux-musleabihf.tar.gz",
+      "name": "just-1.38.0-armv7-unknown-linux-musleabihf.tar.gz",
+      "browser_download_url": "https://github.com/casey/just/releases/download/1.38.0/just-1.38.0-armv7-unknown-linux-musleabihf.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "just-1.36.0-armv7-unknown-linux-musleabihf.tar.gz.sha256sum",
-      "browser_download_url": "https://github.com/casey/just/releases/download/1.36.0/just-1.36.0-armv7-unknown-linux-musleabihf.tar.gz.sha256sum",
-      "content_type": "application/octet-stream"
-    },
-    {
-      "name": "just-1.36.0-x86_64-apple-darwin.tar.gz",
-      "browser_download_url": "https://github.com/casey/just/releases/download/1.36.0/just-1.36.0-x86_64-apple-darwin.tar.gz",
+      "name": "just-1.38.0-x86_64-apple-darwin.tar.gz",
+      "browser_download_url": "https://github.com/casey/just/releases/download/1.38.0/just-1.38.0-x86_64-apple-darwin.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "just-1.36.0-x86_64-apple-darwin.tar.gz.sha256sum",
-      "browser_download_url": "https://github.com/casey/just/releases/download/1.36.0/just-1.36.0-x86_64-apple-darwin.tar.gz.sha256sum",
-      "content_type": "application/octet-stream"
-    },
-    {
-      "name": "just-1.36.0-x86_64-pc-windows-msvc.zip",
-      "browser_download_url": "https://github.com/casey/just/releases/download/1.36.0/just-1.36.0-x86_64-pc-windows-msvc.zip",
+      "name": "just-1.38.0-x86_64-pc-windows-msvc.zip",
+      "browser_download_url": "https://github.com/casey/just/releases/download/1.38.0/just-1.38.0-x86_64-pc-windows-msvc.zip",
       "content_type": "application/zip"
     },
     {
-      "name": "just-1.36.0-x86_64-pc-windows-msvc.zip.sha256sum",
-      "browser_download_url": "https://github.com/casey/just/releases/download/1.36.0/just-1.36.0-x86_64-pc-windows-msvc.zip.sha256sum",
-      "content_type": "application/octet-stream"
-    },
-    {
-      "name": "just-1.36.0-x86_64-unknown-linux-musl.tar.gz",
-      "browser_download_url": "https://github.com/casey/just/releases/download/1.36.0/just-1.36.0-x86_64-unknown-linux-musl.tar.gz",
+      "name": "just-1.38.0-x86_64-unknown-linux-musl.tar.gz",
+      "browser_download_url": "https://github.com/casey/just/releases/download/1.38.0/just-1.38.0-x86_64-unknown-linux-musl.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "just-1.36.0-x86_64-unknown-linux-musl.tar.gz.sha256sum",
-      "browser_download_url": "https://github.com/casey/just/releases/download/1.36.0/just-1.36.0-x86_64-unknown-linux-musl.tar.gz.sha256sum",
+      "name": "SHA256SUMS",
+      "browser_download_url": "https://github.com/casey/just/releases/download/1.38.0/SHA256SUMS",
       "content_type": "application/octet-stream"
     }
   ],
@@ -1134,310 +1099,310 @@
   ],
   "cli/cli": [
     {
-      "name": "gh_2.59.0_checksums.txt",
-      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.59.0/gh_2.59.0_checksums.txt",
+      "name": "gh_2.63.2_checksums.txt",
+      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.63.2/gh_2.63.2_checksums.txt",
       "content_type": "text/plain; charset=utf-8"
     },
     {
-      "name": "gh_2.59.0_linux_386.deb",
-      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.59.0/gh_2.59.0_linux_386.deb",
+      "name": "gh_2.63.2_linux_386.deb",
+      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.63.2/gh_2.63.2_linux_386.deb",
       "content_type": "application/x-debian-package"
     },
     {
-      "name": "gh_2.59.0_linux_386.rpm",
-      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.59.0/gh_2.59.0_linux_386.rpm",
+      "name": "gh_2.63.2_linux_386.rpm",
+      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.63.2/gh_2.63.2_linux_386.rpm",
       "content_type": "application/x-rpm"
     },
     {
-      "name": "gh_2.59.0_linux_386.tar.gz",
-      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.59.0/gh_2.59.0_linux_386.tar.gz",
+      "name": "gh_2.63.2_linux_386.tar.gz",
+      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.63.2/gh_2.63.2_linux_386.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "gh_2.59.0_linux_amd64.deb",
-      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.59.0/gh_2.59.0_linux_amd64.deb",
+      "name": "gh_2.63.2_linux_amd64.deb",
+      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.63.2/gh_2.63.2_linux_amd64.deb",
       "content_type": "application/x-debian-package"
     },
     {
-      "name": "gh_2.59.0_linux_amd64.rpm",
-      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.59.0/gh_2.59.0_linux_amd64.rpm",
+      "name": "gh_2.63.2_linux_amd64.rpm",
+      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.63.2/gh_2.63.2_linux_amd64.rpm",
       "content_type": "application/x-rpm"
     },
     {
-      "name": "gh_2.59.0_linux_amd64.tar.gz",
-      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.59.0/gh_2.59.0_linux_amd64.tar.gz",
+      "name": "gh_2.63.2_linux_amd64.tar.gz",
+      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.63.2/gh_2.63.2_linux_amd64.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "gh_2.59.0_linux_arm64.deb",
-      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.59.0/gh_2.59.0_linux_arm64.deb",
+      "name": "gh_2.63.2_linux_arm64.deb",
+      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.63.2/gh_2.63.2_linux_arm64.deb",
       "content_type": "application/x-debian-package"
     },
     {
-      "name": "gh_2.59.0_linux_arm64.rpm",
-      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.59.0/gh_2.59.0_linux_arm64.rpm",
+      "name": "gh_2.63.2_linux_arm64.rpm",
+      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.63.2/gh_2.63.2_linux_arm64.rpm",
       "content_type": "application/x-rpm"
     },
     {
-      "name": "gh_2.59.0_linux_arm64.tar.gz",
-      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.59.0/gh_2.59.0_linux_arm64.tar.gz",
+      "name": "gh_2.63.2_linux_arm64.tar.gz",
+      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.63.2/gh_2.63.2_linux_arm64.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "gh_2.59.0_linux_armv6.deb",
-      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.59.0/gh_2.59.0_linux_armv6.deb",
+      "name": "gh_2.63.2_linux_armv6.deb",
+      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.63.2/gh_2.63.2_linux_armv6.deb",
       "content_type": "application/x-debian-package"
     },
     {
-      "name": "gh_2.59.0_linux_armv6.rpm",
-      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.59.0/gh_2.59.0_linux_armv6.rpm",
+      "name": "gh_2.63.2_linux_armv6.rpm",
+      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.63.2/gh_2.63.2_linux_armv6.rpm",
       "content_type": "application/x-rpm"
     },
     {
-      "name": "gh_2.59.0_linux_armv6.tar.gz",
-      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.59.0/gh_2.59.0_linux_armv6.tar.gz",
+      "name": "gh_2.63.2_linux_armv6.tar.gz",
+      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.63.2/gh_2.63.2_linux_armv6.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "gh_2.59.0_macOS_amd64.zip",
-      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.59.0/gh_2.59.0_macOS_amd64.zip",
+      "name": "gh_2.63.2_macOS_amd64.zip",
+      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.63.2/gh_2.63.2_macOS_amd64.zip",
       "content_type": "application/zip"
     },
     {
-      "name": "gh_2.59.0_macOS_arm64.zip",
-      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.59.0/gh_2.59.0_macOS_arm64.zip",
+      "name": "gh_2.63.2_macOS_arm64.zip",
+      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.63.2/gh_2.63.2_macOS_arm64.zip",
       "content_type": "application/zip"
     },
     {
-      "name": "gh_2.59.0_macOS_universal.pkg",
-      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.59.0/gh_2.59.0_macOS_universal.pkg",
+      "name": "gh_2.63.2_macOS_universal.pkg",
+      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.63.2/gh_2.63.2_macOS_universal.pkg",
       "content_type": "application/x-xar"
     },
     {
-      "name": "gh_2.59.0_windows_386.msi",
-      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.59.0/gh_2.59.0_windows_386.msi",
+      "name": "gh_2.63.2_windows_386.msi",
+      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.63.2/gh_2.63.2_windows_386.msi",
       "content_type": "application/x-msi"
     },
     {
-      "name": "gh_2.59.0_windows_386.zip",
-      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.59.0/gh_2.59.0_windows_386.zip",
+      "name": "gh_2.63.2_windows_386.zip",
+      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.63.2/gh_2.63.2_windows_386.zip",
       "content_type": "application/zip"
     },
     {
-      "name": "gh_2.59.0_windows_amd64.msi",
-      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.59.0/gh_2.59.0_windows_amd64.msi",
+      "name": "gh_2.63.2_windows_amd64.msi",
+      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.63.2/gh_2.63.2_windows_amd64.msi",
       "content_type": "application/x-msi"
     },
     {
-      "name": "gh_2.59.0_windows_amd64.zip",
-      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.59.0/gh_2.59.0_windows_amd64.zip",
+      "name": "gh_2.63.2_windows_amd64.zip",
+      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.63.2/gh_2.63.2_windows_amd64.zip",
       "content_type": "application/zip"
     },
     {
-      "name": "gh_2.59.0_windows_arm64.zip",
-      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.59.0/gh_2.59.0_windows_arm64.zip",
+      "name": "gh_2.63.2_windows_arm64.zip",
+      "browser_download_url": "https://github.com/cli/cli/releases/download/v2.63.2/gh_2.63.2_windows_arm64.zip",
       "content_type": "application/zip"
     }
   ],
   "derailed/k9s": [
     {
       "name": "checksums.sha256",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/checksums.sha256",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/checksums.sha256",
       "content_type": "application/octet-stream"
     },
     {
       "name": "k9s_Darwin_amd64.tar.gz",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Darwin_amd64.tar.gz",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_Darwin_amd64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "k9s_Darwin_amd64.tar.gz.sbom.json",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Darwin_amd64.tar.gz.sbom.json",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_Darwin_amd64.tar.gz.sbom.json",
       "content_type": "application/json"
     },
     {
       "name": "k9s_Darwin_arm64.tar.gz",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Darwin_arm64.tar.gz",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_Darwin_arm64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "k9s_Darwin_arm64.tar.gz.sbom.json",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Darwin_arm64.tar.gz.sbom.json",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_Darwin_arm64.tar.gz.sbom.json",
       "content_type": "application/json"
     },
     {
       "name": "k9s_Freebsd_amd64.tar.gz",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Freebsd_amd64.tar.gz",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_Freebsd_amd64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "k9s_Freebsd_amd64.tar.gz.sbom.json",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Freebsd_amd64.tar.gz.sbom.json",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_Freebsd_amd64.tar.gz.sbom.json",
       "content_type": "application/json"
     },
     {
       "name": "k9s_Freebsd_arm64.tar.gz",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Freebsd_arm64.tar.gz",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_Freebsd_arm64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "k9s_Freebsd_arm64.tar.gz.sbom.json",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Freebsd_arm64.tar.gz.sbom.json",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_Freebsd_arm64.tar.gz.sbom.json",
       "content_type": "application/json"
     },
     {
       "name": "k9s_Freebsd_armv7.tar.gz",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Freebsd_armv7.tar.gz",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_Freebsd_armv7.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "k9s_Freebsd_armv7.tar.gz.sbom.json",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Freebsd_armv7.tar.gz.sbom.json",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_Freebsd_armv7.tar.gz.sbom.json",
       "content_type": "application/json"
     },
     {
       "name": "k9s_linux_amd64.apk",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_linux_amd64.apk",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_linux_amd64.apk",
       "content_type": "application/vnd.android.package-archive"
     },
     {
       "name": "k9s_linux_amd64.deb",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_linux_amd64.deb",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_linux_amd64.deb",
       "content_type": "application/vnd.debian.binary-package"
     },
     {
       "name": "k9s_linux_amd64.rpm",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_linux_amd64.rpm",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_linux_amd64.rpm",
       "content_type": "application/x-rpm"
     },
     {
       "name": "k9s_Linux_amd64.tar.gz",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Linux_amd64.tar.gz",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_Linux_amd64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "k9s_Linux_amd64.tar.gz.sbom.json",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Linux_amd64.tar.gz.sbom.json",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_Linux_amd64.tar.gz.sbom.json",
       "content_type": "application/json"
     },
     {
       "name": "k9s_linux_arm.apk",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_linux_arm.apk",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_linux_arm.apk",
       "content_type": "application/vnd.android.package-archive"
     },
     {
       "name": "k9s_linux_arm.deb",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_linux_arm.deb",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_linux_arm.deb",
       "content_type": "application/vnd.debian.binary-package"
     },
     {
       "name": "k9s_linux_arm.rpm",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_linux_arm.rpm",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_linux_arm.rpm",
       "content_type": "application/x-rpm"
     },
     {
       "name": "k9s_linux_arm64.apk",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_linux_arm64.apk",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_linux_arm64.apk",
       "content_type": "application/vnd.android.package-archive"
     },
     {
       "name": "k9s_linux_arm64.deb",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_linux_arm64.deb",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_linux_arm64.deb",
       "content_type": "application/vnd.debian.binary-package"
     },
     {
       "name": "k9s_linux_arm64.rpm",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_linux_arm64.rpm",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_linux_arm64.rpm",
       "content_type": "application/x-rpm"
     },
     {
       "name": "k9s_Linux_arm64.tar.gz",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Linux_arm64.tar.gz",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_Linux_arm64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "k9s_Linux_arm64.tar.gz.sbom.json",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Linux_arm64.tar.gz.sbom.json",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_Linux_arm64.tar.gz.sbom.json",
       "content_type": "application/json"
     },
     {
       "name": "k9s_Linux_armv7.tar.gz",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Linux_armv7.tar.gz",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_Linux_armv7.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "k9s_Linux_armv7.tar.gz.sbom.json",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Linux_armv7.tar.gz.sbom.json",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_Linux_armv7.tar.gz.sbom.json",
       "content_type": "application/json"
     },
     {
       "name": "k9s_linux_ppc64le.apk",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_linux_ppc64le.apk",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_linux_ppc64le.apk",
       "content_type": "application/vnd.android.package-archive"
     },
     {
       "name": "k9s_linux_ppc64le.deb",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_linux_ppc64le.deb",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_linux_ppc64le.deb",
       "content_type": "application/vnd.debian.binary-package"
     },
     {
       "name": "k9s_linux_ppc64le.rpm",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_linux_ppc64le.rpm",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_linux_ppc64le.rpm",
       "content_type": "application/x-rpm"
     },
     {
       "name": "k9s_Linux_ppc64le.tar.gz",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Linux_ppc64le.tar.gz",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_Linux_ppc64le.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "k9s_Linux_ppc64le.tar.gz.sbom.json",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Linux_ppc64le.tar.gz.sbom.json",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_Linux_ppc64le.tar.gz.sbom.json",
       "content_type": "application/json"
     },
     {
       "name": "k9s_linux_s390x.apk",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_linux_s390x.apk",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_linux_s390x.apk",
       "content_type": "application/vnd.android.package-archive"
     },
     {
       "name": "k9s_linux_s390x.deb",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_linux_s390x.deb",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_linux_s390x.deb",
       "content_type": "application/vnd.debian.binary-package"
     },
     {
       "name": "k9s_linux_s390x.rpm",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_linux_s390x.rpm",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_linux_s390x.rpm",
       "content_type": "application/x-rpm"
     },
     {
       "name": "k9s_Linux_s390x.tar.gz",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Linux_s390x.tar.gz",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_Linux_s390x.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "k9s_Linux_s390x.tar.gz.sbom.json",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Linux_s390x.tar.gz.sbom.json",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_Linux_s390x.tar.gz.sbom.json",
       "content_type": "application/json"
     },
     {
       "name": "k9s_Windows_amd64.zip",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Windows_amd64.zip",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_Windows_amd64.zip",
       "content_type": "application/zip"
     },
     {
       "name": "k9s_Windows_amd64.zip.sbom.json",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Windows_amd64.zip.sbom.json",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_Windows_amd64.zip.sbom.json",
       "content_type": "application/json"
     },
     {
       "name": "k9s_Windows_arm64.zip",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Windows_arm64.zip",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_Windows_arm64.zip",
       "content_type": "application/zip"
     },
     {
       "name": "k9s_Windows_arm64.zip.sbom.json",
-      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Windows_arm64.zip.sbom.json",
+      "browser_download_url": "https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_Windows_arm64.zip.sbom.json",
       "content_type": "application/json"
     }
   ],
@@ -1560,663 +1525,758 @@
   ],
   "eza-community/eza": [
     {
-      "name": "completions-0.20.4.tar.gz",
-      "browser_download_url": "https://github.com/eza-community/eza/releases/download/v0.20.4/completions-0.20.4.tar.gz",
+      "name": "completions-0.20.12.tar.gz",
+      "browser_download_url": "https://github.com/eza-community/eza/releases/download/v0.20.12/completions-0.20.12.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
       "name": "eza.exe_x86_64-pc-windows-gnu.tar.gz",
-      "browser_download_url": "https://github.com/eza-community/eza/releases/download/v0.20.4/eza.exe_x86_64-pc-windows-gnu.tar.gz",
+      "browser_download_url": "https://github.com/eza-community/eza/releases/download/v0.20.12/eza.exe_x86_64-pc-windows-gnu.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
       "name": "eza.exe_x86_64-pc-windows-gnu.zip",
-      "browser_download_url": "https://github.com/eza-community/eza/releases/download/v0.20.4/eza.exe_x86_64-pc-windows-gnu.zip",
+      "browser_download_url": "https://github.com/eza-community/eza/releases/download/v0.20.12/eza.exe_x86_64-pc-windows-gnu.zip",
       "content_type": "application/zip"
     },
     {
       "name": "eza_aarch64-unknown-linux-gnu.tar.gz",
-      "browser_download_url": "https://github.com/eza-community/eza/releases/download/v0.20.4/eza_aarch64-unknown-linux-gnu.tar.gz",
+      "browser_download_url": "https://github.com/eza-community/eza/releases/download/v0.20.12/eza_aarch64-unknown-linux-gnu.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
       "name": "eza_aarch64-unknown-linux-gnu.zip",
-      "browser_download_url": "https://github.com/eza-community/eza/releases/download/v0.20.4/eza_aarch64-unknown-linux-gnu.zip",
+      "browser_download_url": "https://github.com/eza-community/eza/releases/download/v0.20.12/eza_aarch64-unknown-linux-gnu.zip",
       "content_type": "application/zip"
     },
     {
       "name": "eza_arm-unknown-linux-gnueabihf.tar.gz",
-      "browser_download_url": "https://github.com/eza-community/eza/releases/download/v0.20.4/eza_arm-unknown-linux-gnueabihf.tar.gz",
+      "browser_download_url": "https://github.com/eza-community/eza/releases/download/v0.20.12/eza_arm-unknown-linux-gnueabihf.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
       "name": "eza_arm-unknown-linux-gnueabihf.zip",
-      "browser_download_url": "https://github.com/eza-community/eza/releases/download/v0.20.4/eza_arm-unknown-linux-gnueabihf.zip",
+      "browser_download_url": "https://github.com/eza-community/eza/releases/download/v0.20.12/eza_arm-unknown-linux-gnueabihf.zip",
       "content_type": "application/zip"
     },
     {
       "name": "eza_x86_64-unknown-linux-gnu.tar.gz",
-      "browser_download_url": "https://github.com/eza-community/eza/releases/download/v0.20.4/eza_x86_64-unknown-linux-gnu.tar.gz",
+      "browser_download_url": "https://github.com/eza-community/eza/releases/download/v0.20.12/eza_x86_64-unknown-linux-gnu.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
       "name": "eza_x86_64-unknown-linux-gnu.zip",
-      "browser_download_url": "https://github.com/eza-community/eza/releases/download/v0.20.4/eza_x86_64-unknown-linux-gnu.zip",
+      "browser_download_url": "https://github.com/eza-community/eza/releases/download/v0.20.12/eza_x86_64-unknown-linux-gnu.zip",
       "content_type": "application/zip"
     },
     {
       "name": "eza_x86_64-unknown-linux-musl.tar.gz",
-      "browser_download_url": "https://github.com/eza-community/eza/releases/download/v0.20.4/eza_x86_64-unknown-linux-musl.tar.gz",
+      "browser_download_url": "https://github.com/eza-community/eza/releases/download/v0.20.12/eza_x86_64-unknown-linux-musl.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
       "name": "eza_x86_64-unknown-linux-musl.zip",
-      "browser_download_url": "https://github.com/eza-community/eza/releases/download/v0.20.4/eza_x86_64-unknown-linux-musl.zip",
+      "browser_download_url": "https://github.com/eza-community/eza/releases/download/v0.20.12/eza_x86_64-unknown-linux-musl.zip",
       "content_type": "application/zip"
     },
     {
-      "name": "man-0.20.4.tar.gz",
-      "browser_download_url": "https://github.com/eza-community/eza/releases/download/v0.20.4/man-0.20.4.tar.gz",
+      "name": "man-0.20.12.tar.gz",
+      "browser_download_url": "https://github.com/eza-community/eza/releases/download/v0.20.12/man-0.20.12.tar.gz",
       "content_type": "application/x-gtar"
     }
   ],
   "go-task/task": [
     {
       "name": "task_checksums.txt",
-      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.39.2/task_checksums.txt",
+      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.40.1/task_checksums.txt",
       "content_type": "text/plain; charset=utf-8"
     },
     {
       "name": "task_darwin_amd64.tar.gz",
-      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.39.2/task_darwin_amd64.tar.gz",
+      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.40.1/task_darwin_amd64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "task_darwin_arm64.tar.gz",
-      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.39.2/task_darwin_arm64.tar.gz",
+      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.40.1/task_darwin_arm64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "task_freebsd_386.tar.gz",
-      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.39.2/task_freebsd_386.tar.gz",
+      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.40.1/task_freebsd_386.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "task_freebsd_amd64.tar.gz",
-      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.39.2/task_freebsd_amd64.tar.gz",
+      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.40.1/task_freebsd_amd64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "task_freebsd_arm.tar.gz",
-      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.39.2/task_freebsd_arm.tar.gz",
+      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.40.1/task_freebsd_arm.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "task_freebsd_arm64.tar.gz",
-      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.39.2/task_freebsd_arm64.tar.gz",
+      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.40.1/task_freebsd_arm64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "task_linux_386.deb",
-      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.39.2/task_linux_386.deb",
+      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.40.1/task_linux_386.deb",
       "content_type": "application/vnd.debian.binary-package"
     },
     {
       "name": "task_linux_386.rpm",
-      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.39.2/task_linux_386.rpm",
+      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.40.1/task_linux_386.rpm",
       "content_type": "application/x-rpm"
     },
     {
       "name": "task_linux_386.tar.gz",
-      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.39.2/task_linux_386.tar.gz",
+      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.40.1/task_linux_386.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "task_linux_amd64.deb",
-      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.39.2/task_linux_amd64.deb",
+      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.40.1/task_linux_amd64.deb",
       "content_type": "application/vnd.debian.binary-package"
     },
     {
       "name": "task_linux_amd64.rpm",
-      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.39.2/task_linux_amd64.rpm",
+      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.40.1/task_linux_amd64.rpm",
       "content_type": "application/x-rpm"
     },
     {
       "name": "task_linux_amd64.tar.gz",
-      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.39.2/task_linux_amd64.tar.gz",
+      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.40.1/task_linux_amd64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "task_linux_arm.deb",
-      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.39.2/task_linux_arm.deb",
+      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.40.1/task_linux_arm.deb",
       "content_type": "application/vnd.debian.binary-package"
     },
     {
       "name": "task_linux_arm.rpm",
-      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.39.2/task_linux_arm.rpm",
+      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.40.1/task_linux_arm.rpm",
       "content_type": "application/x-rpm"
     },
     {
       "name": "task_linux_arm.tar.gz",
-      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.39.2/task_linux_arm.tar.gz",
+      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.40.1/task_linux_arm.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "task_linux_arm64.deb",
-      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.39.2/task_linux_arm64.deb",
+      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.40.1/task_linux_arm64.deb",
       "content_type": "application/vnd.debian.binary-package"
     },
     {
       "name": "task_linux_arm64.rpm",
-      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.39.2/task_linux_arm64.rpm",
+      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.40.1/task_linux_arm64.rpm",
       "content_type": "application/x-rpm"
     },
     {
       "name": "task_linux_arm64.tar.gz",
-      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.39.2/task_linux_arm64.tar.gz",
+      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.40.1/task_linux_arm64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "task_linux_riscv64.deb",
-      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.39.2/task_linux_riscv64.deb",
+      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.40.1/task_linux_riscv64.deb",
       "content_type": "application/vnd.debian.binary-package"
     },
     {
       "name": "task_linux_riscv64.rpm",
-      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.39.2/task_linux_riscv64.rpm",
+      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.40.1/task_linux_riscv64.rpm",
       "content_type": "application/x-rpm"
     },
     {
       "name": "task_linux_riscv64.tar.gz",
-      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.39.2/task_linux_riscv64.tar.gz",
+      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.40.1/task_linux_riscv64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "task_windows_386.zip",
-      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.39.2/task_windows_386.zip",
+      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.40.1/task_windows_386.zip",
       "content_type": "application/zip"
     },
     {
       "name": "task_windows_amd64.zip",
-      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.39.2/task_windows_amd64.zip",
+      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.40.1/task_windows_amd64.zip",
       "content_type": "application/zip"
     },
     {
       "name": "task_windows_arm.zip",
-      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.39.2/task_windows_arm.zip",
+      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.40.1/task_windows_arm.zip",
       "content_type": "application/zip"
     },
     {
       "name": "task_windows_arm64.zip",
-      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.39.2/task_windows_arm64.zip",
+      "browser_download_url": "https://github.com/go-task/task/releases/download/v3.40.1/task_windows_arm64.zip",
       "content_type": "application/zip"
     }
   ],
   "golangci/golangci-lint": [
     {
-      "name": "golangci-lint-1.61.0-checksums.txt",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-checksums.txt",
+      "name": "golangci-lint-1.62.2-checksums.txt",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-checksums.txt",
       "content_type": "text/plain; charset=utf-8"
     },
     {
-      "name": "golangci-lint-1.61.0-darwin-amd64.tar.gz",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-darwin-amd64.tar.gz",
+      "name": "golangci-lint-1.62.2-darwin-amd64.tar.gz",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-darwin-amd64.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "golangci-lint-1.61.0-darwin-arm64.tar.gz",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-darwin-arm64.tar.gz",
+      "name": "golangci-lint-1.62.2-darwin-arm64.tar.gz",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-darwin-arm64.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "golangci-lint-1.61.0-freebsd-386.tar.gz",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-freebsd-386.tar.gz",
+      "name": "golangci-lint-1.62.2-freebsd-386.tar.gz",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-freebsd-386.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "golangci-lint-1.61.0-freebsd-amd64.tar.gz",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-freebsd-amd64.tar.gz",
+      "name": "golangci-lint-1.62.2-freebsd-amd64.tar.gz",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-freebsd-amd64.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "golangci-lint-1.61.0-freebsd-armv6.tar.gz",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-freebsd-armv6.tar.gz",
+      "name": "golangci-lint-1.62.2-freebsd-armv6.tar.gz",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-freebsd-armv6.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "golangci-lint-1.61.0-freebsd-armv7.tar.gz",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-freebsd-armv7.tar.gz",
+      "name": "golangci-lint-1.62.2-freebsd-armv7.tar.gz",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-freebsd-armv7.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "golangci-lint-1.61.0-illumos-amd64.tar.gz",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-illumos-amd64.tar.gz",
+      "name": "golangci-lint-1.62.2-illumos-amd64.tar.gz",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-illumos-amd64.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-386.deb",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-386.deb",
+      "name": "golangci-lint-1.62.2-linux-386.deb",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-386.deb",
       "content_type": "application/vnd.debian.binary-package"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-386.rpm",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-386.rpm",
+      "name": "golangci-lint-1.62.2-linux-386.rpm",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-386.rpm",
       "content_type": "application/x-rpm"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-386.tar.gz",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-386.tar.gz",
+      "name": "golangci-lint-1.62.2-linux-386.tar.gz",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-386.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-amd64.deb",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-amd64.deb",
+      "name": "golangci-lint-1.62.2-linux-amd64.deb",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-amd64.deb",
       "content_type": "application/vnd.debian.binary-package"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-amd64.rpm",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-amd64.rpm",
+      "name": "golangci-lint-1.62.2-linux-amd64.rpm",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-amd64.rpm",
       "content_type": "application/x-rpm"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-amd64.tar.gz",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-amd64.tar.gz",
+      "name": "golangci-lint-1.62.2-linux-amd64.tar.gz",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-amd64.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-arm64.deb",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-arm64.deb",
+      "name": "golangci-lint-1.62.2-linux-arm64.deb",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-arm64.deb",
       "content_type": "application/vnd.debian.binary-package"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-arm64.rpm",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-arm64.rpm",
+      "name": "golangci-lint-1.62.2-linux-arm64.rpm",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-arm64.rpm",
       "content_type": "application/x-rpm"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-arm64.tar.gz",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-arm64.tar.gz",
+      "name": "golangci-lint-1.62.2-linux-arm64.tar.gz",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-arm64.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-armv6.deb",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-armv6.deb",
+      "name": "golangci-lint-1.62.2-linux-armv6.deb",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-armv6.deb",
       "content_type": "application/vnd.debian.binary-package"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-armv6.rpm",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-armv6.rpm",
+      "name": "golangci-lint-1.62.2-linux-armv6.rpm",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-armv6.rpm",
       "content_type": "application/x-rpm"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-armv6.tar.gz",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-armv6.tar.gz",
+      "name": "golangci-lint-1.62.2-linux-armv6.tar.gz",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-armv6.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-armv7.deb",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-armv7.deb",
+      "name": "golangci-lint-1.62.2-linux-armv7.deb",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-armv7.deb",
       "content_type": "application/vnd.debian.binary-package"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-armv7.rpm",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-armv7.rpm",
+      "name": "golangci-lint-1.62.2-linux-armv7.rpm",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-armv7.rpm",
       "content_type": "application/x-rpm"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-armv7.tar.gz",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-armv7.tar.gz",
+      "name": "golangci-lint-1.62.2-linux-armv7.tar.gz",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-armv7.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-loong64.deb",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-loong64.deb",
+      "name": "golangci-lint-1.62.2-linux-loong64.deb",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-loong64.deb",
       "content_type": "application/vnd.debian.binary-package"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-loong64.rpm",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-loong64.rpm",
+      "name": "golangci-lint-1.62.2-linux-loong64.rpm",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-loong64.rpm",
       "content_type": "application/x-rpm"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-loong64.tar.gz",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-loong64.tar.gz",
+      "name": "golangci-lint-1.62.2-linux-loong64.tar.gz",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-loong64.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-mips64.deb",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-mips64.deb",
+      "name": "golangci-lint-1.62.2-linux-mips64.deb",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-mips64.deb",
       "content_type": "application/vnd.debian.binary-package"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-mips64.rpm",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-mips64.rpm",
+      "name": "golangci-lint-1.62.2-linux-mips64.rpm",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-mips64.rpm",
       "content_type": "application/x-rpm"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-mips64.tar.gz",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-mips64.tar.gz",
+      "name": "golangci-lint-1.62.2-linux-mips64.tar.gz",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-mips64.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-mips64le.deb",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-mips64le.deb",
+      "name": "golangci-lint-1.62.2-linux-mips64le.deb",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-mips64le.deb",
       "content_type": "application/vnd.debian.binary-package"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-mips64le.rpm",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-mips64le.rpm",
+      "name": "golangci-lint-1.62.2-linux-mips64le.rpm",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-mips64le.rpm",
       "content_type": "application/x-rpm"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-mips64le.tar.gz",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-mips64le.tar.gz",
+      "name": "golangci-lint-1.62.2-linux-mips64le.tar.gz",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-mips64le.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-ppc64le.deb",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-ppc64le.deb",
+      "name": "golangci-lint-1.62.2-linux-ppc64le.deb",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-ppc64le.deb",
       "content_type": "application/vnd.debian.binary-package"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-ppc64le.rpm",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-ppc64le.rpm",
+      "name": "golangci-lint-1.62.2-linux-ppc64le.rpm",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-ppc64le.rpm",
       "content_type": "application/x-rpm"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-ppc64le.tar.gz",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-ppc64le.tar.gz",
+      "name": "golangci-lint-1.62.2-linux-ppc64le.tar.gz",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-ppc64le.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-riscv64.deb",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-riscv64.deb",
+      "name": "golangci-lint-1.62.2-linux-riscv64.deb",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-riscv64.deb",
       "content_type": "application/vnd.debian.binary-package"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-riscv64.rpm",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-riscv64.rpm",
+      "name": "golangci-lint-1.62.2-linux-riscv64.rpm",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-riscv64.rpm",
       "content_type": "application/x-rpm"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-riscv64.tar.gz",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-riscv64.tar.gz",
+      "name": "golangci-lint-1.62.2-linux-riscv64.tar.gz",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-riscv64.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-s390x.deb",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-s390x.deb",
+      "name": "golangci-lint-1.62.2-linux-s390x.deb",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-s390x.deb",
       "content_type": "application/vnd.debian.binary-package"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-s390x.rpm",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-s390x.rpm",
+      "name": "golangci-lint-1.62.2-linux-s390x.rpm",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-s390x.rpm",
       "content_type": "application/x-rpm"
     },
     {
-      "name": "golangci-lint-1.61.0-linux-s390x.tar.gz",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-linux-s390x.tar.gz",
+      "name": "golangci-lint-1.62.2-linux-s390x.tar.gz",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-linux-s390x.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "golangci-lint-1.61.0-netbsd-386.tar.gz",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-netbsd-386.tar.gz",
+      "name": "golangci-lint-1.62.2-netbsd-386.tar.gz",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-netbsd-386.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "golangci-lint-1.61.0-netbsd-amd64.tar.gz",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-netbsd-amd64.tar.gz",
+      "name": "golangci-lint-1.62.2-netbsd-amd64.tar.gz",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-netbsd-amd64.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "golangci-lint-1.61.0-netbsd-arm64.tar.gz",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-netbsd-arm64.tar.gz",
+      "name": "golangci-lint-1.62.2-netbsd-arm64.tar.gz",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-netbsd-arm64.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "golangci-lint-1.61.0-netbsd-armv6.tar.gz",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-netbsd-armv6.tar.gz",
+      "name": "golangci-lint-1.62.2-netbsd-armv6.tar.gz",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-netbsd-armv6.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "golangci-lint-1.61.0-netbsd-armv7.tar.gz",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-netbsd-armv7.tar.gz",
+      "name": "golangci-lint-1.62.2-netbsd-armv7.tar.gz",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-netbsd-armv7.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "golangci-lint-1.61.0-source.tar.gz",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-source.tar.gz",
+      "name": "golangci-lint-1.62.2-source.tar.gz",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-source.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "golangci-lint-1.61.0-windows-386.zip",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-windows-386.zip",
+      "name": "golangci-lint-1.62.2-windows-386.zip",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-windows-386.zip",
       "content_type": "application/zip"
     },
     {
-      "name": "golangci-lint-1.61.0-windows-amd64.zip",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-windows-amd64.zip",
+      "name": "golangci-lint-1.62.2-windows-amd64.zip",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-windows-amd64.zip",
       "content_type": "application/zip"
     },
     {
-      "name": "golangci-lint-1.61.0-windows-arm64.zip",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-windows-arm64.zip",
+      "name": "golangci-lint-1.62.2-windows-arm64.zip",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-windows-arm64.zip",
       "content_type": "application/zip"
     },
     {
-      "name": "golangci-lint-1.61.0-windows-armv6.zip",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-windows-armv6.zip",
+      "name": "golangci-lint-1.62.2-windows-armv6.zip",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-windows-armv6.zip",
       "content_type": "application/zip"
     },
     {
-      "name": "golangci-lint-1.61.0-windows-armv7.zip",
-      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.61.0/golangci-lint-1.61.0-windows-armv7.zip",
+      "name": "golangci-lint-1.62.2-windows-armv7.zip",
+      "browser_download_url": "https://github.com/golangci/golangci-lint/releases/download/v1.62.2/golangci-lint-1.62.2-windows-armv7.zip",
       "content_type": "application/zip"
     }
   ],
   "hashicorp/terraform": [],
+  "hashicorp/vault": [],
   "helm/helm": [
     {
-      "name": "helm-v3.16.2-darwin-amd64.tar.gz.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-darwin-amd64.tar.gz.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-darwin-amd64.tar.gz.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-darwin-amd64.tar.gz.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-darwin-amd64.tar.gz.sha256.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-darwin-amd64.tar.gz.sha256.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-darwin-amd64.tar.gz.sha256.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-darwin-amd64.tar.gz.sha256.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-darwin-amd64.tar.gz.sha256sum.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-darwin-amd64.tar.gz.sha256sum.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-darwin-amd64.tar.gz.sha256sum.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-darwin-amd64.tar.gz.sha256sum.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-darwin-arm64.tar.gz.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-darwin-arm64.tar.gz.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-darwin-arm64.tar.gz.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-darwin-arm64.tar.gz.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-darwin-arm64.tar.gz.sha256.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-darwin-arm64.tar.gz.sha256.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-darwin-arm64.tar.gz.sha256.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-darwin-arm64.tar.gz.sha256.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-darwin-arm64.tar.gz.sha256sum.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-darwin-arm64.tar.gz.sha256sum.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-darwin-arm64.tar.gz.sha256sum.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-darwin-arm64.tar.gz.sha256sum.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-linux-386.tar.gz.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-linux-386.tar.gz.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-linux-386.tar.gz.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-linux-386.tar.gz.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-linux-386.tar.gz.sha256.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-linux-386.tar.gz.sha256.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-linux-386.tar.gz.sha256.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-linux-386.tar.gz.sha256.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-linux-386.tar.gz.sha256sum.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-linux-386.tar.gz.sha256sum.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-linux-386.tar.gz.sha256sum.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-linux-386.tar.gz.sha256sum.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-linux-amd64.tar.gz.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-linux-amd64.tar.gz.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-linux-amd64.tar.gz.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-linux-amd64.tar.gz.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-linux-amd64.tar.gz.sha256.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-linux-amd64.tar.gz.sha256.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-linux-amd64.tar.gz.sha256.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-linux-amd64.tar.gz.sha256.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-linux-amd64.tar.gz.sha256sum.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-linux-amd64.tar.gz.sha256sum.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-linux-amd64.tar.gz.sha256sum.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-linux-amd64.tar.gz.sha256sum.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-linux-arm.tar.gz.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-linux-arm.tar.gz.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-linux-arm.tar.gz.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-linux-arm.tar.gz.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-linux-arm.tar.gz.sha256.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-linux-arm.tar.gz.sha256.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-linux-arm.tar.gz.sha256.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-linux-arm.tar.gz.sha256.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-linux-arm.tar.gz.sha256sum.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-linux-arm.tar.gz.sha256sum.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-linux-arm.tar.gz.sha256sum.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-linux-arm.tar.gz.sha256sum.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-linux-arm64.tar.gz.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-linux-arm64.tar.gz.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-linux-arm64.tar.gz.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-linux-arm64.tar.gz.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-linux-arm64.tar.gz.sha256.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-linux-arm64.tar.gz.sha256.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-linux-arm64.tar.gz.sha256.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-linux-arm64.tar.gz.sha256.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-linux-arm64.tar.gz.sha256sum.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-linux-arm64.tar.gz.sha256sum.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-linux-arm64.tar.gz.sha256sum.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-linux-arm64.tar.gz.sha256sum.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-linux-ppc64le.tar.gz.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-linux-ppc64le.tar.gz.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-linux-ppc64le.tar.gz.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-linux-ppc64le.tar.gz.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-linux-ppc64le.tar.gz.sha256.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-linux-ppc64le.tar.gz.sha256.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-linux-ppc64le.tar.gz.sha256.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-linux-ppc64le.tar.gz.sha256.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-linux-ppc64le.tar.gz.sha256sum.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-linux-ppc64le.tar.gz.sha256sum.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-linux-ppc64le.tar.gz.sha256sum.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-linux-ppc64le.tar.gz.sha256sum.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-linux-riscv64.tar.gz.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-linux-riscv64.tar.gz.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-linux-riscv64.tar.gz.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-linux-riscv64.tar.gz.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-linux-riscv64.tar.gz.sha256.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-linux-riscv64.tar.gz.sha256.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-linux-riscv64.tar.gz.sha256.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-linux-riscv64.tar.gz.sha256.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-linux-riscv64.tar.gz.sha256sum.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-linux-riscv64.tar.gz.sha256sum.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-linux-riscv64.tar.gz.sha256sum.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-linux-riscv64.tar.gz.sha256sum.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-linux-s390x.tar.gz.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-linux-s390x.tar.gz.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-linux-s390x.tar.gz.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-linux-s390x.tar.gz.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-linux-s390x.tar.gz.sha256.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-linux-s390x.tar.gz.sha256.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-linux-s390x.tar.gz.sha256.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-linux-s390x.tar.gz.sha256.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-linux-s390x.tar.gz.sha256sum.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-linux-s390x.tar.gz.sha256sum.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-linux-s390x.tar.gz.sha256sum.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-linux-s390x.tar.gz.sha256sum.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-windows-amd64.zip.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-windows-amd64.zip.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-windows-amd64.zip.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-windows-amd64.zip.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-windows-amd64.zip.sha256.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-windows-amd64.zip.sha256.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-windows-amd64.zip.sha256.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-windows-amd64.zip.sha256.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-windows-amd64.zip.sha256sum.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-windows-amd64.zip.sha256sum.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-windows-amd64.zip.sha256sum.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-windows-amd64.zip.sha256sum.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-windows-arm64.zip.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-windows-arm64.zip.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-windows-arm64.zip.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-windows-arm64.zip.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-windows-arm64.zip.sha256.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-windows-arm64.zip.sha256.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-windows-arm64.zip.sha256.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-windows-arm64.zip.sha256.asc",
+      "content_type": "text/plain"
     },
     {
-      "name": "helm-v3.16.2-windows-arm64.zip.sha256sum.asc",
-      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.2/helm-v3.16.2-windows-arm64.zip.sha256sum.asc",
-      "content_type": "application/octet-stream"
+      "name": "helm-v3.16.3-windows-arm64.zip.sha256sum.asc",
+      "browser_download_url": "https://github.com/helm/helm/releases/download/v3.16.3/helm-v3.16.3-windows-arm64.zip.sha256sum.asc",
+      "content_type": "text/plain"
     }
   ],
   "homeport/dyff": [
     {
       "name": "checksums.txt",
-      "browser_download_url": "https://github.com/homeport/dyff/releases/download/v1.9.2/checksums.txt",
+      "browser_download_url": "https://github.com/homeport/dyff/releases/download/v1.9.4/checksums.txt",
       "content_type": "text/plain; charset=utf-8"
     },
     {
-      "name": "dyff_1.9.2_darwin_amd64.tar.gz",
-      "browser_download_url": "https://github.com/homeport/dyff/releases/download/v1.9.2/dyff_1.9.2_darwin_amd64.tar.gz",
+      "name": "dyff_1.9.4_darwin_amd64.tar.gz",
+      "browser_download_url": "https://github.com/homeport/dyff/releases/download/v1.9.4/dyff_1.9.4_darwin_amd64.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "dyff_1.9.2_darwin_arm64.tar.gz",
-      "browser_download_url": "https://github.com/homeport/dyff/releases/download/v1.9.2/dyff_1.9.2_darwin_arm64.tar.gz",
+      "name": "dyff_1.9.4_darwin_arm64.tar.gz",
+      "browser_download_url": "https://github.com/homeport/dyff/releases/download/v1.9.4/dyff_1.9.4_darwin_arm64.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "dyff_1.9.2_linux_amd64.tar.gz",
-      "browser_download_url": "https://github.com/homeport/dyff/releases/download/v1.9.2/dyff_1.9.2_linux_amd64.tar.gz",
+      "name": "dyff_1.9.4_linux_amd64.tar.gz",
+      "browser_download_url": "https://github.com/homeport/dyff/releases/download/v1.9.4/dyff_1.9.4_linux_amd64.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "dyff_1.9.2_linux_arm64.tar.gz",
-      "browser_download_url": "https://github.com/homeport/dyff/releases/download/v1.9.2/dyff_1.9.2_linux_arm64.tar.gz",
+      "name": "dyff_1.9.4_linux_arm64.tar.gz",
+      "browser_download_url": "https://github.com/homeport/dyff/releases/download/v1.9.4/dyff_1.9.4_linux_arm64.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "dyff_1.9.2_windows_amd64.tar.gz",
-      "browser_download_url": "https://github.com/homeport/dyff/releases/download/v1.9.2/dyff_1.9.2_windows_amd64.tar.gz",
+      "name": "dyff_1.9.4_windows_amd64.tar.gz",
+      "browser_download_url": "https://github.com/homeport/dyff/releases/download/v1.9.4/dyff_1.9.4_windows_amd64.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "dyff_1.9.2_windows_arm64.tar.gz",
-      "browser_download_url": "https://github.com/homeport/dyff/releases/download/v1.9.2/dyff_1.9.2_windows_arm64.tar.gz",
+      "name": "dyff_1.9.4_windows_arm64.tar.gz",
+      "browser_download_url": "https://github.com/homeport/dyff/releases/download/v1.9.4/dyff_1.9.4_windows_arm64.tar.gz",
       "content_type": "application/gzip"
+    }
+  ],
+  "idelchi/go-match": [
+    {
+      "name": "go-match_0.0.0_checksums.txt",
+      "browser_download_url": "https://github.com/idelchi/go-match/releases/download/v0.0.0/go-match_0.0.0_checksums.txt",
+      "content_type": "text/plain; charset=utf-8"
+    },
+    {
+      "name": "go-match_darwin_amd64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/go-match/releases/download/v0.0.0/go-match_darwin_amd64.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "go-match_darwin_arm64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/go-match/releases/download/v0.0.0/go-match_darwin_arm64.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "go-match_linux_amd64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/go-match/releases/download/v0.0.0/go-match_linux_amd64.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "go-match_linux_arm64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/go-match/releases/download/v0.0.0/go-match_linux_arm64.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "go-match_linux_armv6.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/go-match/releases/download/v0.0.0/go-match_linux_armv6.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "go-match_linux_armv7.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/go-match/releases/download/v0.0.0/go-match_linux_armv7.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "go-match_linux_x86.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/go-match/releases/download/v0.0.0/go-match_linux_x86.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "go-match_windows_amd64.zip",
+      "browser_download_url": "https://github.com/idelchi/go-match/releases/download/v0.0.0/go-match_windows_amd64.zip",
+      "content_type": "application/zip"
+    }
+  ],
+  "idelchi/go-next-tag": [
+    {
+      "name": "go-next-tag_0.0.0_checksums.txt",
+      "browser_download_url": "https://github.com/idelchi/go-next-tag/releases/download/v0.0.0/go-next-tag_0.0.0_checksums.txt",
+      "content_type": "text/plain; charset=utf-8"
+    },
+    {
+      "name": "go-next-tag_darwin_amd64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/go-next-tag/releases/download/v0.0.0/go-next-tag_darwin_amd64.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "go-next-tag_darwin_arm64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/go-next-tag/releases/download/v0.0.0/go-next-tag_darwin_arm64.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "go-next-tag_linux_amd64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/go-next-tag/releases/download/v0.0.0/go-next-tag_linux_amd64.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "go-next-tag_linux_arm64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/go-next-tag/releases/download/v0.0.0/go-next-tag_linux_arm64.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "go-next-tag_linux_armv6.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/go-next-tag/releases/download/v0.0.0/go-next-tag_linux_armv6.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "go-next-tag_linux_armv7.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/go-next-tag/releases/download/v0.0.0/go-next-tag_linux_armv7.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "go-next-tag_linux_x86.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/go-next-tag/releases/download/v0.0.0/go-next-tag_linux_x86.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "go-next-tag_windows_amd64.zip",
+      "browser_download_url": "https://github.com/idelchi/go-next-tag/releases/download/v0.0.0/go-next-tag_windows_amd64.zip",
+      "content_type": "application/zip"
     }
   ],
   "idelchi/gocry": [
@@ -2313,6 +2373,147 @@
       "content_type": "application/zip"
     }
   ],
+  "idelchi/gogen": [
+    {
+      "name": "gogen_0.0.0_checksums.txt",
+      "browser_download_url": "https://github.com/idelchi/gogen/releases/download/v0.0.0/gogen_0.0.0_checksums.txt",
+      "content_type": "text/plain; charset=utf-8"
+    },
+    {
+      "name": "gogen_darwin_amd64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/gogen/releases/download/v0.0.0/gogen_darwin_amd64.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "gogen_darwin_arm64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/gogen/releases/download/v0.0.0/gogen_darwin_arm64.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "gogen_linux_amd64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/gogen/releases/download/v0.0.0/gogen_linux_amd64.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "gogen_linux_arm64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/gogen/releases/download/v0.0.0/gogen_linux_arm64.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "gogen_linux_armv6.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/gogen/releases/download/v0.0.0/gogen_linux_armv6.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "gogen_linux_armv7.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/gogen/releases/download/v0.0.0/gogen_linux_armv7.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "gogen_linux_x86.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/gogen/releases/download/v0.0.0/gogen_linux_x86.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "gogen_windows_amd64.zip",
+      "browser_download_url": "https://github.com/idelchi/gogen/releases/download/v0.0.0/gogen_windows_amd64.zip",
+      "content_type": "application/zip"
+    }
+  ],
+  "idelchi/gonc": [
+    {
+      "name": "gonc_0.0.0_checksums.txt",
+      "browser_download_url": "https://github.com/idelchi/gonc/releases/download/v0.0.0/gonc_0.0.0_checksums.txt",
+      "content_type": "text/plain; charset=utf-8"
+    },
+    {
+      "name": "gonc_darwin_amd64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/gonc/releases/download/v0.0.0/gonc_darwin_amd64.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "gonc_darwin_arm64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/gonc/releases/download/v0.0.0/gonc_darwin_arm64.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "gonc_linux_amd64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/gonc/releases/download/v0.0.0/gonc_linux_amd64.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "gonc_linux_arm64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/gonc/releases/download/v0.0.0/gonc_linux_arm64.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "gonc_linux_armv6.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/gonc/releases/download/v0.0.0/gonc_linux_armv6.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "gonc_linux_armv7.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/gonc/releases/download/v0.0.0/gonc_linux_armv7.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "gonc_linux_x86.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/gonc/releases/download/v0.0.0/gonc_linux_x86.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "gonc_windows_amd64.zip",
+      "browser_download_url": "https://github.com/idelchi/gonc/releases/download/v0.0.0/gonc_windows_amd64.zip",
+      "content_type": "application/zip"
+    }
+  ],
+  "idelchi/wslint": [
+    {
+      "name": "wslint_0.0.0_checksums.txt",
+      "browser_download_url": "https://github.com/idelchi/wslint/releases/download/v0.0.0/wslint_0.0.0_checksums.txt",
+      "content_type": "text/plain; charset=utf-8"
+    },
+    {
+      "name": "wslint_darwin_amd64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/wslint/releases/download/v0.0.0/wslint_darwin_amd64.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "wslint_darwin_arm64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/wslint/releases/download/v0.0.0/wslint_darwin_arm64.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "wslint_linux_amd64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/wslint/releases/download/v0.0.0/wslint_linux_amd64.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "wslint_linux_arm64.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/wslint/releases/download/v0.0.0/wslint_linux_arm64.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "wslint_linux_armv6.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/wslint/releases/download/v0.0.0/wslint_linux_armv6.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "wslint_linux_armv7.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/wslint/releases/download/v0.0.0/wslint_linux_armv7.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "wslint_linux_x86.tar.gz",
+      "browser_download_url": "https://github.com/idelchi/wslint/releases/download/v0.0.0/wslint_linux_x86.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "wslint_windows_amd64.zip",
+      "browser_download_url": "https://github.com/idelchi/wslint/releases/download/v0.0.0/wslint_windows_amd64.zip",
+      "content_type": "application/zip"
+    }
+  ],
   "jarun/nnn": [
     {
       "name": "nnn-5.0.tar.gz.sig",
@@ -2353,67 +2554,67 @@
   "jesseduffield/lazydocker": [
     {
       "name": "checksums.txt",
-      "browser_download_url": "https://github.com/jesseduffield/lazydocker/releases/download/v0.23.3/checksums.txt",
+      "browser_download_url": "https://github.com/jesseduffield/lazydocker/releases/download/v0.24.1/checksums.txt",
       "content_type": "text/plain; charset=utf-8"
     },
     {
-      "name": "lazydocker_0.23.3_Darwin_arm64.tar.gz",
-      "browser_download_url": "https://github.com/jesseduffield/lazydocker/releases/download/v0.23.3/lazydocker_0.23.3_Darwin_arm64.tar.gz",
+      "name": "lazydocker_0.24.1_Darwin_arm64.tar.gz",
+      "browser_download_url": "https://github.com/jesseduffield/lazydocker/releases/download/v0.24.1/lazydocker_0.24.1_Darwin_arm64.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "lazydocker_0.23.3_Darwin_x86_64.tar.gz",
-      "browser_download_url": "https://github.com/jesseduffield/lazydocker/releases/download/v0.23.3/lazydocker_0.23.3_Darwin_x86_64.tar.gz",
+      "name": "lazydocker_0.24.1_Darwin_x86_64.tar.gz",
+      "browser_download_url": "https://github.com/jesseduffield/lazydocker/releases/download/v0.24.1/lazydocker_0.24.1_Darwin_x86_64.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "lazydocker_0.23.3_Linux_arm64.tar.gz",
-      "browser_download_url": "https://github.com/jesseduffield/lazydocker/releases/download/v0.23.3/lazydocker_0.23.3_Linux_arm64.tar.gz",
+      "name": "lazydocker_0.24.1_Linux_arm64.tar.gz",
+      "browser_download_url": "https://github.com/jesseduffield/lazydocker/releases/download/v0.24.1/lazydocker_0.24.1_Linux_arm64.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "lazydocker_0.23.3_Linux_armv6.tar.gz",
-      "browser_download_url": "https://github.com/jesseduffield/lazydocker/releases/download/v0.23.3/lazydocker_0.23.3_Linux_armv6.tar.gz",
+      "name": "lazydocker_0.24.1_Linux_armv6.tar.gz",
+      "browser_download_url": "https://github.com/jesseduffield/lazydocker/releases/download/v0.24.1/lazydocker_0.24.1_Linux_armv6.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "lazydocker_0.23.3_Linux_armv7.tar.gz",
-      "browser_download_url": "https://github.com/jesseduffield/lazydocker/releases/download/v0.23.3/lazydocker_0.23.3_Linux_armv7.tar.gz",
+      "name": "lazydocker_0.24.1_Linux_armv7.tar.gz",
+      "browser_download_url": "https://github.com/jesseduffield/lazydocker/releases/download/v0.24.1/lazydocker_0.24.1_Linux_armv7.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "lazydocker_0.23.3_Linux_x86.tar.gz",
-      "browser_download_url": "https://github.com/jesseduffield/lazydocker/releases/download/v0.23.3/lazydocker_0.23.3_Linux_x86.tar.gz",
+      "name": "lazydocker_0.24.1_Linux_x86.tar.gz",
+      "browser_download_url": "https://github.com/jesseduffield/lazydocker/releases/download/v0.24.1/lazydocker_0.24.1_Linux_x86.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "lazydocker_0.23.3_Linux_x86_64.tar.gz",
-      "browser_download_url": "https://github.com/jesseduffield/lazydocker/releases/download/v0.23.3/lazydocker_0.23.3_Linux_x86_64.tar.gz",
+      "name": "lazydocker_0.24.1_Linux_x86_64.tar.gz",
+      "browser_download_url": "https://github.com/jesseduffield/lazydocker/releases/download/v0.24.1/lazydocker_0.24.1_Linux_x86_64.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "lazydocker_0.23.3_Windows_arm64.zip",
-      "browser_download_url": "https://github.com/jesseduffield/lazydocker/releases/download/v0.23.3/lazydocker_0.23.3_Windows_arm64.zip",
+      "name": "lazydocker_0.24.1_Windows_arm64.zip",
+      "browser_download_url": "https://github.com/jesseduffield/lazydocker/releases/download/v0.24.1/lazydocker_0.24.1_Windows_arm64.zip",
       "content_type": "application/zip"
     },
     {
-      "name": "lazydocker_0.23.3_Windows_armv6.zip",
-      "browser_download_url": "https://github.com/jesseduffield/lazydocker/releases/download/v0.23.3/lazydocker_0.23.3_Windows_armv6.zip",
+      "name": "lazydocker_0.24.1_Windows_armv6.zip",
+      "browser_download_url": "https://github.com/jesseduffield/lazydocker/releases/download/v0.24.1/lazydocker_0.24.1_Windows_armv6.zip",
       "content_type": "application/zip"
     },
     {
-      "name": "lazydocker_0.23.3_Windows_armv7.zip",
-      "browser_download_url": "https://github.com/jesseduffield/lazydocker/releases/download/v0.23.3/lazydocker_0.23.3_Windows_armv7.zip",
+      "name": "lazydocker_0.24.1_Windows_armv7.zip",
+      "browser_download_url": "https://github.com/jesseduffield/lazydocker/releases/download/v0.24.1/lazydocker_0.24.1_Windows_armv7.zip",
       "content_type": "application/zip"
     },
     {
-      "name": "lazydocker_0.23.3_Windows_x86.zip",
-      "browser_download_url": "https://github.com/jesseduffield/lazydocker/releases/download/v0.23.3/lazydocker_0.23.3_Windows_x86.zip",
+      "name": "lazydocker_0.24.1_Windows_x86.zip",
+      "browser_download_url": "https://github.com/jesseduffield/lazydocker/releases/download/v0.24.1/lazydocker_0.24.1_Windows_x86.zip",
       "content_type": "application/zip"
     },
     {
-      "name": "lazydocker_0.23.3_Windows_x86_64.zip",
-      "browser_download_url": "https://github.com/jesseduffield/lazydocker/releases/download/v0.23.3/lazydocker_0.23.3_Windows_x86_64.zip",
+      "name": "lazydocker_0.24.1_Windows_x86_64.zip",
+      "browser_download_url": "https://github.com/jesseduffield/lazydocker/releases/download/v0.24.1/lazydocker_0.24.1_Windows_x86_64.zip",
       "content_type": "application/zip"
     }
   ],
@@ -2645,93 +2846,93 @@
   ],
   "junegunn/fzf": [
     {
-      "name": "fzf-0.55.0-darwin_amd64.tar.gz",
-      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.55.0/fzf-0.55.0-darwin_amd64.tar.gz",
+      "name": "fzf-0.57.0-darwin_amd64.tar.gz",
+      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.57.0/fzf-0.57.0-darwin_amd64.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "fzf-0.55.0-darwin_arm64.tar.gz",
-      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.55.0/fzf-0.55.0-darwin_arm64.tar.gz",
+      "name": "fzf-0.57.0-darwin_arm64.tar.gz",
+      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.57.0/fzf-0.57.0-darwin_arm64.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "fzf-0.55.0-freebsd_amd64.tar.gz",
-      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.55.0/fzf-0.55.0-freebsd_amd64.tar.gz",
+      "name": "fzf-0.57.0-freebsd_amd64.tar.gz",
+      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.57.0/fzf-0.57.0-freebsd_amd64.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "fzf-0.55.0-linux_amd64.tar.gz",
-      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.55.0/fzf-0.55.0-linux_amd64.tar.gz",
+      "name": "fzf-0.57.0-linux_amd64.tar.gz",
+      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.57.0/fzf-0.57.0-linux_amd64.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "fzf-0.55.0-linux_arm64.tar.gz",
-      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.55.0/fzf-0.55.0-linux_arm64.tar.gz",
+      "name": "fzf-0.57.0-linux_arm64.tar.gz",
+      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.57.0/fzf-0.57.0-linux_arm64.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "fzf-0.55.0-linux_armv5.tar.gz",
-      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.55.0/fzf-0.55.0-linux_armv5.tar.gz",
+      "name": "fzf-0.57.0-linux_armv5.tar.gz",
+      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.57.0/fzf-0.57.0-linux_armv5.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "fzf-0.55.0-linux_armv6.tar.gz",
-      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.55.0/fzf-0.55.0-linux_armv6.tar.gz",
+      "name": "fzf-0.57.0-linux_armv6.tar.gz",
+      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.57.0/fzf-0.57.0-linux_armv6.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "fzf-0.55.0-linux_armv7.tar.gz",
-      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.55.0/fzf-0.55.0-linux_armv7.tar.gz",
+      "name": "fzf-0.57.0-linux_armv7.tar.gz",
+      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.57.0/fzf-0.57.0-linux_armv7.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "fzf-0.55.0-linux_loong64.tar.gz",
-      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.55.0/fzf-0.55.0-linux_loong64.tar.gz",
+      "name": "fzf-0.57.0-linux_loong64.tar.gz",
+      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.57.0/fzf-0.57.0-linux_loong64.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "fzf-0.55.0-linux_ppc64le.tar.gz",
-      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.55.0/fzf-0.55.0-linux_ppc64le.tar.gz",
+      "name": "fzf-0.57.0-linux_ppc64le.tar.gz",
+      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.57.0/fzf-0.57.0-linux_ppc64le.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "fzf-0.55.0-linux_s390x.tar.gz",
-      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.55.0/fzf-0.55.0-linux_s390x.tar.gz",
+      "name": "fzf-0.57.0-linux_s390x.tar.gz",
+      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.57.0/fzf-0.57.0-linux_s390x.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "fzf-0.55.0-openbsd_amd64.tar.gz",
-      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.55.0/fzf-0.55.0-openbsd_amd64.tar.gz",
+      "name": "fzf-0.57.0-openbsd_amd64.tar.gz",
+      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.57.0/fzf-0.57.0-openbsd_amd64.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "fzf-0.55.0-windows_amd64.zip",
-      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.55.0/fzf-0.55.0-windows_amd64.zip",
+      "name": "fzf-0.57.0-windows_amd64.zip",
+      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.57.0/fzf-0.57.0-windows_amd64.zip",
       "content_type": "application/zip"
     },
     {
-      "name": "fzf-0.55.0-windows_arm64.zip",
-      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.55.0/fzf-0.55.0-windows_arm64.zip",
+      "name": "fzf-0.57.0-windows_arm64.zip",
+      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.57.0/fzf-0.57.0-windows_arm64.zip",
       "content_type": "application/zip"
     },
     {
-      "name": "fzf-0.55.0-windows_armv5.zip",
-      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.55.0/fzf-0.55.0-windows_armv5.zip",
+      "name": "fzf-0.57.0-windows_armv5.zip",
+      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.57.0/fzf-0.57.0-windows_armv5.zip",
       "content_type": "application/zip"
     },
     {
-      "name": "fzf-0.55.0-windows_armv6.zip",
-      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.55.0/fzf-0.55.0-windows_armv6.zip",
+      "name": "fzf-0.57.0-windows_armv6.zip",
+      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.57.0/fzf-0.57.0-windows_armv6.zip",
       "content_type": "application/zip"
     },
     {
-      "name": "fzf-0.55.0-windows_armv7.zip",
-      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.55.0/fzf-0.55.0-windows_armv7.zip",
+      "name": "fzf-0.57.0-windows_armv7.zip",
+      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.57.0/fzf-0.57.0-windows_armv7.zip",
       "content_type": "application/zip"
     },
     {
-      "name": "fzf_0.55.0_checksums.txt",
-      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.55.0/fzf_0.55.0_checksums.txt",
+      "name": "fzf_0.57.0_checksums.txt",
+      "browser_download_url": "https://github.com/junegunn/fzf/releases/download/v0.57.0/fzf_0.57.0_checksums.txt",
       "content_type": "text/plain; charset=utf-8"
     }
   ],
@@ -2859,115 +3060,115 @@
   ],
   "knqyf263/pet": [
     {
-      "name": "pet_0.9.0_checksums.txt",
-      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v0.9.0/pet_0.9.0_checksums.txt",
+      "name": "pet_1.0.1_checksums.txt",
+      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v1.0.1/pet_1.0.1_checksums.txt",
       "content_type": "text/plain; charset=utf-8"
     },
     {
-      "name": "pet_0.9.0_darwin_amd64.tar.gz",
-      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v0.9.0/pet_0.9.0_darwin_amd64.tar.gz",
+      "name": "pet_1.0.1_darwin_amd64.tar.gz",
+      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v1.0.1/pet_1.0.1_darwin_amd64.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "pet_0.9.0_darwin_arm64.tar.gz",
-      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v0.9.0/pet_0.9.0_darwin_arm64.tar.gz",
+      "name": "pet_1.0.1_darwin_arm64.tar.gz",
+      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v1.0.1/pet_1.0.1_darwin_arm64.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "pet_0.9.0_linux_386.deb",
-      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v0.9.0/pet_0.9.0_linux_386.deb",
+      "name": "pet_1.0.1_linux_386.deb",
+      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v1.0.1/pet_1.0.1_linux_386.deb",
       "content_type": "application/vnd.debian.binary-package"
     },
     {
-      "name": "pet_0.9.0_linux_386.rpm",
-      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v0.9.0/pet_0.9.0_linux_386.rpm",
+      "name": "pet_1.0.1_linux_386.rpm",
+      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v1.0.1/pet_1.0.1_linux_386.rpm",
       "content_type": "application/x-rpm"
     },
     {
-      "name": "pet_0.9.0_linux_386.tar.gz",
-      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v0.9.0/pet_0.9.0_linux_386.tar.gz",
+      "name": "pet_1.0.1_linux_386.tar.gz",
+      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v1.0.1/pet_1.0.1_linux_386.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "pet_0.9.0_linux_amd64.deb",
-      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v0.9.0/pet_0.9.0_linux_amd64.deb",
+      "name": "pet_1.0.1_linux_amd64.deb",
+      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v1.0.1/pet_1.0.1_linux_amd64.deb",
       "content_type": "application/vnd.debian.binary-package"
     },
     {
-      "name": "pet_0.9.0_linux_amd64.rpm",
-      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v0.9.0/pet_0.9.0_linux_amd64.rpm",
+      "name": "pet_1.0.1_linux_amd64.rpm",
+      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v1.0.1/pet_1.0.1_linux_amd64.rpm",
       "content_type": "application/x-rpm"
     },
     {
-      "name": "pet_0.9.0_linux_amd64.tar.gz",
-      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v0.9.0/pet_0.9.0_linux_amd64.tar.gz",
+      "name": "pet_1.0.1_linux_amd64.tar.gz",
+      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v1.0.1/pet_1.0.1_linux_amd64.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "pet_0.9.0_linux_arm64.deb",
-      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v0.9.0/pet_0.9.0_linux_arm64.deb",
+      "name": "pet_1.0.1_linux_arm64.deb",
+      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v1.0.1/pet_1.0.1_linux_arm64.deb",
       "content_type": "application/vnd.debian.binary-package"
     },
     {
-      "name": "pet_0.9.0_linux_arm64.rpm",
-      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v0.9.0/pet_0.9.0_linux_arm64.rpm",
+      "name": "pet_1.0.1_linux_arm64.rpm",
+      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v1.0.1/pet_1.0.1_linux_arm64.rpm",
       "content_type": "application/x-rpm"
     },
     {
-      "name": "pet_0.9.0_linux_arm64.tar.gz",
-      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v0.9.0/pet_0.9.0_linux_arm64.tar.gz",
+      "name": "pet_1.0.1_linux_arm64.tar.gz",
+      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v1.0.1/pet_1.0.1_linux_arm64.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "pet_0.9.0_linux_armv6.deb",
-      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v0.9.0/pet_0.9.0_linux_armv6.deb",
+      "name": "pet_1.0.1_linux_armv6.deb",
+      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v1.0.1/pet_1.0.1_linux_armv6.deb",
       "content_type": "application/vnd.debian.binary-package"
     },
     {
-      "name": "pet_0.9.0_linux_armv6.rpm",
-      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v0.9.0/pet_0.9.0_linux_armv6.rpm",
+      "name": "pet_1.0.1_linux_armv6.rpm",
+      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v1.0.1/pet_1.0.1_linux_armv6.rpm",
       "content_type": "application/x-rpm"
     },
     {
-      "name": "pet_0.9.0_linux_armv6.tar.gz",
-      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v0.9.0/pet_0.9.0_linux_armv6.tar.gz",
+      "name": "pet_1.0.1_linux_armv6.tar.gz",
+      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v1.0.1/pet_1.0.1_linux_armv6.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "pet_0.9.0_windows_386.tar.gz",
-      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v0.9.0/pet_0.9.0_windows_386.tar.gz",
+      "name": "pet_1.0.1_windows_386.tar.gz",
+      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v1.0.1/pet_1.0.1_windows_386.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "pet_0.9.0_windows_amd64.tar.gz",
-      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v0.9.0/pet_0.9.0_windows_amd64.tar.gz",
+      "name": "pet_1.0.1_windows_amd64.tar.gz",
+      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v1.0.1/pet_1.0.1_windows_amd64.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "pet_0.9.0_windows_arm64.tar.gz",
-      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v0.9.0/pet_0.9.0_windows_arm64.tar.gz",
+      "name": "pet_1.0.1_windows_arm64.tar.gz",
+      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v1.0.1/pet_1.0.1_windows_arm64.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "pet_0.9.0_windows_armv6.tar.gz",
-      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v0.9.0/pet_0.9.0_windows_armv6.tar.gz",
+      "name": "pet_1.0.1_windows_armv6.tar.gz",
+      "browser_download_url": "https://github.com/knqyf263/pet/releases/download/v1.0.1/pet_1.0.1_windows_armv6.tar.gz",
       "content_type": "application/gzip"
     }
   ],
   "kraanzu/dooit": [
     {
       "name": "linux-dooit",
-      "browser_download_url": "https://github.com/kraanzu/dooit/releases/download/v2.2.0/linux-dooit",
+      "browser_download_url": "https://github.com/dooit-org/dooit/releases/download/v3.1.0/linux-dooit",
       "content_type": "application/octet-stream"
     },
     {
       "name": "macos-dooit",
-      "browser_download_url": "https://github.com/kraanzu/dooit/releases/download/v2.2.0/macos-dooit",
+      "browser_download_url": "https://github.com/dooit-org/dooit/releases/download/v3.1.0/macos-dooit",
       "content_type": "application/octet-stream"
     },
     {
       "name": "windows-dooit.exe",
-      "browser_download_url": "https://github.com/kraanzu/dooit/releases/download/v2.2.0/windows-dooit.exe",
+      "browser_download_url": "https://github.com/dooit-org/dooit/releases/download/v3.1.0/windows-dooit.exe",
       "content_type": "application/octet-stream"
     }
   ],
@@ -3232,32 +3433,32 @@
   "logdyhq/logdy-core": [
     {
       "name": "logdy_darwin_amd64",
-      "browser_download_url": "https://github.com/logdyhq/logdy-core/releases/download/v0.13.0/logdy_darwin_amd64",
+      "browser_download_url": "https://github.com/logdyhq/logdy-core/releases/download/v0.14.0/logdy_darwin_amd64",
       "content_type": "application/octet-stream"
     },
     {
       "name": "logdy_darwin_arm64",
-      "browser_download_url": "https://github.com/logdyhq/logdy-core/releases/download/v0.13.0/logdy_darwin_arm64",
+      "browser_download_url": "https://github.com/logdyhq/logdy-core/releases/download/v0.14.0/logdy_darwin_arm64",
       "content_type": "application/octet-stream"
     },
     {
       "name": "logdy_linux_amd64",
-      "browser_download_url": "https://github.com/logdyhq/logdy-core/releases/download/v0.13.0/logdy_linux_amd64",
+      "browser_download_url": "https://github.com/logdyhq/logdy-core/releases/download/v0.14.0/logdy_linux_amd64",
       "content_type": "application/octet-stream"
     },
     {
       "name": "logdy_linux_arm64",
-      "browser_download_url": "https://github.com/logdyhq/logdy-core/releases/download/v0.13.0/logdy_linux_arm64",
+      "browser_download_url": "https://github.com/logdyhq/logdy-core/releases/download/v0.14.0/logdy_linux_arm64",
       "content_type": "application/octet-stream"
     },
     {
       "name": "logdy_windows_386.exe",
-      "browser_download_url": "https://github.com/logdyhq/logdy-core/releases/download/v0.13.0/logdy_windows_386.exe",
+      "browser_download_url": "https://github.com/logdyhq/logdy-core/releases/download/v0.14.0/logdy_windows_386.exe",
       "content_type": "application/x-msdownload"
     },
     {
       "name": "logdy_windows_amd64.exe",
-      "browser_download_url": "https://github.com/logdyhq/logdy-core/releases/download/v0.13.0/logdy_windows_amd64.exe",
+      "browser_download_url": "https://github.com/logdyhq/logdy-core/releases/download/v0.14.0/logdy_windows_amd64.exe",
       "content_type": "application/x-msdownload"
     }
   ],
@@ -3408,257 +3609,267 @@
   "mikefarah/yq": [
     {
       "name": "checksums",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/checksums",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/checksums",
       "content_type": "application/octet-stream"
     },
     {
       "name": "checksums-bsd",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/checksums-bsd",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/checksums-bsd",
       "content_type": "application/octet-stream"
     },
     {
       "name": "checksums_hashes_order",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/checksums_hashes_order",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/checksums_hashes_order",
       "content_type": "application/octet-stream"
     },
     {
       "name": "extract-checksum.sh",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/extract-checksum.sh",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/extract-checksum.sh",
       "content_type": "application/x-sh"
     },
     {
       "name": "yq_darwin_amd64",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_darwin_amd64",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_darwin_amd64",
       "content_type": "application/octet-stream"
     },
     {
       "name": "yq_darwin_amd64.tar.gz",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_darwin_amd64.tar.gz",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_darwin_amd64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "yq_darwin_arm64",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_darwin_arm64",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_darwin_arm64",
       "content_type": "application/octet-stream"
     },
     {
       "name": "yq_darwin_arm64.tar.gz",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_darwin_arm64.tar.gz",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_darwin_arm64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "yq_freebsd_386",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_freebsd_386",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_freebsd_386",
       "content_type": "application/octet-stream"
     },
     {
       "name": "yq_freebsd_386.tar.gz",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_freebsd_386.tar.gz",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_freebsd_386.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "yq_freebsd_amd64",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_freebsd_amd64",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_freebsd_amd64",
       "content_type": "application/octet-stream"
     },
     {
       "name": "yq_freebsd_amd64.tar.gz",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_freebsd_amd64.tar.gz",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_freebsd_amd64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "yq_freebsd_arm",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_freebsd_arm",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_freebsd_arm",
       "content_type": "application/octet-stream"
     },
     {
       "name": "yq_freebsd_arm.tar.gz",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_freebsd_arm.tar.gz",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_freebsd_arm.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "yq_linux_386",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_linux_386",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_linux_386",
       "content_type": "application/octet-stream"
     },
     {
       "name": "yq_linux_386.tar.gz",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_linux_386.tar.gz",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_linux_386.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "yq_linux_amd64",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_linux_amd64",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_linux_amd64",
       "content_type": "application/octet-stream"
     },
     {
       "name": "yq_linux_amd64.tar.gz",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_linux_amd64.tar.gz",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_linux_amd64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "yq_linux_arm",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_linux_arm",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_linux_arm",
       "content_type": "application/octet-stream"
     },
     {
       "name": "yq_linux_arm.tar.gz",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_linux_arm.tar.gz",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_linux_arm.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "yq_linux_arm64",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_linux_arm64",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_linux_arm64",
       "content_type": "application/octet-stream"
     },
     {
       "name": "yq_linux_arm64.tar.gz",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_linux_arm64.tar.gz",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_linux_arm64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "yq_linux_mips",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_linux_mips",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_linux_mips",
       "content_type": "application/octet-stream"
     },
     {
       "name": "yq_linux_mips.tar.gz",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_linux_mips.tar.gz",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_linux_mips.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "yq_linux_mips64",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_linux_mips64",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_linux_mips64",
       "content_type": "application/octet-stream"
     },
     {
       "name": "yq_linux_mips64.tar.gz",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_linux_mips64.tar.gz",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_linux_mips64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "yq_linux_mips64le",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_linux_mips64le",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_linux_mips64le",
       "content_type": "application/octet-stream"
     },
     {
       "name": "yq_linux_mips64le.tar.gz",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_linux_mips64le.tar.gz",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_linux_mips64le.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "yq_linux_mipsle",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_linux_mipsle",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_linux_mipsle",
       "content_type": "application/octet-stream"
     },
     {
       "name": "yq_linux_mipsle.tar.gz",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_linux_mipsle.tar.gz",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_linux_mipsle.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "yq_linux_ppc64",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_linux_ppc64",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_linux_ppc64",
       "content_type": "application/octet-stream"
     },
     {
       "name": "yq_linux_ppc64.tar.gz",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_linux_ppc64.tar.gz",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_linux_ppc64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "yq_linux_ppc64le",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_linux_ppc64le",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_linux_ppc64le",
       "content_type": "application/octet-stream"
     },
     {
       "name": "yq_linux_ppc64le.tar.gz",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_linux_ppc64le.tar.gz",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_linux_ppc64le.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "yq_linux_riscv64",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_linux_riscv64",
+      "content_type": "application/octet-stream"
+    },
+    {
+      "name": "yq_linux_riscv64.tar.gz",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_linux_riscv64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "yq_linux_s390x",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_linux_s390x",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_linux_s390x",
       "content_type": "application/octet-stream"
     },
     {
       "name": "yq_linux_s390x.tar.gz",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_linux_s390x.tar.gz",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_linux_s390x.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "yq_man_page_only.tar.gz",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_man_page_only.tar.gz",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_man_page_only.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "yq_netbsd_386",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_netbsd_386",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_netbsd_386",
       "content_type": "application/octet-stream"
     },
     {
       "name": "yq_netbsd_386.tar.gz",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_netbsd_386.tar.gz",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_netbsd_386.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "yq_netbsd_amd64",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_netbsd_amd64",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_netbsd_amd64",
       "content_type": "application/octet-stream"
     },
     {
       "name": "yq_netbsd_amd64.tar.gz",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_netbsd_amd64.tar.gz",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_netbsd_amd64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "yq_netbsd_arm",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_netbsd_arm",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_netbsd_arm",
       "content_type": "application/octet-stream"
     },
     {
       "name": "yq_netbsd_arm.tar.gz",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_netbsd_arm.tar.gz",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_netbsd_arm.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "yq_openbsd_386",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_openbsd_386",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_openbsd_386",
       "content_type": "application/octet-stream"
     },
     {
       "name": "yq_openbsd_386.tar.gz",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_openbsd_386.tar.gz",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_openbsd_386.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "yq_openbsd_amd64",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_openbsd_amd64",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_openbsd_amd64",
       "content_type": "application/octet-stream"
     },
     {
       "name": "yq_openbsd_amd64.tar.gz",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_openbsd_amd64.tar.gz",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_openbsd_amd64.tar.gz",
       "content_type": "application/gzip"
     },
     {
       "name": "yq_windows_386.exe",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_windows_386.exe",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_windows_386.exe",
       "content_type": "application/octet-stream"
     },
     {
       "name": "yq_windows_386.zip",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_windows_386.zip",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_windows_386.zip",
       "content_type": "application/zip"
     },
     {
       "name": "yq_windows_amd64.exe",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_windows_amd64.exe",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_windows_amd64.exe",
       "content_type": "application/octet-stream"
     },
     {
       "name": "yq_windows_amd64.zip",
-      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_windows_amd64.zip",
+      "browser_download_url": "https://github.com/mikefarah/yq/releases/download/v4.44.6/yq_windows_amd64.zip",
       "content_type": "application/zip"
     }
   ],
@@ -4333,83 +4544,93 @@
   ],
   "sharkdp/hyperfine": [
     {
-      "name": "hyperfine-musl_1.18.0_amd64.deb",
-      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.18.0/hyperfine-musl_1.18.0_amd64.deb",
+      "name": "hyperfine-musl_1.19.0_amd64.deb",
+      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.19.0/hyperfine-musl_1.19.0_amd64.deb",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "hyperfine-musl_1.18.0_i686.deb",
-      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.18.0/hyperfine-musl_1.18.0_i686.deb",
+      "name": "hyperfine-musl_1.19.0_armhf.deb",
+      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.19.0/hyperfine-musl_1.19.0_armhf.deb",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "hyperfine-v1.18.0-aarch64-unknown-linux-gnu.tar.gz",
-      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.18.0/hyperfine-v1.18.0-aarch64-unknown-linux-gnu.tar.gz",
+      "name": "hyperfine-musl_1.19.0_i686.deb",
+      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.19.0/hyperfine-musl_1.19.0_i686.deb",
+      "content_type": "application/octet-stream"
+    },
+    {
+      "name": "hyperfine-v1.19.0-aarch64-apple-darwin.tar.gz",
+      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.19.0/hyperfine-v1.19.0-aarch64-apple-darwin.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "hyperfine-v1.18.0-arm-unknown-linux-gnueabihf.tar.gz",
-      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.18.0/hyperfine-v1.18.0-arm-unknown-linux-gnueabihf.tar.gz",
+      "name": "hyperfine-v1.19.0-aarch64-unknown-linux-gnu.tar.gz",
+      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.19.0/hyperfine-v1.19.0-aarch64-unknown-linux-gnu.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "hyperfine-v1.18.0-arm-unknown-linux-musleabihf.tar.gz",
-      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.18.0/hyperfine-v1.18.0-arm-unknown-linux-musleabihf.tar.gz",
+      "name": "hyperfine-v1.19.0-arm-unknown-linux-gnueabihf.tar.gz",
+      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.19.0/hyperfine-v1.19.0-arm-unknown-linux-gnueabihf.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "hyperfine-v1.18.0-i686-pc-windows-msvc.zip",
-      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.18.0/hyperfine-v1.18.0-i686-pc-windows-msvc.zip",
+      "name": "hyperfine-v1.19.0-arm-unknown-linux-musleabihf.tar.gz",
+      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.19.0/hyperfine-v1.19.0-arm-unknown-linux-musleabihf.tar.gz",
+      "content_type": "application/gzip"
+    },
+    {
+      "name": "hyperfine-v1.19.0-i686-pc-windows-msvc.zip",
+      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.19.0/hyperfine-v1.19.0-i686-pc-windows-msvc.zip",
       "content_type": "application/zip"
     },
     {
-      "name": "hyperfine-v1.18.0-i686-unknown-linux-gnu.tar.gz",
-      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.18.0/hyperfine-v1.18.0-i686-unknown-linux-gnu.tar.gz",
+      "name": "hyperfine-v1.19.0-i686-unknown-linux-gnu.tar.gz",
+      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.19.0/hyperfine-v1.19.0-i686-unknown-linux-gnu.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "hyperfine-v1.18.0-i686-unknown-linux-musl.tar.gz",
-      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.18.0/hyperfine-v1.18.0-i686-unknown-linux-musl.tar.gz",
+      "name": "hyperfine-v1.19.0-i686-unknown-linux-musl.tar.gz",
+      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.19.0/hyperfine-v1.19.0-i686-unknown-linux-musl.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "hyperfine-v1.18.0-x86_64-apple-darwin.tar.gz",
-      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.18.0/hyperfine-v1.18.0-x86_64-apple-darwin.tar.gz",
+      "name": "hyperfine-v1.19.0-x86_64-apple-darwin.tar.gz",
+      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.19.0/hyperfine-v1.19.0-x86_64-apple-darwin.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "hyperfine-v1.18.0-x86_64-pc-windows-msvc.zip",
-      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.18.0/hyperfine-v1.18.0-x86_64-pc-windows-msvc.zip",
+      "name": "hyperfine-v1.19.0-x86_64-pc-windows-msvc.zip",
+      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.19.0/hyperfine-v1.19.0-x86_64-pc-windows-msvc.zip",
       "content_type": "application/zip"
     },
     {
-      "name": "hyperfine-v1.18.0-x86_64-unknown-linux-gnu.tar.gz",
-      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.18.0/hyperfine-v1.18.0-x86_64-unknown-linux-gnu.tar.gz",
+      "name": "hyperfine-v1.19.0-x86_64-unknown-linux-gnu.tar.gz",
+      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.19.0/hyperfine-v1.19.0-x86_64-unknown-linux-gnu.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "hyperfine-v1.18.0-x86_64-unknown-linux-musl.tar.gz",
-      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.18.0/hyperfine-v1.18.0-x86_64-unknown-linux-musl.tar.gz",
+      "name": "hyperfine-v1.19.0-x86_64-unknown-linux-musl.tar.gz",
+      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.19.0/hyperfine-v1.19.0-x86_64-unknown-linux-musl.tar.gz",
       "content_type": "application/gzip"
     },
     {
-      "name": "hyperfine_1.18.0_amd64.deb",
-      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.18.0/hyperfine_1.18.0_amd64.deb",
+      "name": "hyperfine_1.19.0_amd64.deb",
+      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.19.0/hyperfine_1.19.0_amd64.deb",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "hyperfine_1.18.0_arm64.deb",
-      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.18.0/hyperfine_1.18.0_arm64.deb",
+      "name": "hyperfine_1.19.0_arm64.deb",
+      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.19.0/hyperfine_1.19.0_arm64.deb",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "hyperfine_1.18.0_armhf.deb",
-      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.18.0/hyperfine_1.18.0_armhf.deb",
+      "name": "hyperfine_1.19.0_armhf.deb",
+      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.19.0/hyperfine_1.19.0_armhf.deb",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "hyperfine_1.18.0_i686.deb",
-      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.18.0/hyperfine_1.18.0_i686.deb",
+      "name": "hyperfine_1.19.0_i686.deb",
+      "browser_download_url": "https://github.com/sharkdp/hyperfine/releases/download/v1.19.0/hyperfine_1.19.0_i686.deb",
       "content_type": "application/octet-stream"
     }
   ],
@@ -4744,197 +4965,197 @@
   "syncthing/syncthing": [
     {
       "name": "compat.json",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/compat.json",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/compat.json",
       "content_type": "application/octet-stream"
     },
     {
       "name": "sha1sum.txt.asc",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/sha1sum.txt.asc",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/sha1sum.txt.asc",
       "content_type": "application/octet-stream"
     },
     {
       "name": "sha256sum.txt.asc",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/sha256sum.txt.asc",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/sha256sum.txt.asc",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-dragonfly-amd64-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-dragonfly-amd64-v1.28.0.tar.gz",
+      "name": "syncthing-dragonfly-amd64-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-dragonfly-amd64-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-freebsd-386-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-freebsd-386-v1.28.0.tar.gz",
+      "name": "syncthing-freebsd-386-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-freebsd-386-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-freebsd-amd64-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-freebsd-amd64-v1.28.0.tar.gz",
+      "name": "syncthing-freebsd-amd64-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-freebsd-amd64-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-freebsd-arm-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-freebsd-arm-v1.28.0.tar.gz",
+      "name": "syncthing-freebsd-arm-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-freebsd-arm-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-freebsd-arm64-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-freebsd-arm64-v1.28.0.tar.gz",
+      "name": "syncthing-freebsd-arm64-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-freebsd-arm64-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-illumos-amd64-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-illumos-amd64-v1.28.0.tar.gz",
+      "name": "syncthing-illumos-amd64-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-illumos-amd64-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-linux-386-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-linux-386-v1.28.0.tar.gz",
+      "name": "syncthing-linux-386-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-linux-386-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-linux-amd64-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-linux-amd64-v1.28.0.tar.gz",
+      "name": "syncthing-linux-amd64-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-linux-amd64-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-linux-arm-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-linux-arm-v1.28.0.tar.gz",
+      "name": "syncthing-linux-arm-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-linux-arm-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-linux-arm64-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-linux-arm64-v1.28.0.tar.gz",
+      "name": "syncthing-linux-arm64-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-linux-arm64-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-linux-loong64-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-linux-loong64-v1.28.0.tar.gz",
+      "name": "syncthing-linux-loong64-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-linux-loong64-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-linux-mips-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-linux-mips-v1.28.0.tar.gz",
+      "name": "syncthing-linux-mips-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-linux-mips-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-linux-mips64-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-linux-mips64-v1.28.0.tar.gz",
+      "name": "syncthing-linux-mips64-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-linux-mips64-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-linux-mips64le-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-linux-mips64le-v1.28.0.tar.gz",
+      "name": "syncthing-linux-mips64le-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-linux-mips64le-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-linux-mipsle-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-linux-mipsle-v1.28.0.tar.gz",
+      "name": "syncthing-linux-mipsle-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-linux-mipsle-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-linux-ppc64-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-linux-ppc64-v1.28.0.tar.gz",
+      "name": "syncthing-linux-ppc64-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-linux-ppc64-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-linux-ppc64le-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-linux-ppc64le-v1.28.0.tar.gz",
+      "name": "syncthing-linux-ppc64le-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-linux-ppc64le-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-linux-riscv64-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-linux-riscv64-v1.28.0.tar.gz",
+      "name": "syncthing-linux-riscv64-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-linux-riscv64-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-linux-s390x-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-linux-s390x-v1.28.0.tar.gz",
+      "name": "syncthing-linux-s390x-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-linux-s390x-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-macos-amd64-v1.28.0.zip",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-macos-amd64-v1.28.0.zip",
+      "name": "syncthing-macos-amd64-v1.28.1.zip",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-macos-amd64-v1.28.1.zip",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-macos-arm64-v1.28.0.zip",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-macos-arm64-v1.28.0.zip",
+      "name": "syncthing-macos-arm64-v1.28.1.zip",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-macos-arm64-v1.28.1.zip",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-macos-universal-v1.28.0.zip",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-macos-universal-v1.28.0.zip",
+      "name": "syncthing-macos-universal-v1.28.1.zip",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-macos-universal-v1.28.1.zip",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-netbsd-amd64-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-netbsd-amd64-v1.28.0.tar.gz",
+      "name": "syncthing-netbsd-amd64-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-netbsd-amd64-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-netbsd-arm64-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-netbsd-arm64-v1.28.0.tar.gz",
+      "name": "syncthing-netbsd-arm64-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-netbsd-arm64-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-openbsd-386-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-openbsd-386-v1.28.0.tar.gz",
+      "name": "syncthing-openbsd-386-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-openbsd-386-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-openbsd-amd64-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-openbsd-amd64-v1.28.0.tar.gz",
+      "name": "syncthing-openbsd-amd64-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-openbsd-amd64-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-openbsd-arm-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-openbsd-arm-v1.28.0.tar.gz",
+      "name": "syncthing-openbsd-arm-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-openbsd-arm-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-openbsd-arm64-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-openbsd-arm64-v1.28.0.tar.gz",
+      "name": "syncthing-openbsd-arm64-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-openbsd-arm64-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-openbsd-riscv64-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-openbsd-riscv64-v1.28.0.tar.gz",
+      "name": "syncthing-openbsd-riscv64-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-openbsd-riscv64-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-solaris-amd64-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-solaris-amd64-v1.28.0.tar.gz",
+      "name": "syncthing-solaris-amd64-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-solaris-amd64-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-source-v1.28.0.tar.gz",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-source-v1.28.0.tar.gz",
+      "name": "syncthing-source-v1.28.1.tar.gz",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-source-v1.28.1.tar.gz",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-source-v1.28.0.tar.gz.asc",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-source-v1.28.0.tar.gz.asc",
+      "name": "syncthing-source-v1.28.1.tar.gz.asc",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-source-v1.28.1.tar.gz.asc",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-windows-386-v1.28.0.zip",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-windows-386-v1.28.0.zip",
+      "name": "syncthing-windows-386-v1.28.1.zip",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-windows-386-v1.28.1.zip",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-windows-amd64-v1.28.0.zip",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-windows-amd64-v1.28.0.zip",
+      "name": "syncthing-windows-amd64-v1.28.1.zip",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-windows-amd64-v1.28.1.zip",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-windows-arm-v1.28.0.zip",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-windows-arm-v1.28.0.zip",
+      "name": "syncthing-windows-arm-v1.28.1.zip",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-windows-arm-v1.28.1.zip",
       "content_type": "application/octet-stream"
     },
     {
-      "name": "syncthing-windows-arm64-v1.28.0.zip",
-      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.0/syncthing-windows-arm64-v1.28.0.zip",
+      "name": "syncthing-windows-arm64-v1.28.1.zip",
+      "browser_download_url": "https://github.com/syncthing/syncthing/releases/download/v1.28.1/syncthing-windows-arm64-v1.28.1.zip",
       "content_type": "application/octet-stream"
     }
   ],
@@ -4967,98 +5188,98 @@
   ],
   "traefik/traefik": [
     {
-      "name": "traefik-v3.2.1.src.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik-v3.2.1.src.tar.gz",
+      "name": "traefik-v3.2.3.src.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.3/traefik-v3.2.3.src.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.2.1_checksums.txt",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_checksums.txt",
+      "name": "traefik_v3.2.3_checksums.txt",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.3/traefik_v3.2.3_checksums.txt",
       "content_type": "text/plain; charset=utf-8"
     },
     {
-      "name": "traefik_v3.2.1_darwin_amd64.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_darwin_amd64.tar.gz",
+      "name": "traefik_v3.2.3_darwin_amd64.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.3/traefik_v3.2.3_darwin_amd64.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.2.1_darwin_arm64.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_darwin_arm64.tar.gz",
+      "name": "traefik_v3.2.3_darwin_arm64.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.3/traefik_v3.2.3_darwin_arm64.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.2.1_freebsd_386.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_freebsd_386.tar.gz",
+      "name": "traefik_v3.2.3_freebsd_386.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.3/traefik_v3.2.3_freebsd_386.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.2.1_freebsd_amd64.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_freebsd_amd64.tar.gz",
+      "name": "traefik_v3.2.3_freebsd_amd64.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.3/traefik_v3.2.3_freebsd_amd64.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.2.1_linux_386.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_linux_386.tar.gz",
+      "name": "traefik_v3.2.3_linux_386.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.3/traefik_v3.2.3_linux_386.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.2.1_linux_amd64.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_linux_amd64.tar.gz",
+      "name": "traefik_v3.2.3_linux_amd64.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.3/traefik_v3.2.3_linux_amd64.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.2.1_linux_arm64.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_linux_arm64.tar.gz",
+      "name": "traefik_v3.2.3_linux_arm64.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.3/traefik_v3.2.3_linux_arm64.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.2.1_linux_armv6.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_linux_armv6.tar.gz",
+      "name": "traefik_v3.2.3_linux_armv6.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.3/traefik_v3.2.3_linux_armv6.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.2.1_linux_armv7.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_linux_armv7.tar.gz",
+      "name": "traefik_v3.2.3_linux_armv7.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.3/traefik_v3.2.3_linux_armv7.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.2.1_linux_ppc64le.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_linux_ppc64le.tar.gz",
+      "name": "traefik_v3.2.3_linux_ppc64le.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.3/traefik_v3.2.3_linux_ppc64le.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.2.1_linux_riscv64.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_linux_riscv64.tar.gz",
+      "name": "traefik_v3.2.3_linux_riscv64.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.3/traefik_v3.2.3_linux_riscv64.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.2.1_linux_s390x.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_linux_s390x.tar.gz",
+      "name": "traefik_v3.2.3_linux_s390x.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.3/traefik_v3.2.3_linux_s390x.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.2.1_openbsd_386.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_openbsd_386.tar.gz",
+      "name": "traefik_v3.2.3_openbsd_386.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.3/traefik_v3.2.3_openbsd_386.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.2.1_openbsd_amd64.tar.gz",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_openbsd_amd64.tar.gz",
+      "name": "traefik_v3.2.3_openbsd_amd64.tar.gz",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.3/traefik_v3.2.3_openbsd_amd64.tar.gz",
       "content_type": "application/x-gtar"
     },
     {
-      "name": "traefik_v3.2.1_windows_386.zip",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_windows_386.zip",
+      "name": "traefik_v3.2.3_windows_386.zip",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.3/traefik_v3.2.3_windows_386.zip",
       "content_type": "application/zip"
     },
     {
-      "name": "traefik_v3.2.1_windows_amd64.zip",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_windows_amd64.zip",
+      "name": "traefik_v3.2.3_windows_amd64.zip",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.3/traefik_v3.2.3_windows_amd64.zip",
       "content_type": "application/zip"
     },
     {
-      "name": "traefik_v3.2.1_windows_arm64.zip",
-      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.1/traefik_v3.2.1_windows_arm64.zip",
+      "name": "traefik_v3.2.3_windows_arm64.zip",
+      "browser_download_url": "https://github.com/traefik/traefik/releases/download/v3.2.3/traefik_v3.2.3_windows_arm64.zip",
       "content_type": "application/zip"
     }
   ],
@@ -5152,73 +5373,73 @@
   "ynqa/jnv": [
     {
       "name": "dist-manifest.json",
-      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.1/dist-manifest.json",
-      "content_type": "raw"
+      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.2/dist-manifest.json",
+      "content_type": "application/json"
     },
     {
       "name": "jnv-aarch64-apple-darwin.tar.xz",
-      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.1/jnv-aarch64-apple-darwin.tar.xz",
-      "content_type": "raw"
+      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.2/jnv-aarch64-apple-darwin.tar.xz",
+      "content_type": "application/x-xz"
     },
     {
       "name": "jnv-aarch64-apple-darwin.tar.xz.sha256",
-      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.1/jnv-aarch64-apple-darwin.tar.xz.sha256",
-      "content_type": "raw"
+      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.2/jnv-aarch64-apple-darwin.tar.xz.sha256",
+      "content_type": "application/octet-stream"
     },
     {
       "name": "jnv-x86_64-apple-darwin.tar.xz",
-      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.1/jnv-x86_64-apple-darwin.tar.xz",
-      "content_type": "raw"
+      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.2/jnv-x86_64-apple-darwin.tar.xz",
+      "content_type": "application/x-xz"
     },
     {
       "name": "jnv-x86_64-apple-darwin.tar.xz.sha256",
-      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.1/jnv-x86_64-apple-darwin.tar.xz.sha256",
-      "content_type": "raw"
+      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.2/jnv-x86_64-apple-darwin.tar.xz.sha256",
+      "content_type": "application/octet-stream"
     },
     {
       "name": "jnv-x86_64-pc-windows-msvc.zip",
-      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.1/jnv-x86_64-pc-windows-msvc.zip",
-      "content_type": "raw"
+      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.2/jnv-x86_64-pc-windows-msvc.zip",
+      "content_type": "application/zip"
     },
     {
       "name": "jnv-x86_64-pc-windows-msvc.zip.sha256",
-      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.1/jnv-x86_64-pc-windows-msvc.zip.sha256",
-      "content_type": "raw"
+      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.2/jnv-x86_64-pc-windows-msvc.zip.sha256",
+      "content_type": "application/octet-stream"
     },
     {
       "name": "jnv-x86_64-unknown-linux-gnu.tar.xz",
-      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.1/jnv-x86_64-unknown-linux-gnu.tar.xz",
-      "content_type": "raw"
+      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.2/jnv-x86_64-unknown-linux-gnu.tar.xz",
+      "content_type": "application/x-xz"
     },
     {
       "name": "jnv-x86_64-unknown-linux-gnu.tar.xz.sha256",
-      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.1/jnv-x86_64-unknown-linux-gnu.tar.xz.sha256",
-      "content_type": "raw"
+      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.2/jnv-x86_64-unknown-linux-gnu.tar.xz.sha256",
+      "content_type": "application/octet-stream"
     },
     {
       "name": "jnv-x86_64-unknown-linux-musl.tar.xz",
-      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.1/jnv-x86_64-unknown-linux-musl.tar.xz",
-      "content_type": "raw"
+      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.2/jnv-x86_64-unknown-linux-musl.tar.xz",
+      "content_type": "application/x-xz"
     },
     {
       "name": "jnv-x86_64-unknown-linux-musl.tar.xz.sha256",
-      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.1/jnv-x86_64-unknown-linux-musl.tar.xz.sha256",
-      "content_type": "raw"
+      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.2/jnv-x86_64-unknown-linux-musl.tar.xz.sha256",
+      "content_type": "application/octet-stream"
     },
     {
       "name": "jnv.rb",
-      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.1/jnv.rb",
-      "content_type": "raw"
+      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.2/jnv.rb",
+      "content_type": "application/x-ruby"
     },
     {
       "name": "source.tar.gz",
-      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.1/source.tar.gz",
-      "content_type": "raw"
+      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.2/source.tar.gz",
+      "content_type": "application/x-gtar"
     },
     {
       "name": "source.tar.gz.sha256",
-      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.1/source.tar.gz.sha256",
-      "content_type": "raw"
+      "browser_download_url": "https://github.com/ynqa/jnv/releases/download/v0.4.2/source.tar.gz.sha256",
+      "content_type": "application/octet-stream"
     }
   ],
   "zyedidia/micro": [

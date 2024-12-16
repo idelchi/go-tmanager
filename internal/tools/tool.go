@@ -61,7 +61,9 @@ type Tool struct {
 	Env env.Env
 	// Check defines a set of instructions for verifying the tool's integrity or functionality.
 	Check Checker
-	//
+	// VersionParse defines the strategy for parsing the version of the tool.
+	VersionParse string `yaml:"parse"`
+	// NoVerifySSL specifies whether SSL verification should be disabled when fetching the tool.
 	NoVerifySSL bool `json:"-" mapstructure:"-" yaml:"-"`
 }
 

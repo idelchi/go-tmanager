@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"context"
 	"errors"
+	"os"
 	"os/exec"
 	"strings"
 	"time"
@@ -33,6 +34,7 @@ func (e Executable) Command(ctx context.Context, cmdArgs []string) (string, erro
 	cmd := exec.CommandContext(ctx, e.File.Name(), cmdArgs...)
 	cmd.Stdout = &out
 	cmd.Stderr = &out
+	cmd.Stdin = os.Stdin
 
 	err := cmd.Run()
 
@@ -42,21 +44,19 @@ func (e Executable) Command(ctx context.Context, cmdArgs []string) (string, erro
 // ParseVersion attempts to parse the version of the executable using the provided Version object.
 // It iterates over predefined command strategies and tries to parse the version from the command output.
 // If successful, it sets the Version field of Executable; otherwise, it returns an error.
-func (e *Executable) ParseVersion() error {
-	timeout := 30 * time.Second
+func (e *Executable) ParseVersion(version *Version) error {
+	timeout := 5 * time.Second
 
 	// Create a context with a timeout to prevent hanging
 	ctx, cancel := context.WithTimeout(context.Background(), timeout)
 	defer cancel()
 
-	version := NewDefaultVersionParser()
-
 	// Iterate through each command strategy
 	for _, cmdArgs := range version.Commands {
 		// Get the output of the command
-		output, err := e.Command(ctx, cmdArgs)
+		output, err := e.Command(ctx, []string{cmdArgs})
 		if err != nil {
-			continue
+			// Many tools will have an exit 1 status when the version flag is used
 		}
 
 		if version, err := version.ParseString(output); err == nil {

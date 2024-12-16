@@ -38,7 +38,7 @@ func (g *GitHub) Export() error {
 }
 
 // LatestVersion fetches the latest release version of the GitHub repository.
-func (g *GitHub) LatestVersion2() (string, error) {
+func (g *GitHub) LatestVersion() (string, error) {
 	client := github.NewClient(g.Token)
 	repository := github.NewRepository(g.Owner, g.Repo, client)
 
@@ -50,15 +50,15 @@ func (g *GitHub) LatestVersion2() (string, error) {
 	// Store the latest release for future use
 	g.latestStoredRelease = release
 
-	if err := g.Export(); err != nil {
-		return "", err
-	}
+	// if err := g.Export(); err != nil {
+	// 	return "", err
+	// }
 
 	return release.Tag, nil
 }
 
 // LatestVersion fetches the latest release version of the GitHub repository.
-func (g *GitHub) LatestVersion() (string, error) {
+func (g *GitHub) LatestVersionFromExport() (string, error) {
 	client := github.NewClient(g.Token)
 	repository := github.NewRepository(g.Owner, g.Repo, client)
 
@@ -103,7 +103,6 @@ func (g *GitHub) MatchAssetsToRequirements(
 
 	matches := assets.Match(requirements)
 	if matches.Status() != nil {
-		return "", matches.WithoutZero().Status()
 		return "", matches.WithoutZero().Status()
 	}
 

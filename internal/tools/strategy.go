@@ -1,6 +1,8 @@
 package tools
 
 import (
+	"fmt"
+
 	"github.com/idelchi/godyl/internal/version"
 )
 
@@ -42,15 +44,25 @@ func (s Strategy) Upgrade(t *Tool) error {
 	case Upgrade:
 		// Parse the version of the existing tool.
 		exe := version.NewExecutable(t.Output, t.Exe.Name)
-		err := exe.ParseVersion()
-		if err != nil {
+
+		parser := version.NewDefaultVersionParser()
+		if t.VersionParse != "" {
+			parser.Commands = []string{t.VersionParse}
+		}
+
+		if t.VersionParse == "-" {
 			return nil
 		}
+
+		if err := exe.ParseVersion(parser); err != nil {
+			return nil
+		}
+
 		// Parse the desired version of the tool.
 		if version, err := version.NewDefaultVersionParser().ParseString(t.Version); err == nil {
 			// If the versions match, return an error indicating the tool is already up to date.
 			if exe.Version == version {
-				return ErrAlreadyExists
+				return fmt.Errorf("%w: current version %q and target version %q match", ErrUpToDate, exe.Version, version)
 			}
 		}
 		return nil
