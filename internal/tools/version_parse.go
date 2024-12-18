@@ -6,9 +6,13 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
+// Version represents the version configuration for a tool.
 type Version struct {
-	Version  string
+	// Version holds the string representation of the parsed version.
+	Version string
+	// Commands contains the list of command strategies used to extract the version.
 	Commands unmarshal.SingleOrSlice[string]
+	// Patterns contains the list of regex patterns for parsing the version from output strings.
 	Patterns unmarshal.SingleOrSlice[string]
 }
 

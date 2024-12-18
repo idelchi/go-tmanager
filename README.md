@@ -346,6 +346,10 @@ skip:
 
 #### Usage
 
+- As template for other fields
+- To compare tool versions if `strategy` is set to `upgrade`
+- Will be inferred and populated by the `source` method if not given
+
 - `version.version` is the version of the tool to download
 - `version.commands` is a list of commands to run to get the version of the tool (for upgrades)
 - `version.patterns` is a list of patterns to use for finding the version of the tool (for upgrades)
@@ -366,12 +370,6 @@ is equivalent to:
 version:
   version: v0.1.0
 ```
-
-#### Usage
-
-- As template for other fields
-- To compare tool versions if `strategy` is set to `upgrade`
-- Will be inferred and populated by the `source` method if not given
 
 ### Path
 
