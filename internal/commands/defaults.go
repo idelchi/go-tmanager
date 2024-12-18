@@ -1,7 +1,6 @@
 package commands
 
 import (
-	_ "embed"
 	"fmt"
 	"os"
 	"path/filepath"
