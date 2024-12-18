@@ -93,7 +93,7 @@ func ToVersion(version string) *semver.Version {
 	for index := range len(version) {
 		candidate := version[index:]
 		// First check if it starts with a digit
-		if len(candidate) > 0 && !unicode.IsDigit(rune(candidate[0])) {
+		if startsWithNonDigit(candidate) {
 			continue
 		}
 		// Then check if it's valid semver
@@ -103,4 +103,9 @@ func ToVersion(version string) *semver.Version {
 	}
 
 	return nil
+}
+
+// startsWithNonDigit checks if the string starts with a non-digit character.
+func startsWithNonDigit(s string) bool {
+	return len(s) > 0 && !unicode.IsDigit(rune(s[0]))
 }
