@@ -92,11 +92,10 @@ func (s Strategy) Upgrade(t *Tool) error {
 func ToVersion(version string) *semver.Version {
 	for index := range len(version) {
 		candidate := version[index:]
-		// First check if it starts with a digit
 		if startsWithNonDigit(candidate) {
 			continue
 		}
-		// Then check if it's valid semver
+
 		if version, err := semver.NewVersion(candidate); err == nil {
 			return version
 		}
