@@ -23,7 +23,7 @@ type Tool struct {
 	// Description of the tool, giving more context about its purpose.
 	Description string
 	// Version specifies the version of the tool.
-	Version string
+	Version Version
 	// Path represents the URL or file path where the tool can be fetched or downloaded from.
 	Path string
 	// Output defines the output path where the tool will be installed or extracted.
@@ -61,8 +61,6 @@ type Tool struct {
 	Env env.Env
 	// Check defines a set of instructions for verifying the tool's integrity or functionality.
 	Check Checker
-	// VersionParse defines the strategy for parsing the version of the tool.
-	VersionParse string `yaml:"parse"`
 	// NoVerifySSL specifies whether SSL verification should be disabled when fetching the tool.
 	NoVerifySSL bool `json:"-" mapstructure:"-" yaml:"-"`
 }
@@ -102,6 +100,9 @@ func (t *Tool) ApplyDefaults(d Defaults) {
 	utils.SetIfEmpty(&t.Mode, d.Mode)
 	utils.SetSliceIfNil(&t.Exe.Patterns, d.Exe.Patterns...)
 	utils.SetSliceIfNil(&t.Extensions, d.Extensions...)
+
+	utils.SetSliceIfNil(&t.Version.Commands, d.Version.Commands...)
+	utils.SetSliceIfNil(&t.Version.Patterns, d.Version.Patterns...)
 	utils.SetMapIfNil(&t.Values, d.Values)
 	utils.DeepMergeMapsWithoutOverwrite(t.Values, d.Values)
 	t.Env.Merge(d.Env)

@@ -315,8 +315,8 @@ func (app *App) handleToolError(tool *tools.Tool, err error, msg string) {
 
 // logToolSuccess logs information about successfully processed tools.
 func (app *App) logToolSuccess(tool *tools.Tool, found file.File) {
-	if tool.Version != "" {
-		app.log.Info("  version: %s", tool.Version)
+	if tool.Version.Version != "" {
+		app.log.Info("  version: %s", tool.Version.Version)
 	}
 	app.log.Info("  picked download %q", filepath.Base(tool.Path))
 	if tool.Mode == "find" {

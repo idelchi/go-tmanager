@@ -53,9 +53,9 @@ func (gu GodylUpdater) Update(version string) error {
 		return fmt.Errorf("resolving tool: %w", err)
 	}
 
-	fmt.Printf("Update requested from %q -> %q\n", version, tool.Version)
+	fmt.Printf("Update requested from %q -> %q\n", version, tool.Version.Version)
 
-	if tool.Version == version {
+	if tool.Version.Version == version {
 		fmt.Println("godyl is already up-to-date")
 
 		return nil

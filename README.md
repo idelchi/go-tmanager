@@ -221,7 +221,10 @@ Otherwise, it will be assumed to be a `source.github` type on the form `owner/re
 ```yaml
 name: string
 description: string
-version: string
+version:
+  version: string
+  commands: []
+  patterns: []
 path: string
 output: string
 exe:
@@ -340,6 +343,26 @@ skip:
 | Template         | Templated | As Template |
 | ---------------- | --------- | ----------- |
 | `{{ .Version }}` | ![yes]    | ![yes]      |
+
+#### Usage
+
+- `version.version` is the version of the tool to download
+- `version.commands` is a list of commands to run to get the version of the tool (for upgrades)
+- `version.patterns` is a list of patterns to use for finding the version of the tool (for upgrades)
+- `version.commands` & `version.patterns` set according to [defaults](#defaults) if not given
+
+#### Alternative form
+
+```yaml
+version: v0.1.0
+```
+
+is equivalent to:
+
+```yaml
+version:
+  version: v0.1.0
+```
 
 #### Usage
 

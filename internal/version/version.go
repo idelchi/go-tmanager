@@ -10,7 +10,7 @@ import (
 // and defines command strategies for extracting the version from an executable.
 type Version struct {
 	// Patterns contains the list of regex patterns for parsing the version from output strings.
-	Patterns []*regexp.Regexp
+	Patterns []string
 	// Commands contains the list of command strategies used to extract the version.
 	Commands []string
 	// String holds the string representation of the parsed version.
@@ -21,18 +21,18 @@ type Version struct {
 // for common version formats and predefined command strategies for extracting the version.
 func NewDefaultVersionParser() *Version {
 	return &Version{
-		Patterns: []*regexp.Regexp{
-			// Pattern for versions formatted as X.X.X, surrounded by any characters.
-			regexp.MustCompile(`.*?(\d+\.\d+\.\d+).*`),
-			// Pattern for versions formatted as X.X, surrounded by any characters.
-			regexp.MustCompile(`.*?(\d+\.\d+).*`),
-		},
-		Commands: []string{
-			"--version", // Attempt to get version with --version flag.
-			"-v",        // Attempt to get version with -v flag.
-			"-version",  // Attempt to get version with -version flag.
-			"version",   // Attempt to get version with version command.
-		},
+		// Patterns: []*regexp.Regexp{
+		// 	// Pattern for versions formatted as X.X.X, surrounded by any characters.
+		// 	regexp.MustCompile(`.*?(\d+\.\d+\.\d+).*`),
+		// 	// Pattern for versions formatted as X.X, surrounded by any characters.
+		// 	regexp.MustCompile(`.*?(\d+\.\d+).*`),
+		// },
+		// Commands: []string{
+		// 	"--version", // Attempt to get version with --version flag.
+		// 	"-v",        // Attempt to get version with -v flag.
+		// 	"-version",  // Attempt to get version with -version flag.
+		// 	"version",   // Attempt to get version with version command.
+		// },
 	}
 }
 
@@ -45,7 +45,9 @@ func (v *Version) ParseString(output string) (string, error) {
 
 	// Try to match each regex pattern on the normalized output.
 	for _, pattern := range v.Patterns {
-		if matches := pattern.FindStringSubmatch(normalizedOutput); len(matches) > 1 {
+		p := regexp.MustCompile(pattern)
+
+		if matches := p.FindStringSubmatch(normalizedOutput); len(matches) > 1 {
 			// Return the first matched version group.
 			return matches[1], nil
 		}

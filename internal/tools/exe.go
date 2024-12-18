@@ -25,17 +25,8 @@ func (e *Exe) UnmarshalYAML(value *yaml.Node) error {
 	// If the YAML value is a scalar (e.g., just the name), handle it directly by setting the Name field.
 	if value.Kind == yaml.ScalarNode {
 		e.Name = value.Value
-		return nil
-	}
 
-	// If the value is a scalar node, treat it as the name and create a corresponding mapping.
-	if value.Kind == yaml.ScalarNode {
-		name := value.Value
-		value.Kind = yaml.MappingNode
-		value.Content = []*yaml.Node{
-			{Kind: yaml.ScalarNode, Value: "name"},
-			{Kind: yaml.ScalarNode, Value: name},
-		}
+		return nil
 	}
 
 	// Perform custom unmarshaling with field validation, allowing only known fields.

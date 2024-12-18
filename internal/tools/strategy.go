@@ -2,7 +2,9 @@ package tools
 
 import (
 	"fmt"
+	"unicode"
 
+	"github.com/Masterminds/semver/v3"
 	"github.com/idelchi/godyl/internal/version"
 )
 
@@ -42,28 +44,36 @@ func (s Strategy) Upgrade(t *Tool) error {
 		// If the strategy is "None" and the tool exists, return an error indicating it already exists.
 		return ErrAlreadyExists
 	case Upgrade:
+		if t.Version.Commands != nil && len(t.Version.Commands) == 0 {
+			// No commands to run, so we can't check the version, forcing an upgrade.
+			return nil
+		}
+
 		// Parse the version of the existing tool.
 		exe := version.NewExecutable(t.Output, t.Exe.Name)
 
-		parser := version.NewDefaultVersionParser()
-		if t.VersionParse != "" {
-			parser.Commands = []string{t.VersionParse}
-		}
-
-		if t.VersionParse == "-" {
-			return nil
+		parser := &version.Version{
+			Patterns: t.Version.Patterns,
+			Commands: t.Version.Commands,
 		}
 
 		if err := exe.ParseVersion(parser); err != nil {
 			return nil
 		}
 
-		// Parse the desired version of the tool.
-		if version, err := version.NewDefaultVersionParser().ParseString(t.Version); err == nil {
-			// If the versions match, return an error indicating the tool is already up to date.
-			if exe.Version == version {
-				return fmt.Errorf("%w: current version %q and target version %q match", ErrUpToDate, exe.Version, version)
-			}
+		source, err := GetFirstSemVerish(exe.Version)
+		if err != nil {
+			return fmt.Errorf("parsing version %q: %w: %q -> %q", exe.Version, err, exe.Version, t.Version.Version)
+		}
+
+		target, err := GetFirstSemVerish(t.Version.Version)
+		if err != nil {
+			return fmt.Errorf("parsing version %q: %w: %q -> %q", t.Version.Version, err, exe.Version, t.Version.Version)
+		}
+
+		// If the versions match, return an error indicating the tool is already up to date.
+		if source.Equal(target) {
+			return fmt.Errorf("%w: current version %q and target version %q match", ErrUpToDate, exe.Version, t.Version.Version)
 		}
 		return nil
 	case Force:
@@ -72,4 +82,21 @@ func (s Strategy) Upgrade(t *Tool) error {
 	default:
 		return nil
 	}
+}
+
+// GetFirstSemVerish returns all leading non-digit characters until we hit the actual version part.
+func GetFirstSemVerish(version string) (*semver.Version, error) {
+	for index := range len(version) {
+		candidate := version[index:]
+		// First check if it starts with a digit
+		if len(candidate) > 0 && !unicode.IsDigit(rune(candidate[0])) {
+			continue
+		}
+		// Then check if it's valid semver
+		if v, err := semver.NewVersion(candidate); err == nil {
+			return v, nil
+		}
+	}
+
+	return nil, fmt.Errorf("no valid semver found in %q", version)
 }

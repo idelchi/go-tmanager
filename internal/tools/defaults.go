@@ -35,6 +35,8 @@ type Defaults struct {
 	Env env.Env
 	// Mode specifies the default operating mode for the tool (e.g., silent mode, verbose mode).
 	Mode Mode
+	// Version specifies the default version details for the tool.
+	Version Version
 }
 
 // Initialize detects the current platform and applies platform-specific defaults to the Defaults struct.

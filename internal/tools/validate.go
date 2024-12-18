@@ -151,13 +151,13 @@ func (t *Tool) tryResolveFallback(fallback sources.Type, path string, withTags, 
 	}
 
 	// Retrieve the tool's version from the installer if it is not already set.
-	if utils.IsEmpty(t.Version) {
+	if utils.IsEmpty(t.Version.Version) {
 		if err := populator.Version(t.Name); err != nil {
 			return err
 		}
 	}
 
-	utils.SetIfEmpty(&t.Version, populator.Get("version"))
+	utils.SetIfEmpty(&t.Version.Version, populator.Get("version"))
 
 	if err := t.TemplateLast(); err != nil {
 		return err
@@ -168,7 +168,7 @@ func (t *Tool) tryResolveFallback(fallback sources.Type, path string, withTags, 
 		hints := t.Hints
 		hints.Add(ExtensionsToHint(t.Extensions))
 
-		if err := populator.Path(t.Name, nil, t.Version, match.Requirements{
+		if err := populator.Path(t.Name, nil, t.Version.Version, match.Requirements{
 			Platform: t.Platform,
 			Hints:    hints,
 		}); err != nil {

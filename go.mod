@@ -3,6 +3,7 @@ module github.com/idelchi/godyl
 go 1.23
 
 require (
+	github.com/Masterminds/semver/v3 v3.2.1
 	github.com/agnivade/levenshtein v1.2.0
 	github.com/cheggaaa/pb/v3 v3.1.5
 	github.com/fatih/color v1.17.0

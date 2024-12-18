@@ -10,7 +10,7 @@ func (t *Tool) ToTemplateMap(flatten ...map[string]any) map[string]any {
 		"Name":    t.Name,
 		"Env":     t.Env,
 		"Values":  t.Values,
-		"Version": t.Version,
+		"Version": t.Version.Version,
 		"Exe":     t.Exe.Name,
 		"Output":  t.Output,
 	}
@@ -53,7 +53,7 @@ func (t *Tool) TemplateFirst() error {
 		return err
 	}
 
-	if err := templates.ApplyAndSet(&t.Version, values); err != nil {
+	if err := templates.ApplyAndSet(&t.Version.Version, values); err != nil {
 		return err
 	}
 
