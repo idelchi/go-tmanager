@@ -351,6 +351,9 @@ skip:
 - `version.patterns` is a list of patterns to use for finding the version of the tool (for upgrades)
 - `version.commands` & `version.patterns` set according to [defaults](#defaults) if not given
 
+Set `version.commands` to `[]` if version parsing is not available. This will result in always downloading the tool
+when `strategy` is set to `upgrade`.
+
 #### Alternative form
 
 ```yaml

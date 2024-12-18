@@ -17,25 +17,6 @@ type Version struct {
 	String string
 }
 
-// NewDefaultVersionParser creates a new Version parser with default regex patterns
-// for common version formats and predefined command strategies for extracting the version.
-func NewDefaultVersionParser() *Version {
-	return &Version{
-		// Patterns: []*regexp.Regexp{
-		// 	// Pattern for versions formatted as X.X.X, surrounded by any characters.
-		// 	regexp.MustCompile(`.*?(\d+\.\d+\.\d+).*`),
-		// 	// Pattern for versions formatted as X.X, surrounded by any characters.
-		// 	regexp.MustCompile(`.*?(\d+\.\d+).*`),
-		// },
-		// Commands: []string{
-		// 	"--version", // Attempt to get version with --version flag.
-		// 	"-v",        // Attempt to get version with -v flag.
-		// 	"-version",  // Attempt to get version with -version flag.
-		// 	"version",   // Attempt to get version with version command.
-		// },
-	}
-}
-
 // ParseString attempts to parse the provided output string using the defined regex patterns.
 // It normalizes multi-line output into a single line and tries to match the patterns.
 // Returns the first matched version string or an error if no match is found.

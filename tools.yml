@@ -32,6 +32,8 @@
 
 - name: kubernetes/minikube
   description: Run Kubernetes locally
+  version:
+    commands: version
   extensions: "{{ .EXTENSION }}"
   tags:
     - kubernetes
@@ -51,6 +53,8 @@
 
 - name: derailed/k9s
   description: Kubernetes CLI To Manage Your Clusters In Style!
+  version:
+    commands: version
   skip:
     - reason: "k9s is not available for armv6"
       condition: '{{ and (eq .ARCH "arm") (eq .ARCH_VERSION 6) }}'
@@ -655,4 +659,6 @@
 - idelchi/go-match
 - idelchi/gonc
 - idelchi/go-next-tag
-- idelchi/wslint
+- name: idelchi/wslint
+  version:
+    commands: -v

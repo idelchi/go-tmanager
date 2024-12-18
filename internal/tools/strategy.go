@@ -58,23 +58,27 @@ func (s Strategy) Upgrade(t *Tool) error {
 		}
 
 		if err := exe.ParseVersion(parser); err != nil {
+			// Force an upgrade if the version cannot be parsed.
 			return nil
 		}
 
-		source, err := GetFirstSemVerish(exe.Version)
-		if err != nil {
-			return fmt.Errorf("parsing version %q: %w: %q -> %q", exe.Version, err, exe.Version, t.Version.Version)
+		source := ToVersion(exe.Version)
+		if source == nil {
+			return fmt.Errorf("parsing version %q: failed: %q -> %q", exe.Version, exe.Version, t.Version.Version)
 		}
 
-		target, err := GetFirstSemVerish(t.Version.Version)
-		if err != nil {
-			return fmt.Errorf("parsing version %q: %w: %q -> %q", t.Version.Version, err, exe.Version, t.Version.Version)
+		target := ToVersion(t.Version.Version)
+		if target == nil {
+			return fmt.Errorf("parsing version %q: failed: %q -> %q", t.Version.Version, exe.Version, t.Version.Version)
 		}
 
 		// If the versions match, return an error indicating the tool is already up to date.
 		if source.Equal(target) {
 			return fmt.Errorf("%w: current version %q and target version %q match", ErrUpToDate, exe.Version, t.Version.Version)
 		}
+
+		fmt.Printf("Update requested from %q -> %q\n", source, target)
+
 		return nil
 	case Force:
 		// If the strategy is "Force", always proceed with the installation or update.
@@ -84,8 +88,8 @@ func (s Strategy) Upgrade(t *Tool) error {
 	}
 }
 
-// GetFirstSemVerish returns all leading non-digit characters until we hit the actual version part.
-func GetFirstSemVerish(version string) (*semver.Version, error) {
+// ToVersion attempts to convert the version string to a semantic version.
+func ToVersion(version string) *semver.Version {
 	for index := range len(version) {
 		candidate := version[index:]
 		// First check if it starts with a digit
@@ -93,10 +97,10 @@ func GetFirstSemVerish(version string) (*semver.Version, error) {
 			continue
 		}
 		// Then check if it's valid semver
-		if v, err := semver.NewVersion(candidate); err == nil {
-			return v, nil
+		if version, err := semver.NewVersion(candidate); err == nil {
+			return version
 		}
 	}
 
-	return nil, fmt.Errorf("no valid semver found in %q", version)
+	return nil
 }
