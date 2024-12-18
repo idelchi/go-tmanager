@@ -12,6 +12,7 @@ import (
 	"github.com/idelchi/godyl/pkg/logger"
 )
 
+// Update holds the configuration options for updating the built binary itself.
 type Update struct {
 	// Strategy to use for updating tools
 	Strategy tools.Strategy `mapstructure:"strategy"`
@@ -19,6 +20,7 @@ type Update struct {
 	Update bool `mapstructure:"update"`
 }
 
+// Tokens holds the configuration options for authentication tokens.
 type Tokens struct {
 	// GitHub token for authentication
 	GitHub string `mapstructure:"github-token" mask:"fixed"`
@@ -30,6 +32,7 @@ type Tokens struct {
 	URL string `mapstructure:"url-token" mask:"fixed"`
 }
 
+// Show holds the configuration options for showing various configurations.
 type Show struct {
 	// Show the parsed configuration and exit
 	Config bool `mapstructure:"show-config"`
@@ -63,7 +66,7 @@ type Config struct {
 	// DumpTools dump out default tools.yml as stdout
 	DumpTools bool `mapstructure:"dump-tools"`
 
-	// Update the tools
+	// Update the tool itself
 	Update Update `mapstructure:",squash"`
 
 	// Run without making any changes (dry run)
