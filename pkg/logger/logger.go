@@ -28,16 +28,6 @@ const (
 	ALWAYS
 )
 
-// IsAllowed checks if the log Level is a valid value (DEBUG, INFO, WARN, ERROR, SILENT).
-func (l Level) IsAllowed() bool {
-	switch l {
-	case SILENT, DEBUG, INFO, WARN, ERROR, ALWAYS:
-		return true
-	default:
-		return false
-	}
-}
-
 // Logger holds the configuration for logging.
 // It includes the current logging level, the output writer, and color mappings for each log level.
 type Logger struct {
@@ -49,7 +39,7 @@ type Logger struct {
 // NewCustom creates a new Logger instance with the specified log level and output writer.
 // If an invalid log level is provided, it defaults to INFO.
 func NewCustom(level Level, output io.Writer) *Logger {
-	if !level.IsAllowed() {
+	if !level.IsALevel() {
 		fmt.Fprintf(os.Stderr, "Invalid log level: %q, setting to %q\n", level, INFO)
 		level = INFO
 	}
@@ -70,7 +60,7 @@ func NewCustom(level Level, output io.Writer) *Logger {
 // New creates a new Logger instance with the specified log level and writes to stdout.
 // If an invalid log level is provided, it defaults to INFO.
 func New(level Level) *Logger {
-	if !level.IsAllowed() {
+	if !level.IsALevel() {
 		fmt.Fprintf(os.Stderr, "Invalid log level: %q, setting to %q\n", level, INFO)
 		level = INFO
 	}
