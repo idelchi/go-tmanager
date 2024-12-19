@@ -77,8 +77,6 @@ func (s Strategy) Upgrade(t *Tool) error {
 			return fmt.Errorf("%w: current version %q and target version %q match", ErrUpToDate, source, target)
 		}
 
-		fmt.Printf("Update requested from %q -> %q\n", source, target)
-
 		return nil
 	case Force:
 		// If the strategy is "Force", always proceed with the installation or update.
