@@ -16,15 +16,6 @@ import (
 	"github.com/idelchi/godyl/pkg/utils"
 )
 
-// ErrIsNotContinue checks if the error indicates we should not continue with the tool.
-func ErrIsNotContinue(err error) bool {
-	return errors.Is(err, ErrAlreadyExists) ||
-		errors.Is(err, ErrUpToDate) ||
-		errors.Is(err, ErrDoesHaveTags) ||
-		errors.Is(err, ErrDoesNotHaveTags) ||
-		errors.Is(err, ErrSkipped)
-}
-
 var (
 	// ErrAlreadyExists indicates that the tool already exists in the system.
 	ErrAlreadyExists = fmt.Errorf("tool already exists")

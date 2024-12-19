@@ -34,8 +34,6 @@ func (s Strategy) Check(t *Tool) error {
 // Upgrade checks if the tool should be upgraded based on the strategy and its current version.
 // It compares the existing version with the desired version and returns an error if the tool is already up to date.
 func (s Strategy) Upgrade(t *Tool) error {
-	// PrintIfMatch(t, pretty.YAML(t))
-
 	// If the tool does not exist, no upgrade is necessary.
 	if !t.Exists() {
 		return nil

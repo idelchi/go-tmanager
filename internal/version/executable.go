@@ -75,7 +75,6 @@ func (e *Executable) ParseVersion(version *Version) error {
 
 	e.Version = ""
 
-	// return errors.New("unable to parse version from output")
 	// Join all errors into a single error message
 	return fmt.Errorf("unable to parse version from output: %w", errors.Join(errs...))
 }
