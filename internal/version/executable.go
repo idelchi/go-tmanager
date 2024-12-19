@@ -67,10 +67,11 @@ func (e *Executable) ParseVersion(version *Version) error {
 			e.Version = version
 
 			return nil
-		} else {
-			errs = append(errs, err)
-			continue
 		}
+
+		errs = append(errs, err)
+
+		continue
 	}
 
 	e.Version = ""

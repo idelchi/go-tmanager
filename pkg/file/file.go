@@ -14,7 +14,7 @@ type File string
 
 // NewFile creates a new File by joining the provided paths.
 func NewFile(paths ...string) File {
-	return File(filepath.Join(paths...)).Normalized()
+	return File(filepath.Join(paths...)) // .Normalized()
 }
 
 // Normalize converts the file path to use forward slashes.
@@ -76,6 +76,11 @@ func (f File) Remove() error {
 
 // Name returns the name (string representation) of the File.
 func (f File) Name() string {
+	return f.String()
+}
+
+// Path returns the path of the File.
+func (f File) Path() string {
 	return f.String()
 }
 
