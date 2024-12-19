@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"runtime"
 	"runtime/debug"
 	"strings"
 
@@ -63,16 +64,23 @@ func (gu GodylUpdater) Update(version string) error {
 
 	// Download the tool.
 	output, err := gu.Get(tool)
+
+	defer func() {
+		folder := file.Folder(output)
+		folder.Remove()
+	}()
+
 	if err != nil {
 		return fmt.Errorf("getting godyl: %w", err)
 	}
 
 	// Replace the existing godyl binary with the newly downloaded version.
-	if err := gu.Replace(filepath.Join(output, "godyl")); err != nil {
+	if err := gu.Replace(filepath.Join(output, tool.Exe.Name)); err != nil {
 		return fmt.Errorf("replacing godyl: %w", err)
 	}
 
 	fmt.Println("godyl updated successfully")
+
 	return nil
 }
 
@@ -88,6 +96,7 @@ func (gu GodylUpdater) Replace(path string) error {
 	if err := update.Apply(body, update.Options{}); err != nil {
 		return err
 	}
+
 	return err
 }
 
@@ -95,8 +104,19 @@ func (gu GodylUpdater) Replace(path string) error {
 func (gu GodylUpdater) Get(tool tools.Tool) (string, error) {
 	// Create a temporary directory to store the downloaded tool.
 	var dir file.Folder
-	if err := dir.CreateRandomInTempDir(); err != nil {
-		return "", fmt.Errorf("creating temporary directory: %w", err)
+	// For Windows, get the directory of the current executable.
+	if runtime.GOOS == "windows" {
+		current, err := os.Executable()
+		if err != nil {
+			return "", fmt.Errorf("getting current executable: %w", err)
+		}
+
+		folder := filepath.Dir(current)
+		dir.CreateRandomInDir(folder)
+	} else {
+		if err := dir.CreateRandomInTempDir(); err != nil {
+			return "", fmt.Errorf("creating temporary directory: %w", err)
+		}
 	}
 
 	tool.Output = dir.Path()
@@ -108,10 +128,7 @@ func (gu GodylUpdater) Get(tool tools.Tool) (string, error) {
 
 	// Download the tool and capture any messages or errors.
 	if output, msg, err := tool.Download(); err != nil {
-		return "", fmt.Errorf("downloading tool: %w: %s", err, output)
-	} else {
-		fmt.Println(msg)
-		fmt.Println(output)
+		return "", fmt.Errorf("downloading tool: %w: %s: %s", err, output, msg)
 	}
 
 	fmt.Printf("Downloading %q from %q\n", tool.Name, tool.Path)

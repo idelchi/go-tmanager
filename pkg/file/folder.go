@@ -71,6 +71,14 @@ func (f Folder) Name() string {
 	return filepath.Base(f.Path())
 }
 
+// CreateRandomInDir creates a new random directory inside the given directory
+// and assigns the generated path to the Folder.
+func (f *Folder) CreateRandomInDir(dir string) error {
+	name, err := os.MkdirTemp(dir, "godyl-*")
+	f.Set(name)
+	return err
+}
+
 // CreateRandomInTempDir creates a new random directory inside the system's temporary directory
 // and assigns the generated path to the Folder.
 func (f *Folder) CreateRandomInTempDir() error {
