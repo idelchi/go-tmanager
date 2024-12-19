@@ -10,37 +10,32 @@ import (
 // IsURL checks if the input string is a valid URL.
 func IsURL(str string) bool {
 	u, err := url.Parse(str)
+
 	return err == nil && u.Scheme != "" && u.Host != ""
 }
 
-// SetIfEmpty sets the value of input to the specified value if it is empty.
-// S must be a comparable type.
-func SetIfEmpty[S comparable](input *S, value S) {
+// IsZeroValue checks if the input value is its zero value.
+func IsZeroValue[S comparable](input S) bool {
 	var zero S
 
-	if *input == zero {
+	return input == zero
+}
+
+// SetIfZeroValue sets the value of input to the specified value if it is its zero value.
+func SetIfZeroValue[S comparable](input *S, value S) {
+	if IsZeroValue(*input) {
 		*input = value
 	}
 }
 
 // SetSliceIfNil sets the value of input to the provided values slice if input is nil.
-// S is constrained to slices of any type T.
 func SetSliceIfNil[S ~[]T, T any](input *S, values ...T) {
 	if *input == nil {
 		*input = append([]T(nil), values...)
 	}
 }
 
-// IsEmpty checks if the input value is empty.
-// S must be a comparable type.
-func IsEmpty[S comparable](input S) bool {
-	var zero S
-
-	return input == zero
-}
-
 // SetMapIfNil sets the value of input to the provided defaultMap if input is nil.
-// M is constrained to maps with keys of type K and values of type V.
 func SetMapIfNil[M ~map[K]V, K comparable, V any](input *M, values M) {
 	if *input == nil {
 		*input = make(M, len(values))
@@ -81,8 +76,7 @@ func DeepMergeMapsWithoutOverwrite(first, second map[string]any) {
 				if secondMap, ok2 := secondVal.(map[string]any); ok2 {
 					DeepMergeMapsWithoutOverwrite(firstMap, secondMap)
 				}
-			}
-			// If the key exists but isn't a map, do nothing (keep the original value)
+			} // If the key exists but isn't a map, do nothing (keep the original value)
 		} else {
 			// If the key doesn't exist in first, add it from second
 			first[key] = secondVal

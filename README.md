@@ -59,7 +59,7 @@ Tool is inspired by [task](https://github.com/go-task/task), [dra](https://githu
 - [Template overview](#template-overview)
   - [Variables](#variables)
   - [Allowed in](#allowed-in)
-- [Inference](#Inference)
+- [Inference](#inference)
   - [Operating Systems](#operating-systems)
   - [Architectures](#architectures)
   - [Libraries](#libraries)
@@ -717,6 +717,7 @@ The example above defines:
     ```
 
   - prefer the three last versions of the arm architecture, in descending order
+
     ```
     - pattern: "armv{{.ARCH_VERSION}}"
       weight: 3
@@ -926,10 +927,6 @@ However, to be certain that the right binary is downloaded, it's recommended to 
 
 [yes]: https://img.shields.io/badge/Yes-green
 [no]: https://img.shields.io/badge/No-red
-[inferred]: https://img.shields.io/badge/Inferred-blue
-[required]: https://img.shields.io/badge/Required-red
-[optional]: https://img.shields.io/badge/Optional-green
-[not-implemented]: https://img.shields.io/badge/Not%20Implemented-gray
 [na]: https://img.shields.io/badge/N%2FA-lightgrey
 
 <!-- Badges -->

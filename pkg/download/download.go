@@ -82,7 +82,9 @@ func (d Downloader) Download(url, output string) (file.File, error) {
 	// Modify the default HTTP client's transport to skip SSL verification if requested
 	if d.InsecureSkipVerify {
 		httpClient.Transport = &http.Transport{
-			TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+			TLSClientConfig: &tls.Config{
+				InsecureSkipVerify: true,
+			}, 
 		}
 	}
 

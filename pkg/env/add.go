@@ -9,12 +9,15 @@ import (
 // Add splits a `key=value` string and adds it to the Env map.
 // It returns an error if the input is not properly formatted, expecting exactly one '=' separator.
 func (e *Env) Add(kv string) error {
-	parts := strings.SplitN(kv, "=", 2)
-	if len(parts) != 2 {
+	const expectedParts = 2
+
+	parts := strings.SplitN(kv, "=", expectedParts)
+	if len(parts) != expectedParts {
 		return fmt.Errorf("%w: %q", ErrEnvMalformed, kv)
 	}
 
 	(*e)[parts[0]] = parts[1]
+
 	return nil
 }
 

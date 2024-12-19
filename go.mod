@@ -6,13 +6,13 @@ require (
 	github.com/Masterminds/semver/v3 v3.2.1
 	github.com/agnivade/levenshtein v1.2.0
 	github.com/cheggaaa/pb/v3 v3.1.5
+	github.com/dmarkham/enumer v1.5.10
 	github.com/fatih/color v1.17.0
 	github.com/fatih/structs v1.1.0
 	github.com/go-playground/validator/v10 v10.22.1
 	github.com/go-resty/resty/v2 v2.15.3
 	github.com/go-task/slim-sprig/v3 v3.0.0
 	github.com/google/go-github/v64 v64.0.0
-	github.com/google/uuid v1.6.0
 	github.com/hashicorp/go-cleanhttp v0.5.2
 	github.com/hashicorp/go-getter/v2 v2.2.3
 	github.com/idelchi/go-next-tag v0.0.0-20241009171622-1f3cb2ac9867
@@ -54,6 +54,7 @@ require (
 	github.com/mitchellh/go-homedir v1.1.0 // indirect
 	github.com/mitchellh/go-testing-interface v1.14.1 // indirect
 	github.com/muesli/cancelreader v0.2.2 // indirect
+	github.com/pascaldekloe/name v1.0.0 // indirect
 	github.com/pelletier/go-toml/v2 v2.2.3 // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
 	github.com/sagikazarmark/locafero v0.6.0 // indirect

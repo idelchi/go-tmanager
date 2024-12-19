@@ -1,3 +1,4 @@
+//nolint:forbidigo // Functions in file will print & exit for various help messages.
 package pretty
 
 import (

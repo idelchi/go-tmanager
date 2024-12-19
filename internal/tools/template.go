@@ -108,7 +108,7 @@ func (t *Tool) TemplateLast() error {
 			return err
 		}
 		// Set a default weight of "1" if not specified and convert it to an integer
-		utils.SetIfEmpty(&t.Hints[i].Weight, "1")
+		utils.SetIfZeroValue(&t.Hints[i].Weight, "1")
 
 		if err := t.Hints[i].SetWeight(); err != nil {
 			return err

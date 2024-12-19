@@ -92,12 +92,12 @@ func (t *Tool) UnmarshalYAML(value *yaml.Node) error {
 // If a field is empty or nil, it is replaced with the corresponding default from the Defaults struct.
 // TODO(Idelchi): Improve - what if someone wants a value to be ""?
 func (t *Tool) ApplyDefaults(d Defaults) {
-	utils.SetIfEmpty(&t.Output, d.Output)
-	utils.SetIfEmpty(&t.Source.Type, d.Source.Type)
-	utils.SetIfEmpty(&t.Source.Github.Token, d.Source.Github.Token)
-	utils.SetIfEmpty(&t.Strategy, d.Strategy)
+	utils.SetIfZeroValue(&t.Output, d.Output)
+	utils.SetIfZeroValue(&t.Source.Type, d.Source.Type)
+	utils.SetIfZeroValue(&t.Source.Github.Token, d.Source.Github.Token)
+	utils.SetIfZeroValue(&t.Strategy, d.Strategy)
 	utils.SetSliceIfNil(&t.Skip, Condition{Condition: "false"})
-	utils.SetIfEmpty(&t.Mode, d.Mode)
+	utils.SetIfZeroValue(&t.Mode, d.Mode)
 	utils.SetSliceIfNil(&t.Exe.Patterns, d.Exe.Patterns...)
 	utils.SetSliceIfNil(&t.Extensions, d.Extensions...)
 	utils.SetSliceIfNil(&t.Version.Commands, d.Version.Commands...)

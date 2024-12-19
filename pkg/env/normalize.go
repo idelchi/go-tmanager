@@ -12,6 +12,7 @@ func (e Env) Normalized() Env {
 	if runtime.GOOS == "windows" {
 		return e.Normalize()
 	}
+
 	return e
 }
 

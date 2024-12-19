@@ -59,26 +59,45 @@ tasks:
   info:
     - task: git
 
+  generate:
+    run: once
+    cmds:
+      - go generate ./...
+
   format:
-    - task: format:default
-    - task: go:format
+    deps:
+      - generate
+    cmds:
+      - task: format:default
+      - task: go:format
 
   lint:
-    # TODO(Idelchi): Move as `deps` when fixed.
-    - cmd: task lint:default
-      ignore_error: true
-    - cmd: task go:lint
-      ignore_error: true
+    deps:
+      - generate
+    cmds:
+      # TODO(Idelchi): Move as `deps` when fixed.
+      - cmd: task lint:default
+        ignore_error: true
+      - cmd: task go:lint
+        ignore_error: true
 
   build:
-    - task: go:build
-    - task: go:release
+    deps:
+      - generate
+    cmds:
+      - task: go:build
+      - task: go:release
 
   test:
-    - task: go:quality
+    deps:
+      - generate
+    cmds:
+      - task: go:quality
 
   all:
     desc: run all available tasks
+    deps:
+      - generate
     cmds:
       - task: clean
       - task: info
@@ -89,6 +108,8 @@ tasks:
 
   default:
     desc: clean, format & lint
+    deps:
+      - generate
     cmds:
       - task: info
       - task: format

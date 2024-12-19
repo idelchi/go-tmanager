@@ -1,5 +1,5 @@
 // Package logger provides a simple logging framework that supports
-// different log levels (DEBUG, INFO, WARN, ERROR) and color-coded output.
+// different log levels (DEBUG, INFO, WARN, ERROR, ALWAYS, SILENT) and color-coded output.
 //
 // The logger is configurable to print messages at a specified level or higher,
 // and it allows for custom output writers. Each log level has a corresponding
@@ -7,7 +7,7 @@
 //
 // Example usage:
 //
-//	// Create a new logger that logs to stdout and has an INFO level.
+//	Create a new logger that logs to stdout and has an INFO level.
 //	l := logger.New(logger.INFO)
 //
 //	// Log messages at various levels.
@@ -15,6 +15,7 @@
 //	l.Info("This is an info message")   // Will be shown.
 //	l.Warn("This is a warning message") // Will be shown.
 //	l.Error("This is an error message") // Will be shown.
+//	l.Always("This is an always message") // Will be shown.
 //
 // You can also create a custom logger with a different output:
 //

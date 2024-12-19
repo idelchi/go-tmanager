@@ -8,5 +8,4 @@
 // - Adding, merging, and normalizing environment variables.
 // - Expanding environment variable values based on the current system environment.
 // - Converting environment variables to and from slices of `key=value` strings.
-
 package env

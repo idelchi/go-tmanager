@@ -7,7 +7,7 @@ GODYL_GITHUB_TOKEN=${GODYL_GITHUB_TOKEN}
 
 # Usage function
 usage() {
-    cat <<EOF
+  cat <<EOF
 Usage: ${0} [OPTIONS]
 Installs Kubernetes-related tools using godyl.
 
@@ -33,72 +33,71 @@ Options:
 
 All remaining arguments are passed to godyl.
 EOF
-    exit 1
+  exit 1
 }
 
 # Parse arguments
 parse_args() {
-    REMAINING_ARGS=""
+  REMAINING_ARGS=""
 
-    # Handle known options with getopts
-    while getopts ":d:t:kh" opt; do
-        case "${opt}" in
-            d) INSTALL_DIR="${OPTARG}" ;;
-            k) DISABLE_SSL=yes ;;
-            t) GODYL_GITHUB_TOKEN="${OPTARG}" ;;
-            h) usage ;;
-            \?) # Unknown option
-                REMAINING_ARGS="$REMAINING_ARGS $1"
-                shift
-                continue
-                ;;
-        esac
-        shift $((OPTIND-1))
-        OPTIND=1
-    done
-
-    # Collect remaining args
-    shift $((OPTIND-1))  # Shift off any remaining getopts-processed args
-    while [ $# -gt 0 ]; do
-        REMAINING_ARGS="$REMAINING_ARGS $1"
+  # Handle known options with getopts
+  while getopts ":d:t:kh" opt; do
+    case "${opt}" in
+      d) INSTALL_DIR="${OPTARG}" ;;
+      k) DISABLE_SSL=yes ;;
+      t) GODYL_GITHUB_TOKEN="${OPTARG}" ;;
+      h) usage ;;
+      \?) # Unknown option
+        REMAINING_ARGS="${REMAINING_ARGS} $1"
         shift
-    done
+        continue
+        ;;
+    esac
+    shift $((OPTIND - 1))
+    OPTIND=1
+  done
+
+  # Collect remaining args
+  shift $((OPTIND - 1)) # Shift off any remaining getopts-processed args
+  while [ $# -gt 0 ]; do
+    REMAINING_ARGS="${REMAINING_ARGS} $1"
+    shift
+  done
 }
 
 # Create and handle temporary directory
 setup_temp_dir() {
-    if [ -z "${TEMP_DIR}" ]; then
-        TEMP_DIR=$(mktemp -d)
-        debug "Created temporary directory: ${TEMP_DIR}"
-    else
-        mkdir -p "${TEMP_DIR}"
-        debug "Using specified temporary directory: ${TEMP_DIR}"
-    fi
+  if [ -z "${TEMP_DIR}" ]; then
+    TEMP_DIR=$(mktemp -d)
+    debug "Created temporary directory: ${TEMP_DIR}"
+  else
+    mkdir -p "${TEMP_DIR}"
+    debug "Using specified temporary directory: ${TEMP_DIR}"
+  fi
 
-    # Set trap to clean up temporary directory
-    trap 'rm -rf "${TEMP_DIR}"' EXIT
+  # Set trap to clean up temporary directory
+  trap 'rm -rf "${TEMP_DIR}"' EXIT
 }
 
 # Install godyl and tools
 install_tools() {
-    tmp=$(mktemp -d)
-    trap 'rm -rf "${tmp}"' EXIT
+  tmp=$(mktemp -d)
+  trap 'rm -rf "${tmp}"' EXIT
 
-    curl ${DISABLE_SSL:+-k} -sSL \
-        "https://raw.githubusercontent.com/idelchi/scripts/refs/heads/dev/install.sh" | \
-        INSTALLER_TOOL=godyl \
-        sh -s -- \
-        -d "${tmp}" \
-        ${DISABLE_SSL:+-k} \
-        -t "${GODYL_GITHUB_TOKEN}"
+  curl ${DISABLE_SSL:+-k} -sSL \
+    "https://raw.githubusercontent.com/idelchi/scripts/refs/heads/dev/install.sh" |
+    INSTALLER_TOOL=godyl \
+      sh -s -- \
+      -d "${tmp}" \
+      ${DISABLE_SSL:+-k} \
+      -t "${GODYL_GITHUB_TOKEN}"
 
+  printf "Installing tools to '${INSTALL_DIR}'\n"
 
-    printf "Installing tools to '${INSTALL_DIR}'\n"
+  [ -n "${REMAINING_ARGS}" ] && printf "Calling godyl with extra arguments: '${REMAINING_ARGS}'\n"
 
-    [ -n "$REMAINING_ARGS" ] && printf "Calling godyl with extra arguments: '${REMAINING_ARGS}'\n"
-
-    # Install tools using godyl
-    GODYL_GITHUB_TOKEN=${GODYL_GITHUB_TOKEN} "${tmp}/godyl" ${REMAINING_ARGS} ${DISABLE_SSL:+-k} --output="${INSTALL_DIR}" - <<YAML
+  # Install tools using godyl
+  GODYL_GITHUB_TOKEN=${GODYL_GITHUB_TOKEN} "${tmp}/godyl" "${REMAINING_ARGS}" ${DISABLE_SSL:+-k} --output="${INSTALL_DIR}" - <<YAML
 - name: helm/helm
   path: https://get.helm.sh/helm-{{ .Version }}-{{ .OS }}-{{ .ARCH }}.tar.gz
 - name: kubernetes/kubernetes
@@ -112,25 +111,25 @@ install_tools() {
 - name: go-task/task
 YAML
 
-    rm -rf ${tmp}
-    printf "All tools installed successfully to ${INSTALL_DIR}\n"
+  rm -rf "${tmp}"
+  printf "All tools installed successfully to ${INSTALL_DIR}\n"
 }
 
 need_cmd() {
-    if ! command -v "${1}" >/dev/null 2>&1; then
-        printf "Required command '${1}' not found"
-        exit 1
-    fi
+  if ! command -v "${1}" >/dev/null 2>&1; then
+    printf "Required command '${1}' not found"
+    exit 1
+  fi
 }
 
 main() {
-    parse_args "$@"
+  parse_args "$@"
 
-    # Check for required commands
-    need_cmd curl
+  # Check for required commands
+  need_cmd curl
 
-    # Install tools
-    install_tools
+  # Install tools
+  install_tools
 }
 
 main "$@"

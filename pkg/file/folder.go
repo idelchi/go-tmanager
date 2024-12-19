@@ -13,7 +13,7 @@ import (
 // removing, expanding paths, and checking existence.
 type Folder string
 
-// NewFolder creates a new Folder from the provided path segments by joining them.
+// NewFolder creates a new Folder object from the provided path segments by joining them.
 func NewFolder(paths ...string) Folder {
 	return Folder(filepath.Join(paths...))
 }
@@ -40,8 +40,10 @@ func (f *Folder) Expand() error {
 		if err != nil {
 			return fmt.Errorf("getting user home directory: %w", err)
 		}
+
 		f.Set(filepath.Join(homeDir, f.Path()[2:]))
 	}
+
 	return nil
 }
 
@@ -58,12 +60,19 @@ func (f Folder) Path() string {
 // Exists checks if the Folder exists in the file system.
 func (f Folder) Exists() bool {
 	_, err := os.Stat(f.Path())
+
 	return err == nil
 }
 
 // Create creates the Folder and all necessary parent directories with 0755 permissions.
 func (f Folder) Create() error {
-	return os.MkdirAll(f.Path(), 0o755)
+	const perm = 0o755
+
+	if err := os.MkdirAll(f.Path(), perm); err != nil {
+		return fmt.Errorf("creating directory %s: %w", f.Path(), err)
+	}
+
+	return nil
 }
 
 // Name returns the base name (last element) of the Folder's path.
@@ -75,35 +84,57 @@ func (f Folder) Name() string {
 // and assigns the generated path to the Folder.
 func (f *Folder) CreateRandomInDir(dir string) error {
 	name, err := os.MkdirTemp(dir, "godyl-*")
+	if err != nil {
+		return fmt.Errorf("creating temporary directory in %s: %w", dir, err)
+	}
+
 	f.Set(name)
-	return err
+
+	return nil
 }
 
 // CreateRandomInTempDir creates a new random directory inside the system's temporary directory
 // and assigns the generated path to the Folder.
 func (f *Folder) CreateRandomInTempDir() error {
 	name, err := os.MkdirTemp("", "godyl-*")
+	if err != nil {
+		return fmt.Errorf("creating temporary directory: %w", err)
+	}
+
 	f.Set(name)
-	return err
+
+	return nil
 }
 
 // CreateInTempDir creates a directory inside the system's temporary directory
 // using the Folder's name and assigns the path to the Folder.
 func (f *Folder) CreateInTempDir() error {
 	name := filepath.Join(os.TempDir(), f.Name())
-	err := os.Mkdir(name, 0o755)
+
+	const perm = 0o755
+
+	if err := os.Mkdir(name, perm); err != nil {
+		return fmt.Errorf("creating directory in temporary directory: %w", err)
+	}
+
 	f.Set(name)
-	return err
+
+	return nil
 }
 
 // Remove deletes the Folder and all of its contents.
 func (f Folder) Remove() error {
-	return os.RemoveAll(f.Path())
+	if err := os.RemoveAll(f.Path()); err != nil {
+		return fmt.Errorf("removing directory %s: %w", f.Path(), err)
+	}
+
+	return nil
 }
 
 // CriteriaFunc defines a function type for filtering files during search operations.
 type CriteriaFunc func(File) (bool, error)
 
+// ErrNotFound is returned when a file is not found during a search operation.
 var ErrNotFound = errors.New("file not found")
 
 // FindFile searches for a file in the Folder that matches the provided criteria.
@@ -132,6 +163,7 @@ func (f Folder) FindFile(criteria ...CriteriaFunc) (File, error) {
 			if err != nil {
 				return err
 			}
+
 			if !matches {
 				return nil // Skip this file if it doesn't match all criteria
 			}
@@ -141,6 +173,7 @@ func (f Folder) FindFile(criteria ...CriteriaFunc) (File, error) {
 
 		// If we've reached here, the file matches all criteria
 		found = true
+
 		return filepath.SkipAll // Stop the walk, we've found a match
 	})
 	if err != nil {

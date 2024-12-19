@@ -10,7 +10,7 @@ import (
 )
 
 // Extensions represents a collection of file extensions.
-type Extensions = unmarshal.SingleOrSlice[string]
+type Extensions = unmarshal.SingleOrSliceType[string]
 
 // ExtensionsToHint converts a list of extensions into a match.Hint.
 func ExtensionsToHint(exts Extensions) match.Hint {

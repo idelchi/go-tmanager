@@ -76,7 +76,12 @@ func (app *App) Run() error {
 		return app.processUpdate()
 	}
 
-	app.log = logger.New(app.cfg.Log)
+	lvl, err := logger.LevelString(app.cfg.Log)
+	if err != nil {
+		return fmt.Errorf("error parsing log level: %v", err)
+	}
+
+	app.log = logger.New(lvl)
 
 	app.logStartupInfo()
 

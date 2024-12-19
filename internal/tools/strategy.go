@@ -5,6 +5,7 @@ import (
 	"unicode"
 
 	"github.com/Masterminds/semver/v3"
+
 	"github.com/idelchi/godyl/internal/version"
 )
 

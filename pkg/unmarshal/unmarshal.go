@@ -16,28 +16,30 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-// SingleOrSlice represents a custom type that can unmarshal from YAML as either
+// SingleOrSliceType represents a custom type that can unmarshal from YAML as either
 // a single element or a slice of elements. It is a generic type that works for
 // any type T.
-type SingleOrSlice[T any] []T
+type SingleOrSliceType[T any] []T
 
 // UnmarshalYAML implements the yaml.Unmarshaler interface for SingleOrSlice.
 // It allows the YAML value to be unmarshaled either as a single element or a slice.
 // The unmarshaled result is assigned to the receiver.
-func (ss *SingleOrSlice[T]) UnmarshalYAML(value *yaml.Node) error {
-	result, err := UnmarshalSingleOrSlice[T](value, true)
+func (ss *SingleOrSliceType[T]) UnmarshalYAML(value *yaml.Node) error {
+	result, err := SingleOrSlice[T](value, true)
 	if err != nil {
 		return err
 	}
+
 	*ss = result
+
 	return nil
 }
 
-// UnmarshalSingleOrSlice is a helper function that unmarshals a YAML node into
+// SingleOrSlice is a helper function that unmarshals a YAML node into
 // a slice of type T. It handles cases where the node could represent a single
 // item or a list. If the node is a scalar or a mapping, it wraps it in a sequence node.
 // The useKnownFields parameter controls whether unknown fields trigger an error.
-func UnmarshalSingleOrSlice[T any](node *yaml.Node, useKnownFields bool) ([]T, error) {
+func SingleOrSlice[T any](node *yaml.Node, useKnownFields bool) ([]T, error) {
 	// If it's a scalar or mapping node, wrap it in a sequence node
 	if node.Kind == yaml.ScalarNode || node.Kind == yaml.MappingNode {
 		node = &yaml.Node{
@@ -63,11 +65,15 @@ func UnmarshalSingleOrSlice[T any](node *yaml.Node, useKnownFields bool) ([]T, e
 func DecodeWithOptionalKnownFields(value *yaml.Node, out any, useKnownFields bool, input string) error {
 	// Re-encode the yaml.Node to bytes
 	var buf bytes.Buffer
+
 	enc := yaml.NewEncoder(&buf)
 	if err := enc.Encode(value); err != nil {
 		return err
 	}
-	enc.Close()
+
+	if err := enc.Close(); err != nil {
+		return err
+	}
 
 	// Decode from the buffer
 	decoder := yaml.NewDecoder(&buf)

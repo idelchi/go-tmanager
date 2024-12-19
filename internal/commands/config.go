@@ -9,7 +9,6 @@ import (
 	"github.com/idelchi/godyl/internal/tools"
 	"github.com/idelchi/godyl/internal/tools/sources"
 	"github.com/idelchi/godyl/pkg/file"
-	"github.com/idelchi/godyl/pkg/logger"
 )
 
 // Update holds the configuration options for updating the built binary itself.
@@ -72,8 +71,8 @@ type Config struct {
 	// Run without making any changes (dry run)
 	Dry bool
 
-	// Log level (DEBUG, INFO, WARN, ERROR)
-	Log logger.Level
+	// Log level (debug, info, warn, error, always, silent)
+	Log string
 
 	// Number of parallel downloads (>= 0)
 	Parallel int `validate:"gte=0"`
@@ -110,7 +109,12 @@ type Config struct {
 func (c *Config) Validate() error {
 	allowedUpdateStrategies := []tools.Strategy{tools.None, tools.Upgrade, tools.Force}
 	if !slices.Contains(allowedUpdateStrategies, c.Update.Strategy) {
-		return fmt.Errorf("%w: unknown update strategy: %q: allowed are %v", ErrUsage, c.Update.Strategy, allowedUpdateStrategies)
+		return fmt.Errorf(
+			"%w: unknown update strategy: %q: allowed are %v",
+			ErrUsage,
+			c.Update.Strategy,
+			allowedUpdateStrategies,
+		)
 	}
 
 	if IsSet("config") && !c.Defaults.Exists() {

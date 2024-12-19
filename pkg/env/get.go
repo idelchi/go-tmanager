@@ -27,11 +27,13 @@ func (e Env) GetOrDefault(key, defaultValue string) string {
 // GetAll returns a new Env containing all key-value pairs that satisfy the given predicate function.
 func (e Env) GetAll(predicate func(key, value string) bool) Env {
 	result := make(Env)
+
 	for k, v := range e {
 		if predicate(k, v) {
 			result[k] = v
 		}
 	}
+
 	return result
 }
 
@@ -56,6 +58,7 @@ func (e Env) GetAllMatching(pattern string) (Env, error) {
 	if err != nil {
 		return nil, fmt.Errorf("invalid regex pattern: %w", err)
 	}
+
 	return e.GetAll(func(key, _ string) bool {
 		return re.MatchString(key)
 	}), nil

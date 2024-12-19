@@ -157,8 +157,8 @@ func (t *Tool) tryResolveFallback(fallback sources.Type, path string, withTags, 
 	}
 
 	// Apply templating to the tool's fields.
-	utils.SetIfEmpty(&t.Exe.Name, populator.Get("exe"))
-	utils.SetIfEmpty(&t.Exe.Name, t.Name)
+	utils.SetIfZeroValue(&t.Exe.Name, populator.Get("exe"))
+	utils.SetIfZeroValue(&t.Exe.Name, t.Name)
 
 	// Re-check skip conditions after applying templates.
 	if err := t.CheckSkipConditions(withTags, withoutTags); err != nil {
@@ -166,20 +166,20 @@ func (t *Tool) tryResolveFallback(fallback sources.Type, path string, withTags, 
 	}
 
 	// Retrieve the tool's version from the installer if it is not already set.
-	if utils.IsEmpty(t.Version.Version) {
+	if utils.IsZeroValue(t.Version.Version) {
 		if err := populator.Version(t.Name); err != nil {
 			return err
 		}
 	}
 
-	utils.SetIfEmpty(&t.Version.Version, populator.Get("version"))
+	utils.SetIfZeroValue(&t.Version.Version, populator.Get("version"))
 
 	if err := t.TemplateLast(); err != nil {
 		return err
 	}
 
 	// Determine the tool's path if not already set.
-	if utils.IsEmpty(t.Path) {
+	if utils.IsZeroValue(t.Path) {
 		hints := t.Hints
 		hints.Add(ExtensionsToHint(t.Extensions))
 
@@ -190,8 +190,8 @@ func (t *Tool) tryResolveFallback(fallback sources.Type, path string, withTags, 
 			return err
 		}
 	}
-	utils.SetIfEmpty(&t.Path, populator.Get("path"))
-	utils.SetIfEmpty(&t.Path, path)
+	utils.SetIfZeroValue(&t.Path, populator.Get("path"))
+	utils.SetIfZeroValue(&t.Path, path)
 
 	// Append platform-specific file extension to the executable name.
 	if !strings.HasSuffix(t.Exe.Name, t.Platform.Extension.String()) {

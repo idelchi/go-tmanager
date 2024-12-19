@@ -20,7 +20,7 @@ services:
     extends: build
     build:
       target: final
-    # platform: linux/amd64
+      # platform: linux/amd64
 
   bookworm-amd32:
     extends: bookworm-amd64

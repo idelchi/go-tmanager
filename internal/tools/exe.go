@@ -16,7 +16,7 @@ type Exe struct {
 	Name string
 	// Patterns specifies the patterns used to locate the binary in the downloaded folder.
 	// This can either be a single string or a slice of strings.
-	Patterns unmarshal.SingleOrSlice[string]
+	Patterns unmarshal.SingleOrSliceType[string]
 }
 
 // UnmarshalYAML implements custom unmarshaling for Exe,

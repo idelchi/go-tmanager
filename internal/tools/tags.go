@@ -15,7 +15,7 @@ type Tags []string
 // UnmarshalYAML implements custom unmarshaling for Tags,
 // allowing the field to be either a single string or a list of strings.
 func (t *Tags) UnmarshalYAML(value *yaml.Node) error {
-	result, err := unmarshal.UnmarshalSingleOrSlice[string](value, false)
+	result, err := unmarshal.SingleOrSlice[string](value, false)
 	if err != nil {
 		return err
 	}

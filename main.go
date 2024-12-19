@@ -1,10 +1,9 @@
 package main
 
 import (
+	_ "embed"
 	"fmt"
 	"os"
-
-	_ "embed"
 
 	"github.com/idelchi/godyl/internal/commands"
 )

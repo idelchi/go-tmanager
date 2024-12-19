@@ -5,4 +5,4 @@ import (
 )
 
 // Aliases represents a tool's alias names.
-type Aliases = unmarshal.SingleOrSlice[string]
+type Aliases = unmarshal.SingleOrSliceType[string]

@@ -10,14 +10,14 @@ install_dir=${1:-~/.local/bin}
 disable_ssl=${2:-0}
 
 if [ "${disable_ssl}" -eq 1 ]; then
-    flag="-k"
+  flag="-k"
 else
-    flag=""
+  flag=""
 fi
 
-curl ${flag} -sSL https://raw.githubusercontent.com/idelchi/scripts/refs/heads/dev/install.sh | sh -s -- -d ${dir}
+curl "${flag}" -sSL https://raw.githubusercontent.com/idelchi/scripts/refs/heads/dev/install.sh | sh -s -- -d "${dir}"
 
-${dir}/godyl --output=${install_dir} - <<YAML
+"${dir}"/godyl --output="${install_dir}" - <<YAML
 - name: helm/helm
   path: https://get.helm.sh/helm-{{ .Version }}-{{ .OS }}-{{ .ARCH }}.tar.gz
 - name: kubernetes/kubernetes
@@ -31,4 +31,4 @@ ${dir}/godyl --output=${install_dir} - <<YAML
 - name: go-task/task
 YAML
 
-rm -rf ${dir}
+rm -rf "${dir}"

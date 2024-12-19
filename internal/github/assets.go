@@ -2,10 +2,10 @@ package github
 
 import (
 	"path/filepath"
+	"strings"
 
 	"github.com/idelchi/godyl/internal/detect/platform"
 	"github.com/idelchi/godyl/internal/match"
-	"github.com/idelchi/godyl/pkg/utils"
 )
 
 // Assets represents a collection of GitHub release assets.
@@ -15,7 +15,7 @@ type Assets []Asset
 // It compares asset names in a case-insensitive manner.
 func (as Assets) FilterByName(name string) (assets Assets) {
 	for _, asset := range as {
-		if utils.EqualLower(asset.Name, name) {
+		if strings.EqualFold(asset.Name, name) {
 			assets = append(assets, asset)
 		}
 	}

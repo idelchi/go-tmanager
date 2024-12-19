@@ -2,7 +2,9 @@ package tools
 
 import (
 	"github.com/fatih/structs"
+
 	"github.com/idelchi/godyl/pkg/unmarshal"
+
 	"gopkg.in/yaml.v3"
 )
 
@@ -11,9 +13,9 @@ type Version struct {
 	// Version holds the string representation of the parsed version.
 	Version string
 	// Commands contains the list of command strategies used to extract the version.
-	Commands unmarshal.SingleOrSlice[string]
+	Commands unmarshal.SingleOrSliceType[string]
 	// Patterns contains the list of regex patterns for parsing the version from output strings.
-	Patterns unmarshal.SingleOrSlice[string]
+	Patterns unmarshal.SingleOrSliceType[string]
 }
 
 // UnmarshalYAML implements custom unmarshaling for Exe,

@@ -47,7 +47,7 @@ func (s *Skip) UnmarshalYAML(value *yaml.Node) error {
 	}
 
 	// Otherwise, treat it as a list of conditions and unmarshal accordingly.
-	result, err := unmarshal.UnmarshalSingleOrSlice[Condition](value, true)
+	result, err := unmarshal.SingleOrSlice[Condition](value, true)
 	if err != nil {
 		return err
 	}

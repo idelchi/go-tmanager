@@ -7,7 +7,7 @@
 .bash_history
 .gitconfig
 .env
-*___generated.go
+# *___generated.go
 
 # Ignored folders
 .build

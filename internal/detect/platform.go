@@ -25,13 +25,13 @@ func (p *Platform) Parse(name string) {
 
 // Merge combines another Platform's fields into the current Platform, setting fields that are empty.
 func (p *Platform) Merge(other Platform) {
-	utils.SetIfEmpty(&p.OS, other.OS)
-	utils.SetIfEmpty(&p.Architecture.Type, other.Architecture.Type)
-	utils.SetIfEmpty(&p.Architecture.Version, other.Architecture.Version)
-	utils.SetIfEmpty(&p.Architecture.Raw, other.Architecture.Raw)
-	utils.SetIfEmpty(&p.Library, other.Library)
-	utils.SetIfEmpty(&p.Extension, other.Extension)
-	utils.SetIfEmpty(&p.Distribution, other.Distribution)
+	utils.SetIfZeroValue(&p.OS, other.OS)
+	utils.SetIfZeroValue(&p.Architecture.Type, other.Architecture.Type)
+	utils.SetIfZeroValue(&p.Architecture.Version, other.Architecture.Version)
+	utils.SetIfZeroValue(&p.Architecture.Raw, other.Architecture.Raw)
+	utils.SetIfZeroValue(&p.Library, other.Library)
+	utils.SetIfZeroValue(&p.Extension, other.Extension)
+	utils.SetIfZeroValue(&p.Distribution, other.Distribution)
 }
 
 // ToMap converts the Platform struct to a map for use in templates.
