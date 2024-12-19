@@ -223,6 +223,8 @@ func winCleanup() error {
 
 	fmt.Printf("Batch file stored in: %s\n", batchFile.Path())
 
+	// TODO(Idelchi): Move into a .bat.template file and use text/template to fill in the values.
+	// This template file could be embedded in the binary, so it's always available.
 	batchContent := fmt.Sprintf(`@echo off
 set "OLD_BINARY=%s"
 set "BATCH_FILE=%s"
