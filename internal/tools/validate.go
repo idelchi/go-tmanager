@@ -16,6 +16,15 @@ import (
 	"github.com/idelchi/godyl/pkg/utils"
 )
 
+func ErrCausesEarlyReturn(err error) bool {
+	return errors.Is(ErrAlreadyExists, err) ||
+		errors.Is(ErrUpToDate, err) ||
+		errors.Is(ErrDoesHaveTags, err) ||
+		errors.Is(ErrDoesNotHaveTags, err) ||
+		errors.Is(ErrSkipped, err) ||
+		errors.Is(ErrFailed, err)
+}
+
 var (
 	// ErrAlreadyExists indicates that the tool already exists in the system.
 	ErrAlreadyExists = fmt.Errorf("tool already exists")
@@ -82,12 +91,12 @@ func (t *Tool) Resolve(withTags, withoutTags []string) error {
 			continue
 		}
 
-		if err := t.tryResolveFallback(fallback, path, withTags, withoutTags); errors.Is(err, ErrFailed) {
+		if err := t.tryResolveFallback(fallback, path, withTags, withoutTags); ErrCausesEarlyReturn(err) {
+			return err
+		} else if err != nil {
 			lastErr = err
 
 			continue // Move on to the next fallback.
-		} else if err != nil {
-			return err // Return on any other error.
 		}
 
 		return nil // Success, no need to try further fallbacks.
