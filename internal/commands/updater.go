@@ -52,10 +52,14 @@ func (gu GodylUpdater) Update(version string) error {
 		return fmt.Errorf("resolving tool: %w", err)
 	}
 
-	if tool.Version.Version == version && gu.Strategy != tools.Force {
-		fmt.Printf("godyl (%v) is already up-to-date", version)
+	if tool.Version.Version == version {
+		fmt.Printf("godyl (%v) is already up-to-date\n", version)
 
-		return nil
+		if gu.Strategy == tools.Force {
+			fmt.Println("Forcing updating...")
+		} else {
+			return nil
+		}
 	}
 
 	fmt.Printf("Update requested from %q -> %q\n", version, tool.Version.Version)
