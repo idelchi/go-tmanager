@@ -92,7 +92,6 @@ func (gu GodylUpdater) Replace(path string) error {
 	}
 	defer body.Close()
 
-	// Apply the update using the `go-update` library.
 	if err := update.Apply(body, update.Options{}); err != nil {
 		return err
 	}

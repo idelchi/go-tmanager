@@ -19,3 +19,4 @@ dist/
 .local
 bin
 .logs
+*.exe.old

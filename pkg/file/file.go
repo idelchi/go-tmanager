@@ -37,6 +37,11 @@ func (f File) Open() (*os.File, error) {
 	return os.Open(f.String())
 }
 
+// Remove deletes the file from the file system.
+func (f File) Remove() error {
+	return os.Remove(f.String())
+}
+
 // Name returns the name (string representation) of the File.
 func (f File) Name() string {
 	return f.String()
