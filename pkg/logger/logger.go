@@ -28,25 +28,6 @@ const (
 	ALWAYS
 )
 
-// func (l Level) AsInt() int {
-// 	switch l {
-// 	case SILENT:
-// 		return -1
-// 	case DEBUG:
-// 		return 0
-// 	case INFO:
-// 		return 1
-// 	case WARN:
-// 		return 2
-// 	case ERROR:
-// 		return 3
-// 	case ALWAYS:
-// 		return 4
-// 	default:
-// 		return 1
-// 	}
-// }
-
 // IsAllowed checks if the log Level is a valid value (DEBUG, INFO, WARN, ERROR, SILENT).
 func (l Level) IsAllowed() bool {
 	switch l {
