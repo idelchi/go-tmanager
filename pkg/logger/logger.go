@@ -60,22 +60,7 @@ func NewCustom(level Level, output io.Writer) *Logger {
 // New creates a new Logger instance with the specified log level and writes to stdout.
 // If an invalid log level is provided, it defaults to INFO.
 func New(level Level) *Logger {
-	if !level.IsALevel() {
-		fmt.Fprintf(os.Stderr, "Invalid log level: %q, setting to %q\n", level, INFO)
-		level = INFO
-	}
-
-	return &Logger{
-		level:  level,
-		output: os.Stdout,
-		colors: map[Level]*color.Color{
-			DEBUG:  color.New(color.FgBlue),
-			INFO:   color.New(color.FgGreen),
-			WARN:   color.New(color.FgYellow),
-			ERROR:  color.New(color.FgRed),
-			ALWAYS: color.New(color.FgGreen),
-		},
-	}
+	return NewCustom(level, os.Stdout)
 }
 
 // log prints a log message with the specified log level, applying colors based on the level if available.
