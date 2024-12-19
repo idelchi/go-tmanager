@@ -29,8 +29,6 @@ func (gu GodylUpdater) Update(version string) error {
 		gu.Strategy = tools.Upgrade
 	}
 
-	fmt.Printf("Updating godyl with strategy: %q\n", gu.Strategy)
-
 	// Determine the tool path from build info, defaulting to "idelchi/godyl" if not available.
 	path := "idelchi/godyl"
 	info, ok := debug.ReadBuildInfo()
@@ -54,13 +52,13 @@ func (gu GodylUpdater) Update(version string) error {
 		return fmt.Errorf("resolving tool: %w", err)
 	}
 
-	fmt.Printf("Update requested from %q -> %q\n", version, tool.Version.Version)
-
 	if tool.Version.Version == version {
-		fmt.Println("godyl is already up-to-date")
+		fmt.Printf("godyl (%v) is already up-to-date", version)
 
 		return nil
 	}
+
+	fmt.Printf("Update requested from %q -> %q\n", version, tool.Version.Version)
 
 	// Download the tool.
 	output, err := gu.Get(tool)
