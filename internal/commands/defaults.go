@@ -27,7 +27,7 @@ func (d *Defaults) Unmarshal(data []byte) error {
 func (d *Defaults) FromFile(path string) error {
 	data, err := os.ReadFile(filepath.Clean(path))
 	if err != nil {
-		return err
+		return fmt.Errorf("reading file %q: %w", path, err)
 	}
 
 	return d.Unmarshal(data)
@@ -76,7 +76,11 @@ func (d *Defaults) Merge(cfg Config) (err error) {
 		err = d.Platform.Architecture.Parse(cfg.Arch)
 	}
 
-	return err
+	if err := d.Validate(); err != nil {
+		return fmt.Errorf("merging defaults: %w", err)
+	}
+
+	return nil
 }
 
 // Load loads configuration defaults from a file or uses embedded defaults if not specified.

@@ -285,12 +285,14 @@ func (app *App) processResult(res result) {
 	err := res.err
 	msg := res.msg
 	found := res.found
+
 	app.log.Info("")
-	app.log.Always(tool.Name)
+	app.log.Info(tool.Name)
 	app.log.Debug("configuration:")
 	app.log.Debug("-------")
 	app.log.Debug(pretty.YAMLMasked(tool))
 	app.log.Debug("-------")
+
 	if err != nil {
 		app.handleToolError(tool, err, msg)
 	} else {
@@ -324,6 +326,7 @@ func (app *App) logToolSuccess(tool *tools.Tool, found file.File) {
 		app.log.Info("  version: %s", tool.Version.Version)
 	}
 	app.log.Info("  picked download %q", filepath.Base(tool.Path))
+
 	if tool.Mode == "find" {
 		app.log.Info("  picked file %q", found)
 		app.log.Info("  installed successfully at %q", filepath.Join(tool.Output, tool.Exe.Name))

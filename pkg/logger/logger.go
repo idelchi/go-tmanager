@@ -66,16 +66,18 @@ func New(level Level) *Logger {
 // log prints a log message with the specified log level, applying colors based on the level if available.
 // The message will only be logged if the level's severity is equal to or higher than the Logger's current level.
 func (l *Logger) log(level Level, format string, args ...any) {
-	if l.level == SILENT {
+	if l.level == SILENT || level < l.level {
 		return
 	}
 
-	if level >= l.level {
-		message := fmt.Sprintf(format, args...)
-		if c, ok := l.colors[level]; ok {
-			c.Fprintln(l.output, message)
-		} else {
-			fmt.Fprintln(l.output, message)
+	message := fmt.Sprintf(format, args...)
+	if c, ok := l.colors[level]; ok {
+		if _, err := c.Fprintln(l.output, message); err != nil {
+			panic(err)
+		}
+	} else {
+		if _, err := fmt.Fprintln(l.output, message); err != nil {
+			panic(err)
 		}
 	}
 }
