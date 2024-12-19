@@ -42,7 +42,7 @@ func flags() {
 	pflag.Bool("update", false, "Update the tools")
 	pflag.Bool("dump-tools", false, "Dump out default tools.yml as stdout")
 	pflag.Bool("dry", false, "Run without making any changes (dry run)")
-	pflag.String("log", string(logger.INFO), "Log level (debug, info, warn, error)")
+	pflag.String("log", string(logger.INFO), "Log level (debug, info, warn, error, silent)")
 	pflag.IntP("parallel", "j", runtime.NumCPU(), "Number of parallel downloads. 0 means unlimited.")
 	pflag.BoolP("no-verify-ssl", "k", false, "Skip SSL verification")
 

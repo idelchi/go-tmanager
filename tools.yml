@@ -208,7 +208,9 @@
     - processing
 
 - name: so-fancy/diff-so-fancy
-  description: Good-looking diffs with diff-highlight and more
+  description: |
+    Good-looking diffs with diff-highlight and more.
+    Will misbehave during upgrade, due to not being compatible with a windows terminal -> always upgrade.
   exe:
     name: diff-so-fancy
     patterns: ^diff-so-fancy$

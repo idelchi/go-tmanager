@@ -34,6 +34,8 @@ func (s Strategy) Check(t *Tool) error {
 // Upgrade checks if the tool should be upgraded based on the strategy and its current version.
 // It compares the existing version with the desired version and returns an error if the tool is already up to date.
 func (s Strategy) Upgrade(t *Tool) error {
+	// PrintIfMatch(t, pretty.YAML(t))
+
 	// If the tool does not exist, no upgrade is necessary.
 	if !t.Exists() {
 		return nil
@@ -74,7 +76,7 @@ func (s Strategy) Upgrade(t *Tool) error {
 
 		// If the versions match, return an error indicating the tool is already up to date.
 		if source.Equal(target) {
-			return fmt.Errorf("%w: current version %q and target version %q match", ErrUpToDate, exe.Version, t.Version.Version)
+			return fmt.Errorf("%w: current version %q and target version %q match", ErrUpToDate, source, target)
 		}
 
 		fmt.Printf("Update requested from %q -> %q\n", source, target)
