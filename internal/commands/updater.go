@@ -3,7 +3,6 @@ package commands
 import (
 	"fmt"
 	"os"
-	"os/exec"
 	"path/filepath"
 	"runtime"
 	"runtime/debug"
@@ -101,7 +100,12 @@ func (gu GodylUpdater) Replace(path string) error {
 	}
 	defer body.Close()
 
-	if err := update.Apply(body, update.Options{}); err != nil {
+	options := update.Options{}
+	if runtime.GOOS == "windows" {
+		// options.OldSavePath = filepath.Join(filepath.Dir(path), ".godyl.exe.old")
+	}
+
+	if err := update.Apply(body, options); err != nil {
 		return err
 	}
 
@@ -142,193 +146,6 @@ func (gu GodylUpdater) Get(tool tools.Tool) (string, error) {
 	}
 
 	fmt.Printf("Downloading %q from %q\n", tool.Name, tool.Path)
+
 	return tool.Output, nil
-}
-
-func winCleanupWorking() error {
-	fmt.Println("Issuing a delete command for the old godyl binary")
-
-	exePath, err := os.Executable()
-	if err != nil {
-		return fmt.Errorf("getting executable path: %w", err)
-	}
-	exeDir := filepath.Dir(exePath)
-	var folder file.Folder
-	if err := folder.CreateRandomInTempDir(); err != nil {
-		return fmt.Errorf("creating temporary directory: %w", err)
-	}
-
-	logFile := filepath.Join(exeDir, "godyl_cleanup.log")
-	oldBinary := filepath.Join(exeDir, ".godyl.exe.old")
-	batchFile := filepath.Join(exeDir, "cleanup.bat")
-
-	batchContent := fmt.Sprintf(`@echo off
-echo Started cleanup at %%TIME%% >> "%s"
-attrib -h -s "%s" >nul 2>&1
-
-for /L %%%%G in (1,1,10) do (
-    del /F "%s" >nul 2>&1
-    if not exist "%s" (
-        echo Deleted on attempt %%%%G at %%TIME%% >> "%s"
-        goto :cleanup_success
-    )
-    echo Failed attempt %%%%G at %%TIME%% >> "%s"
-    timeout /t 1 /nobreak >nul
-)
-
-:cleanup_failed
-echo Final cleanup failed at %%TIME%% >> "%s"
-goto :end
-
-:cleanup_success
-echo Cleanup completed successfully at %%TIME%% >> "%s"
-
-:end
-del "%s"
-`, logFile, oldBinary, oldBinary, oldBinary, logFile, logFile, logFile, logFile, batchFile)
-
-	// Write the batch file
-	if err := os.WriteFile(batchFile, []byte(batchContent), 0o644); err != nil {
-		return fmt.Errorf("creating batch file: %w", err)
-	}
-
-	// Use absolute path for the batch file and run it from its directory
-	cmd := exec.Command("cmd", "/C", "cd", "/d", exeDir, "&", "start", "/MIN", filepath.Base(batchFile))
-	cmd.Dir = exeDir
-
-	if err := cmd.Start(); err != nil {
-		return fmt.Errorf("starting cleanup script: %w", err)
-	}
-
-	return nil
-}
-
-func winCleanup() error {
-	fmt.Println("Issuing a delete command for the old godyl binary")
-
-	exePath, err := os.Executable()
-	if err != nil {
-		return fmt.Errorf("getting executable path: %w", err)
-	}
-	exeDir := file.NewFile(exePath).Dir()
-
-	var folder file.Folder
-	if err := folder.CreateRandomInTempDir(); err != nil {
-		return fmt.Errorf("creating temporary directory: %w", err)
-	}
-
-	oldBinary := file.NewFile(exeDir.Path(), ".godyl.exe.old")
-	batchFile := file.NewFile(folder.Path(), "cleanup.bat")
-	logFile := file.NewFile(folder.Path(), "cleanup_debug.log")
-
-	fmt.Printf("Batch file stored in: %s\n", batchFile.Path())
-
-	// TODO(Idelchi): Move into a .bat.template file and use text/template to fill in the values.
-	// This template file could be embedded in the binary, so it's always available.
-	batchContent := fmt.Sprintf(`@echo off
-set "OLD_BINARY=%s"
-set "BATCH_FILE=%s"
-set "FOLDER=%s"
-set "LOG_FILE=%s"
-
-echo Starting cleanup script at %%TIME%% >> "%%LOG_FILE%%"
-
-echo Removing attributes >> "%%LOG_FILE%%"
-attrib -h -s "%%OLD_BINARY%%" >nul 2>&1
-
-echo Beginning deletion attempts >> "%%LOG_FILE%%"
-for /L %%%%G in (1,1,10) do (
-    echo Attempt %%%%G >> "%%LOG_FILE%%"
-    del /F "%%OLD_BINARY%%" >nul 2>&1
-    if not exist "%%OLD_BINARY%%" (
-        echo Deleted successfully on attempt %%%%G >> "%%LOG_FILE%%"
-        goto :cleanup_success
-    )
-    echo Still exists after attempt %%%%G >> "%%LOG_FILE%%"
-    timeout /t 1 /nobreak >nul
-)
-
-:cleanup_failed
-echo Cleanup failed after 10 attempts >> "%%LOG_FILE%%"
-goto :after_cleanup
-
-:cleanup_success
-echo Cleanup succeeded >> "%%LOG_FILE%%"
-
-:after_cleanup
-echo Changing directory to TEMP before deleting files and folder >> "%%LOG_FILE%%"
-cd /d "%%TEMP%%"
-
-REM echo Deleting batch file >> "%%LOG_FILE%%"
-REM del "%%BATCH_FILE%%" >nul 2>&1
-
-echo Removing temporary folder >> "%%LOG_FILE%%"
-rmdir /s /q "%%FOLDER%%" >nul 2>&1
-
-echo Cleanup script finished at %%TIME%% >> "%%LOG_FILE%%"
-`, oldBinary.Path(), batchFile.Path(), folder.Path(), logFile.Path())
-
-	if err := os.WriteFile(batchFile.Path(), []byte(batchContent), 0o644); err != nil {
-		return fmt.Errorf("creating batch file: %w", err)
-	}
-
-	// Fire and forget, run minimized
-	cmd := exec.Command("cmd", "/C", "start", "/MIN", batchFile.Path())
-	if err := cmd.Start(); err != nil {
-		return fmt.Errorf("starting cleanup script: %w", err)
-	}
-
-	return nil
-}
-
-func winCleanup2() error {
-	fmt.Println("Issuing a delete command for the old godyl binary")
-
-	exePath, err := os.Executable()
-	if err != nil {
-		return fmt.Errorf("getting executable path: %w", err)
-	}
-	exeDir := file.NewFile(exePath).Dir()
-
-	var folder file.Folder
-	if err := folder.CreateRandomInTempDir(); err != nil {
-		return fmt.Errorf("creating temporary directory: %w", err)
-	}
-
-	oldBinary := file.NewFile(exeDir.Path(), ".godyl.exe.old")
-	batchFile := file.NewFile(folder.Path(), "cleanup.bat")
-
-	fmt.Printf("Batch file stored in: %s\n", batchFile.Path())
-
-	// Using absolute paths, no logging, and no printing to a file.
-	batchContent := fmt.Sprintf(`@echo off
-attrib -h -s "%s" >nul 2>&1
-
-for /L %%%%G in (1,1,10) do (
-    del /F "%s" >nul 2>&1
-    if not exist "%s" (
-        goto :cleanup_success
-    )
-    timeout /t 1 /nobreak >nul
-)
-
-:cleanup_failed
-goto :end
-
-:cleanup_success
-:end
-del "%s"
-`, oldBinary.Path(), oldBinary.Path(), oldBinary.Path(), batchFile.Path())
-
-	if err := os.WriteFile(batchFile.Path(), []byte(batchContent), 0o644); err != nil {
-		return fmt.Errorf("creating batch file: %w", err)
-	}
-
-	// Use 'start /MIN' with absolute paths; no need for cd since all paths are absolute.
-	cmd := exec.Command("cmd", "/C", "start", "/MIN", batchFile.Path())
-	if err := cmd.Start(); err != nil {
-		return fmt.Errorf("starting cleanup script: %w", err)
-	}
-
-	return nil
 }

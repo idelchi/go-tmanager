@@ -1,0 +1,38 @@
+@echo off
+set "OLD_BINARY={{.OldBinary}}"
+set "BATCH_FILE={{.BatchFile}}"
+set "FOLDER={{.Folder}}"
+set "LOG_FILE={{.LogFile}}"
+
+echo Starting cleanup script at %TIME% >> "%LOG_FILE%"
+
+echo Removing attributes >> "%LOG_FILE%"
+attrib -h -s "%OLD_BINARY%" >nul 2>&1
+
+echo Beginning deletion attempts >> "%LOG_FILE%"
+for /L %%G in (1,1,10) do (
+    echo Attempt %%G >> "%LOG_FILE%"
+    del /F "%OLD_BINARY%" >nul 2>&1
+    if not exist "%OLD_BINARY%" (
+        echo Deleted successfully on attempt %%G >> "%LOG_FILE%"
+        goto :cleanup_success
+    )
+    echo Still exists after attempt %%G >> "%LOG_FILE%"
+    timeout /t 1 /nobreak >nul
+)
+
+:cleanup_failed
+echo Cleanup failed after 10 attempts >> "%LOG_FILE%"
+goto :after_cleanup
+
+:cleanup_success
+echo Cleanup succeeded >> "%LOG_FILE%"
+
+:after_cleanup
+echo Changing directory to TEMP before deleting files and folder >> "%LOG_FILE%"
+cd /d "%TEMP%"
+
+echo Removing temporary folder >> "%LOG_FILE%"
+rmdir /s /q "%FOLDER%" >nul 2>&1
+
+echo Cleanup script finished at %TIME% >> "%LOG_FILE%"
