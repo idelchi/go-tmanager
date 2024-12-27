@@ -133,4 +133,5 @@ func (c *Config) Validate() error {
 	return nil
 }
 
+// ErrUsage is returned when there is an error in the configuration.
 var ErrUsage = fmt.Errorf("usage error")

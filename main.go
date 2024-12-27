@@ -1,7 +1,7 @@
 package main
 
 import (
-	_ "embed"
+	"embed"
 	"fmt"
 	"os"
 
@@ -16,6 +16,11 @@ var defaultsFile []byte
 
 //go:embed tools.yml
 var toolsFile []byte
+
+// content holds our static web server content.
+//
+//go:embed defaults.yml tools.yml internal/commands/scripts/*
+var embeds embed.FS
 
 func main() {
 	app := commands.NewApp(version, defaultsFile, toolsFile)

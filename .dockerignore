@@ -8,3 +8,6 @@
 !.bashrc
 !defaults.yml
 !tools.yml
+
+# Don't ignore stuff in internal/
+!internal/**
