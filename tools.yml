@@ -279,12 +279,22 @@
   tags:
     - processing
 
+- name: MilesCranmer/rip2
+  description: A safe and ergonomic alternative to rm
+  exe: rip2
+  fallbacks:
+    - rust
+  tags:
+    - terminal
+
 - name: nivekuil/rip
   description: A safe and ergonomic alternative to rm
   version: 0.11.4
   fallbacks:
     - rust
   skip:
+    - reason: "replaced by rip2"
+      condition: true
     - reason: "rip is only available for Linux"
       condition: '{{ne .OS "linux"}}'
     - reason: "rip is only available for amd64 and armv7 architectures"
