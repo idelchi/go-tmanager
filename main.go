@@ -17,7 +17,7 @@ var defaultsFile []byte
 //go:embed tools.yml
 var toolsFile []byte
 
-// content holds our static web server content.
+// content holds static template scripts.
 //
 //go:embed defaults.yml tools.yml internal/commands/scripts/*
 var embeds embed.FS

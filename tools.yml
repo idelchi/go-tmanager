@@ -281,7 +281,7 @@
 
 - name: MilesCranmer/rip2
   description: A safe and ergonomic alternative to rm
-  exe: rip2
+  exe: rip
   fallbacks:
     - rust
   tags:
