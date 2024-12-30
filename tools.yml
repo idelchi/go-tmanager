@@ -509,6 +509,11 @@
   tags:
     - automation
 
+- name: authelia/authelia
+  description: The Single Sign-On Multi-Factor portal for web apps
+  tags:
+    - automation
+
 - name: nvbn/thefuck
   description: Magnificent app which corrects your previous console command
   exe: thefuck
