@@ -192,6 +192,14 @@
   tags:
     - terminal
 
+- name: filebrowser/filebrowser
+  description:
+  skip:
+    reason: "filebrowser is not available on windows"
+    condition: '{{ eq .OS "windows" }}'
+  tags:
+    - terminal
+
 - name: kraanzu/dooit
   description: A TUI todo manager
   exe:
@@ -511,6 +519,17 @@
 
 - name: authelia/authelia
   description: The Single Sign-On Multi-Factor portal for web apps
+  skip:
+    - reason: "authelia is not available on windows"
+      condition: '{{ eq .OS "windows" }}'
+    - reason: "authelia is not available on darwin"
+      condition: '{{ eq .OS "darwin" }}'
+  exe:
+    name: authelia
+    patterns: ^authelia
+  hints:
+    - pattern: "-musl"
+      weight: '{{ if eq .DISTRIBUTION "alpine" }}0{{ else }}-2{{ end }}'
   tags:
     - automation
 
@@ -670,6 +689,33 @@
     - elevated
     - native
     - processing
+
+- name: yngveh/sprig-cli
+  description: A command-line tool for parsing and executing Go templates
+  version: master
+  source:
+    type: go
+  tags:
+    - processing
+
+- name: hairyhenderson/gomplate
+  description: A versatile Go template processor
+  exe:
+    patterns: ^gomplate
+  tags:
+    - terminal
+
+- name: coredns/coredns
+  description: DNS server that chains plugins
+  extensions: .tgz
+  tags:
+    - networking
+
+- name: watchexec/watchexec
+  description: Executes commands in response to file modifications
+  extensions: .tar.xz
+  tags:
+    - automation
 
 - idelchi/gocry
 - idelchi/gogen

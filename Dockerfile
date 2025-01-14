@@ -22,7 +22,6 @@ ARG TARGETARCH
 ARG TASK_ARCH=${TARGETARCH}
 RUN wget -qO- https://github.com/go-task/task/releases/download/${TASK_VERSION}/task_linux_${TASK_ARCH}.tar.gz | tar -xz -C /usr/local/bin
 
-
 WORKDIR /work
 
 # Create User (Debian/Ubuntu)
@@ -51,7 +50,6 @@ RUN --mount=type=cache,target=${GOMODCACHE},uid=1001,gid=1001 \
     --mount=type=cache,target=${GOCACHE},uid=1001,gid=1001 \
     # go install golang.org/x/tools/cmd/stringer && \
     GOOS=${TARGETOS} GOARCH=${TARGETARCH} CGO_ENABLED=0 go build -ldflags="-s -w -X 'main.version=${GODYL_VERSION}'" -o bin/ .
-
 
 COPY --chown=${USER}:{USER} .bashrc /home/${USER}/.bashrc
 
