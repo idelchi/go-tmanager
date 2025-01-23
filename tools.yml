@@ -511,7 +511,7 @@
     - automation
 
 - name: hashicorp/vault
-  description: Infrastructure as Code tool
+  description: Secure, store, and tightly control access to tokens, passwords, certificates, API keys, and other secrets
   path: https://releases.hashicorp.com/vault/{{ .Version | trimPrefix "v" }}/vault_{{ .Version | trimPrefix "v" }}_{{ .OS }}_{{ .ARCH }}.zip
   tags:
     - automation
