@@ -9,7 +9,7 @@ GODYL_GITHUB_TOKEN=${GODYL_GITHUB_TOKEN}
 usage() {
   cat <<EOF
 Usage: ${0} [OPTIONS]
-Installs Kubernetes-related tools using godyl.
+Installs all tools from tools.yml using godyl.
 
 This script will install all tools defined in 'tools.yaml' file.
 
@@ -93,7 +93,7 @@ install_tools() {
   [ -n "${REMAINING_ARGS}" ] && printf "Calling godyl with extra arguments: '${REMAINING_ARGS}'\n"
 
   # Install tools using godyl
-  GODYL_GITHUB_TOKEN=${GODYL_GITHUB_TOKEN} "${tmp}/godyl" "${REMAINING_ARGS}" ${DISABLE_SSL:+-k} --output="${INSTALL_DIR}" "${tmp}"/tools.yml
+  GODYL_GITHUB_TOKEN=${GODYL_GITHUB_TOKEN} "${tmp}/godyl" ${REMAINING_ARGS} ${DISABLE_SSL:+-k} --output="${INSTALL_DIR}" "${tmp}"/tools.yml
 
   rm -rf "${tmp}"
   printf "All tools installed successfully to ${INSTALL_DIR}\n"

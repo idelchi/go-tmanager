@@ -725,3 +725,23 @@
 - name: idelchi/wslint
   version:
     commands: -v
+
+- name: bitwarden/cli
+  description: The Bitwarden command-line interface
+  version: 2025.1.0
+  exe: bw
+  path: |-
+    {{- if eq .OS "darwin" -}}
+    https://github.com/bitwarden/clients/releases/download/cli-v{{ .Version }}/bw-macos-{{ .Version }}.zip
+    {{- else -}}
+    https://github.com/bitwarden/clients/releases/download/cli-v{{ .Version }}/bw-{{ .OS }}-{{ .Version }}.zip
+    {{- end -}}
+  source:
+    type: url
+  tags:
+    - automation
+
+- name: getsops/sops
+  description: Simple and flexible tool for managing secrets
+  tags:
+    - security

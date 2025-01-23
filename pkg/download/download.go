@@ -84,7 +84,7 @@ func (d Downloader) Download(url, output string) (file.File, error) {
 		httpClient.Transport = &http.Transport{
 			TLSClientConfig: &tls.Config{
 				InsecureSkipVerify: true,
-			}, 
+			},
 		}
 	}
 
@@ -94,6 +94,8 @@ func (d Downloader) Download(url, output string) (file.File, error) {
 		GetMode: getter.ModeAny,
 	}
 
+	// TODO(Idelchi): Go-Getter messes up ? queries etc and doesn't seem to follow redirects then,
+	// or perhaps messes up the whole URL
 	client := &getter.Client{
 		Getters: []getter.Getter{
 			httpGetter,
