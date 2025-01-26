@@ -742,5 +742,24 @@
 
 - name: getsops/sops
   description: Simple and flexible tool for managing secrets
+  skip:
+    - reason: "sops is not available on windows"
+      condition: '{{ eq .OS "windows" }}'
+    - reason: "sops is not available for ARM32 architecture"
+      condition: '{{ eq .ARCH "arm" }}'
+  extensions: "{{ .ARCH }}"
   tags:
     - security
+
+- name: dagu-org/dagu
+  description: Developer-friendly minimalism Cron/Airflow alternative
+  skip:
+    reason: "dagu is not available on windows"
+    condition: '{{ eq .OS "windows" }}'
+  tags:
+    - automation
+
+- name: binwiederhier/ntfy
+  description: Send push notifications to your phone or desktop using PUT/POST
+  tags:
+    - terminal
